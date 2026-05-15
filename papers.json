@@ -1,0 +1,3698 @@
+[
+  {
+    "id": "designs",
+    "name": "Designs",
+    "subcategories": [
+      {
+        "id": "sequential-generation",
+        "name": "Sequential Generation",
+        "subsubcategories": [
+          {
+            "id": "visual-autoregressive-modeling",
+            "name": "Visual Autoregressive Modeling",
+            "papers": [
+              {
+                "design": "iMoWM",
+                "paper": "iMoWM: Taming Interactive Multi-Modal World Model for Robotic Manipulation",
+                "arxiv": "https://arxiv.org/abs/2510.09036",
+                "github": null,
+                "website": "https://xingyoujun.github.io/imowm/"
+              },
+              {
+                "design": "PWM",
+                "paper": "From Forecasting to Planning: Policy World Model for Collaborative State-Action Prediction",
+                "arxiv": "https://arxiv.org/abs/2510.19654",
+                "github": "https://github.com/6550Zhao/Policy-World-Model",
+                "website": null
+              },
+              {
+                "design": "SAMPO",
+                "paper": "SAMPO: Scale-wise Autoregression with Motion Prompt for Generative World Models",
+                "arxiv": "https://arxiv.org/abs/2509.15536",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "RynnVLA-001",
+                "paper": "RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation",
+                "arxiv": "https://arxiv.org/abs/2509.15212",
+                "github": "https://github.com/alibaba-damo-academy/RynnVLA-001",
+                "website": null
+              },
+              {
+                "design": "OccTENS",
+                "paper": "OccTENS: 3D Occupancy World Model via Temporal Next-Scale Prediction",
+                "arxiv": "https://arxiv.org/abs/2509.03887",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "Genie 3",
+                "paper": "Genie 3: A new frontier for world models",
+                "arxiv": null,
+                "github": null,
+                "website": "https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/"
+              },
+              {
+                "design": "I²-world",
+                "paper": "I²-World: Intra-Inter Tokenization for Efficient Dynamic 4D Scene Forecasting",
+                "arxiv": "https://arxiv.org/abs/2507.09144",
+                "github": "https://github.com/lzzzzzm/II-World",
+                "website": null
+              },
+              {
+                "design": "UniVLA",
+                "paper": "Unified Vision-Language-Action Model",
+                "arxiv": "https://arxiv.org/abs/2506.19850",
+                "github": "https://github.com/baaivision/UniVLA",
+                "website": null
+              },
+              {
+                "design": "WorldVLA",
+                "paper": "WorldVLA: Towards Autoregressive Action World Model",
+                "arxiv": "https://arxiv.org/abs/2506.21539",
+                "github": "https://github.com/alibaba-damo-academy/WorldVLA",
+                "website": null
+              },
+              {
+                "design": "RoboScape",
+                "paper": "RoboScape: Physics-informed Embodied World Model",
+                "arxiv": "https://arxiv.org/abs/2506.23135",
+                "github": "https://github.com/tsinghua-fib-lab/RoboScape",
+                "website": null
+              },
+              {
+                "design": "Xray2Xray",
+                "paper": "Xray2Xray: World Model from Chest X-rays with Volumetric Context",
+                "arxiv": "https://arxiv.org/abs/2506.19055",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "RLVR-World",
+                "paper": "RLVR-World: Training World Models with Reinforcement Learning",
+                "arxiv": "https://arxiv.org/abs/2505.13934",
+                "github": "https://github.com/thuml/RLVR-World",
+                "website": null
+              },
+              {
+                "design": "MineWorld",
+                "paper": "MineWorld: a Real-Time and Open-Source Interactive World Model on Minecraft",
+                "arxiv": "https://arxiv.org/abs/2504.08388",
+                "github": "https://github.com/microsoft/mineworld",
+                "website": null
+              },
+              {
+                "design": "UVA",
+                "paper": "Unified Video Action Model",
+                "arxiv": "https://arxiv.org/abs/2503.00200",
+                "github": "https://github.com/ShuangLI59/unified_video_action",
+                "website": null
+              },
+              {
+                "design": "SurgWM",
+                "paper": "Surgical Vision World Model",
+                "arxiv": "https://arxiv.org/abs/2503.02904",
+                "github": "https://github.com/bhattarailab/Surgical-Vision-World-Model",
+                "website": null
+              },
+              {
+                "design": "DWS",
+                "paper": "Pre-Trained Video Generative Models as World Simulators",
+                "arxiv": "https://arxiv.org/abs/2502.07825",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "VideoWorld",
+                "paper": "VideoWorld: Exploring Knowledge Learning from Unlabeled Videos",
+                "arxiv": "https://arxiv.org/abs/2501.09781",
+                "github": "https://github.com/ByteDance-Seed/VideoWorld",
+                "website": null
+              },
+              {
+                "design": "Drivingworld",
+                "paper": "Drivingworld: Constructing world model for autonomous driving via video GPT",
+                "arxiv": "https://arxiv.org/abs/2412.19505",
+                "github": "https://github.com/YvanYin/DrivingWorld",
+                "website": null
+              },
+              {
+                "design": "Moto",
+                "paper": "Moto: Latent motion token as the bridging language for learning robot manipulation from video",
+                "arxiv": "https://arxiv.org/abs/2412.04445",
+                "github": "https://github.com/TencentARC/Moto",
+                "website": null
+              },
+              {
+                "design": "WHALE",
+                "paper": "WHALE: Towards Generalizable and Scalable World Models for Embodied Decision-making",
+                "arxiv": "https://arxiv.org/abs/2411.05619",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "GR-2",
+                "paper": "GR-2: A Generative Video-Language-Action Model with Web-Scale Knowledge for Robot Manipulation",
+                "arxiv": "https://arxiv.org/abs/2410.06158",
+                "github": null,
+                "website": "https://gr2-manipulation.github.io/"
+              },
+              {
+                "design": "LatentDriver",
+                "paper": "Learning Multiple Probabilistic Decisions from Latent World Model in Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2409.15730",
+                "github": "https://github.com/Sephirex-X/LatentDriver",
+                "website": null
+              },
+              {
+                "design": "Renderworld",
+                "paper": "Renderworld: World model with self-supervised 3D label",
+                "arxiv": "https://arxiv.org/abs/2409.11356",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "VidIT",
+                "paper": "Video In-context Learning: Autoregressive Transformers are Zero-Shot Video Imitators",
+                "arxiv": "https://arxiv.org/abs/2407.07356",
+                "github": null,
+                "website": "https://www.microsoft.com/en-us/research/project/ar-videos/"
+              },
+              {
+                "design": "iVideoGPT",
+                "paper": "iVideoGPT: Interactive VideoGPTs are Scalable World Models",
+                "arxiv": "https://arxiv.org/abs/2405.15223",
+                "github": "https://github.com/thuml/iVideoGPT",
+                "website": null
+              },
+              {
+                "design": "Genie",
+                "paper": "Genie: Generative Interactive Environments",
+                "arxiv": "https://arxiv.org/abs/2402.15391",
+                "github": null,
+                "website": "https://sites.google.com/view/genie-2024/home"
+              },
+              {
+                "design": "LWM",
+                "paper": "World Model on Million-Length Video And Language With Blockwise RingAttention",
+                "arxiv": "https://arxiv.org/abs/2402.08268",
+                "github": "https://github.com/LargeWorldModel/LWM",
+                "website": null
+              },
+              {
+                "design": "WHAM",
+                "paper": "World and human action models towards gameplay ideation",
+                "arxiv": null,
+                "github": null,
+                "website": "https://www.nature.com/articles/s41586-025-08600-3"
+              },
+              {
+                "design": "WorldDreamer",
+                "paper": "WorldDreamer: Towards General World Models for Video Generation via Predicting Masked Tokens",
+                "arxiv": "https://arxiv.org/abs/2401.09985",
+                "github": "https://github.com/JeffWang987/WorldDreamer",
+                "website": null
+              },
+              {
+                "design": "OccWorld",
+                "paper": "OccWorld: Learning a 3D Occupancy World Model for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2311.16038",
+                "github": "https://github.com/wzzheng/OccWorld",
+                "website": null
+              },
+              {
+                "design": "GAIA-1",
+                "paper": "Gaia-1: A generative world model for autonomous driving",
+                "arxiv": "https://arxiv.org/abs/2309.17080",
+                "github": null,
+                "website": "https://wayve.ai/science/gaia/"
+              }
+            ]
+          },
+          {
+            "id": "mllm-guided-multimodal-autoregressive-model",
+            "name": "MLLM-guided Multimodal Autoregressive Model",
+            "papers": [
+              {
+                "design": "AstraNav-World",
+                "paper": "AstraNav-World: World Model for Foresight Control and Consistency",
+                "arxiv": "https://arxiv.org/abs/2512.21714",
+                "github": "https://github.com/amap-cvlab/AstraNav-World",
+                "website": "https://astra-amap.github.io/AstraNav-World.github.io/"
+              },
+              {
+                "design": "RynnVLA-002",
+                "paper": "RynnVLA-002: A Unified Vision-Language-Action and World Model",
+                "arxiv": "https://arxiv.org/abs/2511.17502",
+                "github": "https://github.com/alibaba-damo-academy/RynnVLA-002",
+                "website": null
+              },
+              {
+                "design": "SWM",
+                "paper": "Semantic World Models",
+                "arxiv": "https://arxiv.org/abs/2510.19818",
+                "github": null,
+                "website": "https://weirdlabuw.github.io/swm/"
+              },
+              {
+                "design": "UniWM",
+                "paper": "Unified World Models: Memory-Augmented Planning and Foresight for Visual Navigation",
+                "arxiv": "https://arxiv.org/abs/2510.08713",
+                "github": "https://github.com/F1y1113/UniWM",
+                "website": null
+              },
+              {
+                "design": "F1",
+                "paper": "F1: A Vision-Language-Action Model Bridging Understanding and Generation to Actions",
+                "arxiv": "https://arxiv.org/abs/2509.06951",
+                "github": "https://github.com/InternRobotics/F1-VLA",
+                "website": null
+              },
+              {
+                "design": "OccVLA",
+                "paper": "OccVLA: Vision-Language-Action Model with Implicit 3D Occupancy Supervision",
+                "arxiv": "https://arxiv.org/abs/2509.05578",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "VLWM",
+                "paper": "Planning with Reasoning using Vision Language World Model",
+                "arxiv": "https://arxiv.org/abs/2509.02722",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "DreamVLA",
+                "paper": "DreamVLA: A Vision-Language-Action Model Dreamed with Comprehensive World Knowledge",
+                "arxiv": "https://arxiv.org/abs/2507.04447",
+                "github": "https://github.com/Zhangwenyao1/DreamVLA",
+                "website": null
+              },
+              {
+                "design": "World4Omni",
+                "paper": "World4Omni: A Zero-Shot Framework from Image Generation World Model to Robotic Manipulation",
+                "arxiv": "https://arxiv.org/abs/2506.23919",
+                "github": null,
+                "website": "https://nus-lins-lab.github.io/goalvlaweb/"
+              },
+              {
+                "design": "WALL-E 2.0",
+                "paper": "WALL-E 2.0: World Alignment by NeuroSymbolic Learning Improves World Model-based LLM Agent",
+                "arxiv": "https://arxiv.org/abs/2504.15785",
+                "github": "https://github.com/elated-sawyer/WALL-E",
+                "website": null
+              },
+              {
+                "design": "GR00T N1",
+                "paper": "GR00T N1: An Open Foundation Model for Generalist Humanoid Robots",
+                "arxiv": "https://arxiv.org/abs/2503.14734",
+                "github": "https://github.com/NVIDIA/Isaac-GR00T",
+                "website": null
+              },
+              {
+                "design": "HERMES",
+                "paper": "HERMES: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation",
+                "arxiv": "https://arxiv.org/abs/2501.14729",
+                "github": "https://github.com/LMD0311/HERMES",
+                "website": null
+              },
+              {
+                "design": "Doe-1",
+                "paper": "Doe-1: Closed-Loop Autonomous Driving with Large World Model",
+                "arxiv": "https://arxiv.org/abs/2412.09627",
+                "github": "https://github.com/wzzheng/Doe",
+                "website": null
+              },
+              {
+                "design": "Owl-1",
+                "paper": "Owl-1: Omni World Model for Consistent Long Video Generation",
+                "arxiv": "https://arxiv.org/abs/2412.09600",
+                "github": "https://github.com/huang-yh/Owl",
+                "website": null
+              },
+              {
+                "design": "Eva",
+                "paper": "Eva: An Embodied World Model for Future Video Anticipation",
+                "arxiv": "https://arxiv.org/abs/2410.15461",
+                "github": null,
+                "website": "https://sites.google.com/view/icml-eva"
+              },
+              {
+                "design": "PIVOT-R",
+                "paper": "PIVOT-R: Primitive-Driven Waypoint-Aware World Model for Robotic Manipulation",
+                "arxiv": "https://arxiv.org/abs/2410.10394",
+                "github": "https://github.com/abliao/PIVOT-R",
+                "website": null
+              },
+              {
+                "design": "OccLLaMA",
+                "paper": "OccLLaMA: An Occupancy-Language-Action Generative World Model for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2409.03272",
+                "github": null,
+                "website": "https://vilonge.github.io/OccLLaMA_Page/"
+              },
+              {
+                "design": "WorldGPT",
+                "paper": "WorldGPT: Empowering LLM as Multimodal World Model",
+                "arxiv": "https://arxiv.org/abs/2404.18202",
+                "github": "https://github.com/DCDmllm/WorldGPT",
+                "website": null
+              },
+              {
+                "design": "3D-VLA",
+                "paper": "3D-VLA: A 3D Vision-Language-Action Generative World Model",
+                "arxiv": "https://arxiv.org/abs/2403.09631",
+                "github": null,
+                "website": "https://vis-www.cs.umass.edu/3dvla"
+              },
+              {
+                "design": "ADriver-I",
+                "paper": "ADriver-I: A General World Model for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2311.13549",
+                "github": null,
+                "website": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "diffusion-based-generation",
+        "name": "Diffusion-based Generation",
+        "subsubcategories": [
+          {
+            "id": "latent-diffusion",
+            "name": "Latent Diffusion",
+            "papers": [
+              {
+                "design": "HyDRA",
+                "paper": "Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models",
+                "arxiv": "https://arxiv.org/abs/2603.25716",
+                "github": "https://github.com/H-EmbodVis/HyDRA",
+                "website": null
+              },
+              {
+                "design": "PhyGenesis",
+                "paper": "Toward Physically Consistent Driving Video World Models under Challenging Trajectories",
+                "arxiv": "https://arxiv.org/abs/2603.24506",
+                "github": "https://github.com/wm-research/PhyGenesis",
+                "website": null
+              },
+              {
+                "design": "ABot-PhysWorld",
+                "paper": "ABot-PhysWorld: Interactive World Foundation Model for Robotic Manipulation with Physics Alignment",
+                "arxiv": "https://arxiv.org/abs/2603.23376",
+                "github": "https://github.com/amap-cvlab/ABot-PhysWorld",
+                "website": null
+              },
+              {
+                "design": "EVA",
+                "paper": "EVA: Aligning Video World Models with Executable Robot Actions via Inverse Dynamics Rewards",
+                "arxiv": "https://arxiv.org/abs/2603.17808",
+                "github": "https://github.com/RobbinW/EVA",
+                "website": null
+              },
+              {
+                "design": "InSpatio-WorldFM",
+                "paper": "InSpatio-WorldFM: An Open-Source Real-Time Generative Frame Model",
+                "arxiv": "https://arxiv.org/abs/2603.11911",
+                "github": "https://github.com/inspatio/worldfm",
+                "website": null
+              },
+              {
+                "design": "PlayWorld",
+                "paper": "PlayWorld: Learning Robot World Models from Autonomous Play",
+                "arxiv": "https://arxiv.org/abs/2603.09030",
+                "github": "https://github.com/irom-princeton/open-world",
+                "website": null
+              },
+              {
+                "design": "WorldCache",
+                "paper": "WorldCache: Accelerating World Models for Free via Heterogeneous Token",
+                "arxiv": "https://arxiv.org/abs/2603.06331",
+                "github": "https://github.com/FofGofx/WorldCache",
+                "website": null
+              },
+              {
+                "design": "DreamWorld",
+                "paper": "DreamWorld: Unified World Modeling in Video Generation",
+                "arxiv": "https://arxiv.org/abs/2603.00466",
+                "github": "https://github.com/ABU121111/DreamWorld",
+                "website": null
+              },
+              {
+                "design": "Olaf-World",
+                "paper": "Olaf-World: Orienting Latent Actions for Video World Modeling",
+                "arxiv": "https://arxiv.org/abs/2602.10104",
+                "github": "https://github.com/showlab/Olaf-World",
+                "website": null
+              },
+              {
+                "design": "EgoWM",
+                "paper": "Walk Through Paintings : Ego-centric World Models from Internet Priors",
+                "arxiv": "https://arxiv.org/abs/2601.15284",
+                "github": "https://github.com/miccooper9/egowm",
+                "website": null
+              },
+              {
+                "design": "ReWorld",
+                "paper": "ReWorld: Multi-Dimensional Reward Modeling for Embodied World Models",
+                "arxiv": "https://arxiv.org/abs/2601.12428",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "NeoVerse",
+                "paper": "NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos",
+                "arxiv": "https://arxiv.org/abs/2601.00393",
+                "github": "https://github.com/IamCreateAI/NeoVerse",
+                "website": null
+              },
+              {
+                "design": "GrndCtrl",
+                "paper": "GrndCtrl: Grounding World Models via Self-Supervised Reward Alignment",
+                "arxiv": "https://arxiv.org/abs/2512.01952",
+                "github": null,
+                "website": "https://rlwg-grndctrl.github.io/"
+              },
+              {
+                "design": "C^3",
+                "paper": "World Models That Know When They Don’t Know: Controllable Video Generation with Calibrated Uncertainty",
+                "arxiv": "https://arxiv.org/abs/2512.05927",
+                "github": "https://github.com/irom-princeton/c-cubed",
+                "website": "https://c-cubed-uq.github.io/"
+              },
+              {
+                "design": "GAIA-3",
+                "paper": "GAIA-3: Scaling World Models to Power Safety and Evaluation",
+                "arxiv": null,
+                "github": null,
+                "website": "https://wayve.ai/thinking/gaia-3/"
+              },
+              {
+                "design": "WristWorld",
+                "paper": "WristWorld: Generating Wrist-Views via 4D World Models for Robotic Manipulation",
+                "arxiv": "https://arxiv.org/abs/2510.07313",
+                "github": "https://github.com/XuWuLingYu/WristWorld",
+                "website": null
+              },
+              {
+                "design": "WorldSplat",
+                "paper": "WorldSplat: Gaussian-Centric Feed-Forward 4D Scene Generation for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2509.23402",
+                "github": "https://github.com/wm-research/worldsplat",
+                "website": null
+              },
+              {
+                "design": "WorldForge",
+                "paper": "WorldForge: Unlocking Emergent 3D/4D Generation in Video Diffusion Model via Training-Free Guidance",
+                "arxiv": "https://arxiv.org/abs/2509.15130",
+                "github": "https://github.com/Westlake-AGI-Lab/WorldForge",
+                "website": null
+              },
+              {
+                "design": "PEWM",
+                "paper": "Learning Primitive Embodied World Models: Towards Scalable Robotic Learning",
+                "arxiv": "https://arxiv.org/abs/2508.20840",
+                "github": "https://github.com/qiaosun22/PrimitiveWorld",
+                "website": null
+              },
+              {
+                "design": "Video Policy",
+                "paper": "Video Generators are Robot Policies",
+                "arxiv": "https://arxiv.org/abs/2508.00795",
+                "github": "https://github.com/cvlab-columbia/videopolicy",
+                "website": null
+              },
+              {
+                "design": "Ego-PM",
+                "paper": "Ego-centric Predictive Model Conditioned on Hand Trajectories",
+                "arxiv": "https://arxiv.org/abs/2508.19852",
+                "github": "https://github.com/binjiezhang/Ego-PM",
+                "website": null
+              },
+              {
+                "design": "GWM",
+                "paper": "GWM: Towards Scalable Gaussian World Models for Robotic Manipulation",
+                "arxiv": "https://arxiv.org/abs/2508.17600",
+                "github": "https://github.com/Gaussian-World-Model/gaussianwm",
+                "website": null
+              },
+              {
+                "design": "M3arsSynth",
+                "paper": "Martian World Models: Controllable Video Synthesis with Physically Accurate 3D Reconstructions",
+                "arxiv": "https://arxiv.org/abs/2507.07978",
+                "github": "https://github.com/loongfeili/Martian-World-Model",
+                "website": null
+              },
+              {
+                "design": "AirScape",
+                "paper": "AirScape: An Aerial Generative World Model with Motion Controllability",
+                "arxiv": "https://arxiv.org/abs/2507.08885",
+                "github": "https://github.com/EmbodiedCity/AirScape.code",
+                "website": null
+              },
+              {
+                "design": "robot4dgen",
+                "paper": "Geometry-aware 4D Video Generation for Robot Manipulation",
+                "arxiv": "https://arxiv.org/abs/2507.01099",
+                "github": "https://github.com/lzylucy/4dgen",
+                "website": null
+              },
+              {
+                "design": "Genesis",
+                "paper": "Genesis: Multimodal Driving Scene Generation with Spatio-Temporal and Cross-Modal Consistency",
+                "arxiv": "https://arxiv.org/abs/2506.07497",
+                "github": "https://github.com/xiaomi-research/genesis",
+                "website": null
+              },
+              {
+                "design": "MinD",
+                "paper": "MinD: Learning A Dual-System World Model for Real-Time Planning and Implicit Risk Analysis",
+                "arxiv": "https://arxiv.org/abs/2506.18897",
+                "github": "https://github.com/manipulate-in-dream/MinD",
+                "website": null
+              },
+              {
+                "design": "RealPlay",
+                "paper": "PreFM: Online Audio-Visual Event Parsing via Predictive Future Modeling",
+                "arxiv": "https://arxiv.org/abs/2506.18901",
+                "github": "https://github.com/wenqsun/Real-Play",
+                "website": null
+              },
+              {
+                "design": "COME",
+                "paper": "COME: Adding Scene-Centric Forecasting Control to Occupancy World Model",
+                "arxiv": "https://arxiv.org/abs/2506.13260",
+                "github": "https://github.com/synsin0/COME",
+                "website": null
+              },
+              {
+                "design": "MeWM",
+                "paper": "Medical World Model:  Generative Simulation of Tumor Evolution for Treatment Planning",
+                "arxiv": "https://arxiv.org/abs/2506.02327",
+                "github": "https://github.com/scott-yjyang/MeWM",
+                "website": null
+              },
+              {
+                "design": "StateSpaceDiffuser",
+                "paper": "StateSpaceDiffuser: Bringing Long Context to Diffusion World Models",
+                "arxiv": "https://arxiv.org/abs/2505.22246",
+                "github": "https://github.com/insait-institute/StateSpaceDiffuser",
+                "website": null
+              },
+              {
+                "design": "GeoDrive",
+                "paper": "GeoDrive: 3D Geometry-Informed Driving World Model with Precise Action Control",
+                "arxiv": "https://arxiv.org/abs/2505.22421",
+                "github": "https://github.com/antonioo-c/GeoDrive",
+                "website": null
+              },
+              {
+                "design": "3DPEWM",
+                "paper": "Learning 3d persistent embodied world models",
+                "arxiv": "https://arxiv.org/abs/2505.05495",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "RoboTransfer",
+                "paper": "RoboTransfer: Geometry-Consistent Video Diffusion for Robotic Visual Policy Transfer",
+                "arxiv": "https://arxiv.org/abs/2505.23171",
+                "github": "https://github.com/HorizonRobotics/RoboTransfer",
+                "website": null
+              },
+              {
+                "design": "FlowDreamer",
+                "paper": "FlowDreamer: A RGB-D World Model with Flow-based Motion Representations  for Robot Manipulation",
+                "arxiv": "https://arxiv.org/abs/2505.10075",
+                "github": "https://github.com/sharinka0715/FlowDreamer",
+                "website": null
+              },
+              {
+                "design": "LaDi-WM",
+                "paper": "LaDi-WM: A Latent Diffusion-based World Model for Predictive Manipulation",
+                "arxiv": "https://arxiv.org/abs/2505.11528",
+                "github": "https://github.com/GuHuangAI/LaDiWM",
+                "website": null
+              },
+              {
+                "design": "LangToMo",
+                "paper": "Pixel motion as universal representation for robot control",
+                "arxiv": "https://arxiv.org/abs/2505.07817",
+                "github": "https://github.com/kahnchana/LangToMo",
+                "website": null
+              },
+              {
+                "design": "DreamGen",
+                "paper": "DreamGen: Unlocking Generalization in Robot Learning through Video World Models",
+                "arxiv": "https://arxiv.org/abs/2505.12705",
+                "github": "https://github.com/nvidia/GR00T-dreams",
+                "website": null
+              },
+              {
+                "design": "Learning to Drive",
+                "paper": "Learning to Drive from a World Model",
+                "arxiv": "https://arxiv.org/abs/2504.19077",
+                "github": null,
+                "website": "https://blog.comma.ai/mlsim"
+              },
+              {
+                "design": "Tesseract",
+                "paper": "Tesseract: Learning 4d embodied world models",
+                "arxiv": "https://arxiv.org/abs/2504.20995",
+                "github": "https://github.com/UMass-Embodied-AGI/TesserAct",
+                "website": null
+              },
+              {
+                "design": "UWM",
+                "paper": "Unified world models: Coupling video and action diffusion for pretraining on large robotic datasets",
+                "arxiv": "https://arxiv.org/abs/2504.02792",
+                "github": "https://github.com/WEIRDLabUW/unified-world-model",
+                "website": null
+              },
+              {
+                "design": "ViMo",
+                "paper": "ViMo: A Generative Visual GUI World Model for App Agents",
+                "arxiv": "https://arxiv.org/abs/2504.13936",
+                "github": "https://github.com/ai-agents-2030/ViMo",
+                "website": null
+              },
+              {
+                "design": "DiST-4D",
+                "paper": "DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth  for 4D Driving Scene Generation",
+                "arxiv": "https://arxiv.org/abs/2503.15208",
+                "github": "https://github.com/royalmelon0505/dist4d",
+                "website": null
+              },
+              {
+                "design": "Aether",
+                "paper": "Aether: Geometric-aware unified world modeling",
+                "arxiv": "https://arxiv.org/abs/2503.18945",
+                "github": "https://github.com/InternRobotics/Aether",
+                "website": null
+              },
+              {
+                "design": "Cosmos transfer1",
+                "paper": "Cosmos transfer1: Conditional world generation with adaptive multimodal control",
+                "arxiv": "https://arxiv.org/abs/2503.14492",
+                "github": "https://github.com/nvidia-cosmos/cosmos-transfer1",
+                "website": null
+              },
+              {
+                "design": "GAIA-2",
+                "paper": "GAIA-2: A Controllable Multi-View Generative World Model for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2503.20523",
+                "github": null,
+                "website": "https://wayve.ai/thinking/gaia-2/"
+              },
+              {
+                "design": "EDELINE",
+                "paper": "EDELINE: Enhancing Memory in Diffusion-based World Models via Linear-Time Sequence Modeling",
+                "arxiv": "https://arxiv.org/abs/2502.00466",
+                "github": "https://github.com/LJH-coding/EDELINE",
+                "website": null
+              },
+              {
+                "design": "MaskGWM",
+                "paper": "MaskGWM: A Generalizable Driving World Model with Video Mask Reconstruction",
+                "arxiv": "https://arxiv.org/abs/2502.11663",
+                "github": "https://github.com/SenseTime-FVG/OpenDWM",
+                "website": null
+              },
+              {
+                "design": "Dreamdrive",
+                "paper": "Dreamdrive: Generative 4d scene modeling from street view images",
+                "arxiv": "https://arxiv.org/abs/2501.00601",
+                "github": "https://github.com/NVlabs/DreamDrive",
+                "website": null
+              },
+              {
+                "design": "Cosmos",
+                "paper": "Cosmos World Foundation Model Platform for Physical AI",
+                "arxiv": "https://arxiv.org/abs/2501.03575",
+                "github": "https://github.com/nvidia-cosmos",
+                "website": null
+              },
+              {
+                "design": "VPP",
+                "paper": "Video prediction policy: A generalist robot policy with predictive visual representations",
+                "arxiv": "https://arxiv.org/abs/2412.14803",
+                "github": "https://github.com/roboterax/video-prediction-policy",
+                "website": null
+              },
+              {
+                "design": "Imagine-2-drive",
+                "paper": "Imagine-2-drive: High-fidelity world modeling in carla for autonomous vehicles",
+                "arxiv": "https://arxiv.org/abs/2411.10171",
+                "github": "https://github.com/anantagrg/Imagine-2-Drive",
+                "website": null
+              },
+              {
+                "design": "GenEx",
+                "paper": "Generative World Explorer",
+                "arxiv": "https://arxiv.org/abs/2411.11844",
+                "github": "https://github.com/GenEx-world/genex",
+                "website": null
+              },
+              {
+                "design": "DOME",
+                "paper": "DOME: Taming Diffusion Model into High-Fidelity Controllable Occupancy World Model",
+                "arxiv": "https://arxiv.org/abs/2410.10429",
+                "github": "https://github.com/gusongen/DOME",
+                "website": null
+              },
+              {
+                "design": "Panacea+",
+                "paper": "Panacea+: Panoramic and Controllable Video Generation for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2408.07605",
+                "github": "https://github.com/wenyuqing/panacea",
+                "website": null
+              },
+              {
+                "design": "Bevworld",
+                "paper": "Bevworld: A multimodal world model for autonomous driving via unified bev latent space",
+                "arxiv": "https://arxiv.org/abs/2407.05679",
+                "github": "https://github.com/zympsyche/BevWorld",
+                "website": null
+              },
+              {
+                "design": "Delphi",
+                "paper": "Unleashing generalization of end-to-end autonomous driving with controllable long video generation",
+                "arxiv": "https://arxiv.org/abs/2406.01349",
+                "github": "https://github.com/westlake-autolab/Delphi",
+                "website": null
+              },
+              {
+                "design": "Occsora",
+                "paper": "Occsora: 4d occupancy generation models as world simulators for autonomous driving",
+                "arxiv": "https://arxiv.org/abs/2405.20337",
+                "github": "https://github.com/wzzheng/OccSora",
+                "website": null
+              },
+              {
+                "design": "GenAD",
+                "paper": "Generalized Predictive Model for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2403.09630",
+                "github": "https://github.com/OpenDriveLab/DriveAGI",
+                "website": null
+              },
+              {
+                "design": "WorldGPT",
+                "paper": "Worldgpt: a sora-inspired video ai agent as rich world models from text and image inputs",
+                "arxiv": "https://arxiv.org/abs/2403.07944",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "DriveDreamer-2",
+                "paper": "DriveDreamer-2: LLM-Enhanced World Models for Diverse Driving Video Generation",
+                "arxiv": "https://arxiv.org/abs/2403.06845",
+                "github": "https://github.com/f1yfisher/DriveDreamer2",
+                "website": null
+              },
+              {
+                "design": "WoVoGen",
+                "paper": "WoVoGen: World Volume-Aware Diffusion for Controllable Multi-Camera Driving Scene Generation",
+                "arxiv": "https://arxiv.org/abs/2312.02934",
+                "github": "https://github.com/fudan-zvg/WoVoGen",
+                "website": null
+              },
+              {
+                "design": "Drive-WM",
+                "paper": "Driving into the Future: Multiview Visual Forecasting and Planning with World Model for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2311.17918",
+                "github": "https://github.com/BraveGroup/Drive-WM",
+                "website": null
+              },
+              {
+                "design": "Panacea",
+                "paper": "Panacea: Panoramic and controllable video generation for autonomous driving",
+                "arxiv": "https://arxiv.org/abs/2311.16813",
+                "github": "https://github.com/wenyuqing/panacea",
+                "website": null
+              },
+              {
+                "design": "Drivingdiffusion",
+                "paper": "DrivingDiffusion: Layout-Guided multi-view driving scene video generation with latent diffusion model",
+                "arxiv": "https://arxiv.org/abs/2310.07771",
+                "github": "https://github.com/shalfun/DrivingDiffusion",
+                "website": null
+              },
+              {
+                "design": "DriveDreamer",
+                "paper": "DriveDreamer: Towards Real-world-driven World Models for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2309.09777",
+                "github": "https://github.com/JeffWang987/DriveDreamer",
+                "website": null
+              },
+              {
+                "design": "UniPi",
+                "paper": "Learning universal policies via text-guided video generation",
+                "arxiv": "https://arxiv.org/abs/2302.00111",
+                "github": null,
+                "website": "https://universal-policy.github.io/unipi/"
+              }
+            ]
+          },
+          {
+            "id": "autoregressive-diffusion",
+            "name": "Autoregressive Diffusion",
+            "papers": [
+              {
+                "design": "WorldCam",
+                "paper": "WorldCam: Interactive Autoregressive 3D Gaming Worlds with Camera Pose as a Unifying Geometric Representation",
+                "arxiv": "https://arxiv.org/abs/2603.16871",
+                "github": "https://github.com/cvlab-kaist/WorldCam",
+                "website": null
+              },
+              {
+                "design": "SWM",
+                "paper": "Grounding World Simulation Models in a Real-World Metropolis",
+                "arxiv": "https://arxiv.org/abs/2603.15583",
+                "github": "https://github.com/naver-ai/seoul-world-model",
+                "website": null
+              },
+              {
+                "design": "LIVE",
+                "paper": "LIVE: Long-horizon Interactive Video World Modeling",
+                "arxiv": "https://arxiv.org/abs/2602.03747",
+                "github": "https://github.com/Junchao-cs/LIVE",
+                "website": null
+              },
+              {
+                "design": "LingBot-World",
+                "paper": "Advancing Open-source World Models",
+                "arxiv": "https://arxiv.org/abs/2601.20540",
+                "github": "https://github.com/robbyant/lingbot-world",
+                "website": null
+              },
+              {
+                "design": "UniDrive-WM",
+                "paper": "UniDrive-WM: Unified Understanding, Planning and Generation World Model For Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2601.04453",
+                "github": null,
+                "website": "https://unidrive-wm.github.io/UniDrive-WM/"
+              },
+              {
+                "design": "Yume1.5",
+                "paper": "Yume1.5: A Text-Controlled Interactive World Generation Model",
+                "arxiv": "https://arxiv.org/abs/2512.22096",
+                "github": "https://github.com/stdstu12/YUME",
+                "website": "https://stdstu12.github.io/YUME-Project/"
+              },
+              {
+                "design": "HY-World 1.5",
+                "paper": "HY-World 1.5: A Systematic Framework for Interactive World Modeling with Real-Time Latency and Geometric Consistency",
+                "arxiv": null,
+                "github": "https://github.com/Tencent-Hunyuan/HY-WorldPlay",
+                "website": null
+              },
+              {
+                "design": "Astra",
+                "paper": "Astra: General Interactive World Model with Autoregressive Denoising",
+                "arxiv": "https://arxiv.org/abs/2512.08931",
+                "github": "https://github.com/EternalEvan/Astra",
+                "website": "https://eternalevan.github.io/Astra-project/"
+              },
+              {
+                "design": "RELIC",
+                "paper": "RELIC: Interactive Video World Model with Long-Horizon Memory",
+                "arxiv": "https://arxiv.org/abs/2512.04040",
+                "github": null,
+                "website": "https://relic-worldmodel.github.io/"
+              },
+              {
+                "design": "ANWM",
+                "paper": "Aerial World Model for Long-horizon Visual Generation and Navigation in 3D Space",
+                "arxiv": "https://arxiv.org/abs/2512.21887",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "WorldPack",
+                "paper": "WorldPack: Compressed Memory Improves Spatial Consistency in Video World Modeling",
+                "arxiv": "https://arxiv.org/abs/2512.02473",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "Hunyuan-GameCraft-2",
+                "paper": "Hunyuan-GameCraft-2: Instruction-following Interactive Game World Model",
+                "arxiv": "https://arxiv.org/abs/2511.23429",
+                "github": null,
+                "website": "https://hunyuan-gamecraft-2.github.io/"
+              },
+              {
+                "design": "PAN",
+                "paper": "PAN: A World Model for General, Interactable, and Long-Horizon World Simulation",
+                "arxiv": "https://arxiv.org/abs/2511.09057",
+                "github": null,
+                "website": "https://ifm.mbzuai.ac.ae/pan/"
+              },
+              {
+                "design": "Emu3.5",
+                "paper": "Emu3.5: Native Multimodal Models are World Learners",
+                "arxiv": "https://arxiv.org/abs/2510.26583",
+                "github": "https://github.com/baaivision/Emu3.5",
+                "website": null
+              },
+              {
+                "design": "OmniNWM",
+                "paper": "OmniNWM: Omniscient Driving Navigation World Models",
+                "arxiv": "https://arxiv.org/abs/2510.18313",
+                "github": "https://github.com/Ma-Zhuang/OmniNWM",
+                "website": null
+              },
+              {
+                "design": "WoW",
+                "paper": "WoW: Towards a World omniscient World model Through Embodied Interaction",
+                "arxiv": "https://arxiv.org/abs/2509.22642",
+                "github": "https://github.com/wow-world-model/wow-world-model",
+                "website": null
+              },
+              {
+                "design": "LongScape",
+                "paper": "PreFM: Online Audio-Visual Event Parsing via Predictive Future Modeling",
+                "arxiv": "https://arxiv.org/abs/2509.21790",
+                "github": "https://github.com/tsinghua-fib-lab/Longscape",
+                "website": null
+              },
+              {
+                "design": "Dreamer V4",
+                "paper": "Training Agents Inside of Scalable World Models",
+                "arxiv": "https://arxiv.org/abs/2509.24527",
+                "github": null,
+                "website": "https://danijar.com/project/dreamer4/"
+              },
+              {
+                "design": "Genie Envisioner",
+                "paper": "Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation",
+                "arxiv": "https://arxiv.org/abs/2508.05635",
+                "github": "https://github.com/AgibotTech/Genie-Envisioner",
+                "website": null
+              },
+              {
+                "design": "LiDARCrafter",
+                "paper": "LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences",
+                "arxiv": "https://arxiv.org/abs/2508.03692",
+                "github": "https://github.com/worldbench/lidarcrafter",
+                "website": null
+              },
+              {
+                "design": "Yan",
+                "paper": "Yan: Foundational Interactive Video Generation",
+                "arxiv": "https://arxiv.org/abs/2508.08601",
+                "github": null,
+                "website": "https://greatx3.github.io/Yan/"
+              },
+              {
+                "design": "Matrix-Game 2.0",
+                "paper": "Matrix-Game 2.0: An Open-Source, Real-Time, and Streaming Interactive World Model",
+                "arxiv": "https://arxiv.org/abs/2508.13009",
+                "github": "https://github.com/SkyworkAI/Matrix-Game/tree/main/Matrix-Game-2",
+                "website": null
+              },
+              {
+                "design": "Yume",
+                "paper": "Yume: An Interactive World Generation Model",
+                "arxiv": "https://arxiv.org/abs/2507.17744",
+                "github": "https://github.com/stdstu12/YUME",
+                "website": null
+              },
+              {
+                "design": "Geometry Forcing",
+                "paper": "Geometry Forcing: Marrying Video Diffusion and 3D Representation for Consistent World Modeling",
+                "arxiv": "https://arxiv.org/abs/2507.07982",
+                "github": "https://github.com/CIntellifusion/GeometryForcing",
+                "website": null
+              },
+              {
+                "design": "spmem",
+                "paper": "Video World Models with Long-term Spatial Memory",
+                "arxiv": "https://arxiv.org/abs/2506.05284",
+                "github": null,
+                "website": "https://spmem.github.io/"
+              },
+              {
+                "design": "STAGE",
+                "paper": "STAGE: A Stream-Centric Generative World Model for Long-Horizon Driving-Scene Simulation",
+                "arxiv": "https://arxiv.org/abs/2506.13138",
+                "github": null,
+                "website": "https://4dvlab.github.io/STAGE/"
+              },
+              {
+                "design": "CaM",
+                "paper": "Context as Memory: Scene-Consistent Interactive Long Video Generation with Memory Retrieval",
+                "arxiv": "https://arxiv.org/abs/2506.03141",
+                "github": null,
+                "website": "https://context-as-memory.github.io/"
+              },
+              {
+                "design": "DeepVerse",
+                "paper": "DeepVerse: 4D Autoregressive Video Generation as a World Model",
+                "arxiv": "https://arxiv.org/abs/2506.01103",
+                "github": "https://github.com/SOTAMak1r/DeepVerse",
+                "website": null
+              },
+              {
+                "design": "Epona",
+                "paper": "Epona: Autoregressive Diffusion World Model for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2506.24113",
+                "github": "https://github.com/Kevin-thu/Epona",
+                "website": null
+              },
+              {
+                "design": "SceneDiffuser++",
+                "paper": "SceneDiffuser++: City-Scale Traffic Simulation via a Generative World Model",
+                "arxiv": "https://arxiv.org/abs/2506.21976",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "VMem",
+                "paper": "VMem: Consistent Interactive Video Scene Generation with Surfel-Indexed View Memory",
+                "arxiv": "https://arxiv.org/abs/2506.18903",
+                "github": "https://github.com/runjiali-rl/vmem",
+                "website": null
+              },
+              {
+                "design": "Hunyuan-GameCraft",
+                "paper": "Hunyuan-GameCraft: High-dynamic Interactive Game Video Generation with Hybrid History Condition",
+                "arxiv": "https://arxiv.org/abs/2506.17201",
+                "github": "https://github.com/Tencent-Hunyuan/Hunyuan-GameCraft-1.0",
+                "website": null
+              },
+              {
+                "design": "Matrix-Game",
+                "paper": "Matrix-Game: Interactive World Foundation Model",
+                "arxiv": "https://arxiv.org/abs/2506.18701",
+                "github": "https://github.com/SkyworkAI/Matrix-Game/tree/main/Matrix-Game-1",
+                "website": null
+              },
+              {
+                "design": "PEVA",
+                "paper": "Whole-Body Conditioned Egocentric Video Prediction",
+                "arxiv": "https://arxiv.org/abs/2506.21552",
+                "github": null,
+                "website": "https://dannytran123.github.io/PEVA/"
+              },
+              {
+                "design": "NFD",
+                "paper": "Playing with Transformer at 30+ FPS via Next-Frame Diffusion",
+                "arxiv": "https://arxiv.org/abs/2506.01380",
+                "github": null,
+                "website": "https://nextframed.github.io/"
+              },
+              {
+                "design": "VRAG",
+                "paper": "Learning World Models for Interactive Video Generation",
+                "arxiv": "https://arxiv.org/abs/2505.21996",
+                "github": null,
+                "website": "https://sites.google.com/view/vrag"
+              },
+              {
+                "design": "DriVerse",
+                "paper": "DriVerse: Navigation World Model for Driving Simulation via Multimodal Trajectory Prompting and Motion Alignment",
+                "arxiv": "https://arxiv.org/abs/2504.18576",
+                "github": "https://github.com/shalfun/DriVerse",
+                "website": null
+              },
+              {
+                "design": "WORLDMEM",
+                "paper": "WORLDMEM: Long-term Consistent World Simulation with Memory",
+                "arxiv": "https://arxiv.org/abs/2504.12369",
+                "github": "https://github.com/xizaoqu/WorldMem",
+                "website": null
+              },
+              {
+                "design": "Adaworld",
+                "paper": "Adaworld: Learning adaptable world models with latent actions",
+                "arxiv": "https://arxiv.org/abs/2503.18938",
+                "github": "https://github.com/Little-Podi/AdaWorld",
+                "website": null
+              },
+              {
+                "design": "TSWM",
+                "paper": "Toward Stable World Models: Measuring and Addressing World Instability in Generative Environments",
+                "arxiv": "https://arxiv.org/abs/2503.08122",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "Gamefactory",
+                "paper": "Gamefactory: Creating new games with generative interactive videos",
+                "arxiv": "https://arxiv.org/abs/2501.08325",
+                "github": "https://github.com/KwaiVGI/GameFactory",
+                "website": null
+              },
+              {
+                "design": "PlayGen",
+                "paper": "Playable Game Generation",
+                "arxiv": "https://arxiv.org/abs/2412.00887",
+                "github": "https://github.com/GreatX3/Playable-Game-Generation",
+                "website": null
+              },
+              {
+                "design": "InfinityDrive",
+                "paper": "InfinityDrive: Breaking Time Limits in Driving World Models",
+                "arxiv": "https://arxiv.org/abs/2412.01522",
+                "github": null,
+                "website": "https://metadrivescape.github.io/papers_project/InfinityDrive/page.html"
+              },
+              {
+                "design": "GEM",
+                "paper": "Gem: A generalizable ego-vision multimodal world model for fine-grained ego-motion, object dynamics, and scene composition control",
+                "arxiv": "https://arxiv.org/abs/2412.11198",
+                "github": "https://github.com/vita-epfl/GEM",
+                "website": null
+              },
+              {
+                "design": "UniMLVG",
+                "paper": "UniMLVG: Unified Framework for Multi-view Long Video Generation with Comprehensive Control Capabilities for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2412.04842",
+                "github": "https://github.com/SenseTime-FVG/OpenDWM",
+                "website": null
+              },
+              {
+                "design": "The Matrix",
+                "paper": "The Matrix: Infinite-Horizon World Generation with Real-Time Moving Control",
+                "arxiv": "https://arxiv.org/abs/2412.03568",
+                "github": null,
+                "website": "https://thematrix1999.github.io/index.html"
+              },
+              {
+                "design": "NWM",
+                "paper": "Navigation World Models",
+                "arxiv": "https://arxiv.org/abs/2412.03572",
+                "github": "https://github.com/facebookresearch/nwm",
+                "website": null
+              },
+              {
+                "design": "Copilot4D",
+                "paper": "Copilot4D: Learning Unsupervised World Models for Autonomous Driving via Discrete Diffusion",
+                "arxiv": "https://arxiv.org/abs/2311.01017",
+                "github": null,
+                "website": "https://waabi.ai/research/copilot-4d"
+              },
+              {
+                "design": "Drivingsphere",
+                "paper": "Drivingsphere: Building a high-fidelity 4d world for closed-loop simulation",
+                "arxiv": "https://arxiv.org/abs/2411.11252",
+                "github": "https://github.com/yanty123/DrivingSphere",
+                "website": null
+              },
+              {
+                "design": "Gamegen-x",
+                "paper": "Gamegen-x: Interactive open-world game video generation",
+                "arxiv": "https://arxiv.org/abs/2411.00769",
+                "github": "https://github.com/GameGen-X/GameGen-X",
+                "website": null
+              },
+              {
+                "design": "Genie 2",
+                "paper": "Genie 2: A large-scale foundation world model",
+                "arxiv": null,
+                "github": null,
+                "website": "https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/"
+              },
+              {
+                "design": "oasis",
+                "paper": "Oasis: A Universe in a Transformer",
+                "arxiv": null,
+                "github": "https://github.com/etched-ai/open-oasis",
+                "website": "https://oasis-model.github.io/"
+              },
+              {
+                "design": "GameNGen",
+                "paper": "Diffusion models are real-time game engines",
+                "arxiv": "https://arxiv.org/abs/2408.14837",
+                "github": null,
+                "website": "https://gamengen.github.io/"
+              },
+              {
+                "design": "IRAsim",
+                "paper": "IRASim: A Fine-Grained World Model for Robot Manipulation",
+                "arxiv": "https://arxiv.org/abs/2406.14540",
+                "github": "https://github.com/bytedance/IRASim",
+                "website": null
+              },
+              {
+                "design": "diamond",
+                "paper": "Diffusion for World Modeling: Visual Details Matter in Atari",
+                "arxiv": "https://arxiv.org/abs/2405.12399",
+                "github": "https://github.com/eloialonso/diamond",
+                "website": null
+              },
+              {
+                "design": "Vista",
+                "paper": "Vista: A generalizable driving world model with high fidelity and versatile controllability",
+                "arxiv": "https://arxiv.org/abs/2405.17398",
+                "github": "https://github.com/OpenDriveLab/Vista",
+                "website": null
+              },
+              {
+                "design": "UniSim",
+                "paper": "UniSim: Learning Interactive Real-World Simulators",
+                "arxiv": "https://arxiv.org/abs/2310.06114",
+                "github": null,
+                "website": "https://universal-simulator.github.io/unisim//"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "embedding-prediction",
+        "name": "Embedding Prediction",
+        "subsubcategories": [
+          {
+            "id": "jepa",
+            "name": "JEPA",
+            "papers": [
+              {
+                "design": "HWM",
+                "paper": "Hierarchical Planning with Latent World Models",
+                "arxiv": "https://arxiv.org/abs/2604.03208",
+                "github": "https://github.com/kevinghst/HWM_PLDM",
+                "website": null
+              },
+              {
+                "design": "LeWorldModel",
+                "paper": "LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels",
+                "arxiv": "https://arxiv.org/abs/2603.19312",
+                "github": "https://github.com/lucas-maes/le-wm",
+                "website": null
+              },
+              {
+                "design": "V-JEPA 2.1",
+                "paper": "V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning",
+                "arxiv": "https://arxiv.org/abs/2603.14482",
+                "github": "https://github.com/facebookresearch/vjepa2",
+                "website": null
+              },
+              {
+                "design": "LPWM",
+                "paper": "Latent Particle World Models: Self-supervised Object-centric Stochastic Dynamics Modeling",
+                "arxiv": "https://arxiv.org/abs/2603.04553",
+                "github": "https://github.com/taldatech/lpwm",
+                "website": null
+              },
+              {
+                "design": "VLA-JEPA",
+                "paper": "VLA-JEPA: Enhancing Vision-Language-Action Model with Latent World Model",
+                "arxiv": "https://arxiv.org/abs/2602.10098",
+                "github": "https://github.com/ginwind/VLA-JEPA",
+                "website": null
+              },
+              {
+                "design": "DDP-WM",
+                "paper": "DDP-WM: Disentangled Dynamics Prediction for Efficient World Models",
+                "arxiv": "https://arxiv.org/abs/2602.01780",
+                "github": "https://github.com/HCPLab-SYSU/DDP-WM",
+                "website": null
+              },
+              {
+                "design": "DINO-world",
+                "paper": "Back to the Features: DINO as a Foundation for Video World Models",
+                "arxiv": "https://arxiv.org/abs/2507.19468",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "V-JEPA 2",
+                "paper": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning",
+                "arxiv": "https://arxiv.org/abs/2506.09985",
+                "github": "https://github.com/facebookresearch/vjepa2",
+                "website": null
+              },
+              {
+                "design": "SIVWM",
+                "paper": "Sparse Imagination for Efficient Visual World Model Planning",
+                "arxiv": "https://arxiv.org/abs/2506.01392",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "seq-JEPA",
+                "paper": "seq-JEPA: Autoregressive Predictive Learning of Invariant-Equivariant World Models",
+                "arxiv": "https://arxiv.org/abs/2505.03176",
+                "github": "https://github.com/hafezgh/seq-jepa",
+                "website": null
+              },
+              {
+                "design": "Flare",
+                "paper": "Flare: Robot learning with implicit world modeling",
+                "arxiv": "https://arxiv.org/abs/2505.15659",
+                "github": "https://github.com/JiahengHu/FLaRe",
+                "website": null
+              },
+              {
+                "design": "OSVI-WM",
+                "paper": "OSVI-WM: One-Shot Visual Imitation for Unseen Tasks using World-Model-Guided Trajectory Generation",
+                "arxiv": "https://arxiv.org/abs/2505.20425",
+                "github": "https://github.com/raktimgg/osvi-wm",
+                "website": null
+              },
+              {
+                "design": "EchoWorld",
+                "paper": "EchoWorld: Learning Motion-Aware World Models for Echocardiography Probe Guidance",
+                "arxiv": "https://arxiv.org/abs/2504.13065",
+                "github": "https://github.com/LeapLabTHU/EchoWorld",
+                "website": null
+              },
+              {
+                "design": "AD-L-JEPA",
+                "paper": "AD-L-JEPA: Self-Supervised Spatial World Models with Joint Embedding Predictive Architecture for Autonomous Driving with LiDAR Data",
+                "arxiv": "https://arxiv.org/abs/2501.04969",
+                "github": "https://github.com/HaoranZhuExplorer/AD-L-JEPA-Release",
+                "website": null
+              },
+              {
+                "design": "DINO-Foresight",
+                "paper": "DINO-Foresight: Looking into the Future with DINO",
+                "arxiv": "https://arxiv.org/abs/2412.11673",
+                "github": "https://github.com/Sta8is/DINO-Foresight",
+                "website": null
+              },
+              {
+                "design": "DINO-WM",
+                "paper": "DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning",
+                "arxiv": "https://arxiv.org/abs/2411.04983",
+                "github": "https://github.com/gaoyuezhou/dino_wm",
+                "website": null
+              },
+              {
+                "design": "LAW",
+                "paper": "Enhancing End-to-End Autonomous Driving with Latent World Model",
+                "arxiv": "https://arxiv.org/abs/2406.08481",
+                "github": "https://github.com/BraveGroup/LAW",
+                "website": null
+              },
+              {
+                "design": "V-JEPA",
+                "paper": "Revisiting Feature Prediction for Learning Visual Representations from Video",
+                "arxiv": "https://arxiv.org/abs/2404.08471",
+                "github": "https://github.com/facebookresearch/jepa",
+                "website": null
+              },
+              {
+                "design": "IWM",
+                "paper": "Learning and Leveraging World Models in Visual Representation Learning",
+                "arxiv": "https://arxiv.org/abs/2403.00504",
+                "github": null,
+                "website": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "state-transition",
+        "name": "State Transition",
+        "subsubcategories": [
+          {
+            "id": "latent-state-space-modeling",
+            "name": "Latent State-Space Modeling",
+            "papers": [
+              {
+                "design": "NE-Dreamer",
+                "paper": "Next Embedding Prediction Makes World Models Stronger",
+                "arxiv": "https://arxiv.org/abs/2603.02765",
+                "github": "https://github.com/corl-team/nedreamer",
+                "website": null
+              },
+              {
+                "design": "BOOM",
+                "paper": "Bootstrap Off-policy with World Model",
+                "arxiv": "https://arxiv.org/abs/2511.00423",
+                "github": "https://github.com/molumitu/BOOM_MBRL",
+                "website": null
+              },
+              {
+                "design": "GASv2",
+                "paper": "Visuomotor Grasping with World Models for Surgical Robots",
+                "arxiv": "https://arxiv.org/abs/2508.11200",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "LPS",
+                "paper": "Latent Policy Steering with Embodiment-Agnostic Pretrained World Models",
+                "arxiv": "https://arxiv.org/abs/2507.13340",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "EMERALD",
+                "paper": "Accurate and Efficient World Modeling with Masked Latent Transformers",
+                "arxiv": "https://arxiv.org/abs/2507.04075",
+                "github": "https://github.com/burchim/EMERALD",
+                "website": null
+              },
+              {
+                "design": "FOUNDER",
+                "paper": "FOUNDER: Grounding Foundation Models in World Models for Open-Ended Embodied Decision Making",
+                "arxiv": "https://arxiv.org/abs/2507.12496",
+                "github": null,
+                "website": "https://sites.google.com/view/founder-rl"
+              },
+              {
+                "design": "NavMorph",
+                "paper": "NavMorph: A Self-Evolving World Model for Vision-and-Language Navigation in Continuous Environments",
+                "arxiv": "https://arxiv.org/abs/2506.23468",
+                "github": "https://github.com/Feliciaxyao/NavMorph",
+                "website": null
+              },
+              {
+                "design": "Raw2Drive",
+                "paper": "Raw2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2505.16394",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "SSVWM",
+                "paper": "Long-Context State-Space Video World Models",
+                "arxiv": "https://arxiv.org/abs/2505.20171",
+                "github": null,
+                "website": "https://ryanpo.com/ssm_wm/"
+              },
+              {
+                "design": "PIN-WM",
+                "paper": "PIN-WM: Learning Physics-Informed World Models for Non-Prehensile Manipulation",
+                "arxiv": "https://arxiv.org/abs/2504.16693",
+                "github": "https://github.com/XuAdventurer/PIN-WM",
+                "website": null
+              },
+              {
+                "design": "ReDRAW",
+                "paper": "Adapting World Models with Latent-State Dynamics Residuals",
+                "arxiv": "https://arxiv.org/abs/2504.02252",
+                "github": null,
+                "website": "https://redraw.jblanier.net/"
+              },
+              {
+                "design": "WoTE",
+                "paper": "End-to-End Driving with Online Trajectory Evaluation via BEV World Model",
+                "arxiv": "https://arxiv.org/abs/2504.01941",
+                "github": "https://github.com/liyingyanUCAS/WoTE",
+                "website": null
+              },
+              {
+                "design": "DyWA",
+                "paper": "DyWA: Dynamics-Adaptive World Action Model for Generalizable Non-Prehensile Manipulation",
+                "arxiv": "https://arxiv.org/abs/2503.16806",
+                "github": "https://github.com/jiangranlv/DyWA",
+                "website": null
+              },
+              {
+                "design": "DMWM",
+                "paper": "DMWM: Dual-Mind World Model with Long-Term Imagination",
+                "arxiv": "https://arxiv.org/abs/2502.07591",
+                "github": "https://github.com/news-vt/DMWM",
+                "website": null
+              },
+              {
+                "design": "Simulus",
+                "paper": "Uncovering Untapped Potential in Sample-Efficient World Model Agents",
+                "arxiv": "https://arxiv.org/abs/2502.11537",
+                "github": "https://github.com/leor-c/Simulus",
+                "website": null
+              },
+              {
+                "design": "S5WM",
+                "paper": "Accelerating Model-Based Reinforcement Learning with State-Space World Models",
+                "arxiv": "https://arxiv.org/abs/2502.20168",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "AdaWM",
+                "paper": "AdaWM: Adaptive World Model based Planning for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2501.13072",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "RoboHorizon",
+                "paper": "RoboHorizon: An LLM-Assisted Multi-View World Model for Long-Horizon Robotic Manipulation",
+                "arxiv": "https://arxiv.org/abs/2501.06605",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "LS-Imagine",
+                "paper": "Open-World Reinforcement Learning over Long Short-Term Imagination",
+                "arxiv": "https://arxiv.org/abs/2410.03618",
+                "github": "https://github.com/qiwang067/LS-Imagine",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Mitigating Covariate Shift in Imitation Learning for Autonomous Vehicles Using Latent Space Generative World Models",
+                "arxiv": "https://arxiv.org/abs/2409.16663",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "GenRL",
+                "paper": "GenRL: Multimodal-Foundation World Models for Generalization in Embodied Agents",
+                "arxiv": "https://arxiv.org/abs/2406.18043",
+                "github": "https://github.com/mazpie/genrl",
+                "website": null
+              },
+              {
+                "design": "DriveWorld",
+                "paper": "DriveWorld: 4D Pre-Trained Scene Understanding via World Models for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2405.04390",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "Puppeteer",
+                "paper": "Hierarchical World Models as Visual Whole-Body Humanoid Controllers",
+                "arxiv": "https://arxiv.org/abs/2405.18418",
+                "github": "https://github.com/nicklashansen/puppeteer",
+                "website": null
+              },
+              {
+                "design": "R2I",
+                "paper": "Mastering Memory Tasks with World Models",
+                "arxiv": "https://arxiv.org/abs/2403.04253",
+                "github": "https://github.com/chandar-lab/Recall2Imagine",
+                "website": null
+              },
+              {
+                "design": "REM",
+                "paper": "Improving Token-Based World Models with Parallel Observation Prediction",
+                "arxiv": "https://arxiv.org/abs/2402.05643",
+                "github": "https://github.com/leor-c/REM",
+                "website": null
+              },
+              {
+                "design": "Think2Drive",
+                "paper": "Think2Drive: Efficient Reinforcement Learning by Thinking in Latent World Model for Quasi-Realistic Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2402.16720",
+                "github": "https://github.com/Thinklab-SJTU/Bench2Drive",
+                "website": null
+              },
+              {
+                "design": "MUVO",
+                "paper": "MUVO: A Multimodal Generative World Model for Autonomous Driving with Geometric Representations",
+                "arxiv": "https://arxiv.org/abs/2311.11762",
+                "github": "https://github.com/fzi-forschungszentrum-informatik/muvo",
+                "website": null
+              },
+              {
+                "design": "STORM",
+                "paper": "STORM: Efficient Stochastic Transformer based World Models for Reinforcement Learning",
+                "arxiv": "https://arxiv.org/abs/2310.09615",
+                "github": "https://github.com/weipu-zhang/STORM",
+                "website": null
+              },
+              {
+                "design": "HarmonyDream",
+                "paper": "HarmonyDream: Task Harmonization Inside World Models",
+                "arxiv": "https://arxiv.org/abs/2310.00344",
+                "github": "https://github.com/thuml/HarmonyDream",
+                "website": null
+              },
+              {
+                "design": "TD-MPC2",
+                "paper": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+                "arxiv": "https://arxiv.org/abs/2310.16828",
+                "github": "https://github.com/nicklashansen/tdmpc2",
+                "website": null
+              },
+              {
+                "design": "MoDem-V2",
+                "paper": "MoDem-V2: Visuo-Motor World Models for Real-World Robot Manipulation",
+                "arxiv": "https://arxiv.org/abs/2309.14236",
+                "github": "https://github.com/facebookresearch/modemv2",
+                "website": null
+              },
+              {
+                "design": "SWIM",
+                "paper": "Structured World Models from Human Videos",
+                "arxiv": "https://arxiv.org/abs/2308.10901",
+                "github": null,
+                "website": "https://human-world-model.github.io/"
+              },
+              {
+                "design": "Dynalang",
+                "paper": "Learning to Model the World with Language",
+                "arxiv": "https://arxiv.org/abs/2308.01399",
+                "github": "https://github.com/jlin816/dynalang",
+                "website": null
+              },
+              {
+                "design": "SafeDreamer",
+                "paper": "SafeDreamer: Safe Reinforcement Learning with World Models",
+                "arxiv": "https://arxiv.org/abs/2307.07176",
+                "github": "https://github.com/PKU-Alignment/SafeDreamer",
+                "website": null
+              },
+              {
+                "design": "CoWorld",
+                "paper": "Making Offline RL Online: Collaborative World Models for Offline Visual Reinforcement Learning",
+                "arxiv": "https://arxiv.org/abs/2305.15260",
+                "github": "https://github.com/qiwang067/CoWorld",
+                "website": null
+              },
+              {
+                "design": "TWM",
+                "paper": "Transformer-Based World Models Are Happy With 100k Interactions",
+                "arxiv": "https://arxiv.org/abs/2303.07109",
+                "github": "https://github.com/jrobine/twm",
+                "website": null
+              },
+              {
+                "design": "MV-MWM",
+                "paper": "Multi-View Masked World Models for Visual Robotic Manipulation",
+                "arxiv": "https://arxiv.org/abs/2302.02408",
+                "github": "https://github.com/younggyoseo/MV-MWM",
+                "website": null
+              },
+              {
+                "design": "DreamV3",
+                "paper": "Mastering Diverse Domains through World Models",
+                "arxiv": "https://arxiv.org/abs/2301.04104",
+                "github": "https://github.com/danijar/dreamerv3",
+                "website": null
+              },
+              {
+                "design": "IRIS",
+                "paper": "Transformers are Sample-Efficient World Models",
+                "arxiv": "https://arxiv.org/abs/2209.00588",
+                "github": "https://github.com/eloialonso/iris",
+                "website": null
+              },
+              {
+                "design": "MWM",
+                "paper": "Masked World Models for Visual Control",
+                "arxiv": "https://arxiv.org/abs/2206.14244",
+                "github": "https://github.com/younggyoseo/MWM",
+                "website": null
+              },
+              {
+                "design": "DayDreamer",
+                "paper": "DayDreamer: World Models for Physical Robot Learning",
+                "arxiv": "https://arxiv.org/abs/2206.14176",
+                "github": "https://github.com/danijar/daydreamer",
+                "website": null
+              },
+              {
+                "design": "CADDY",
+                "paper": "Playable Video Generation",
+                "arxiv": "https://arxiv.org/abs/2101.12195",
+                "github": "https://github.com/willi-menapace/PlayableVideoGeneration",
+                "website": null
+              },
+              {
+                "design": "DreamV2",
+                "paper": "Mastering Atari with Discrete World Models",
+                "arxiv": "https://arxiv.org/abs/2010.02193",
+                "github": "https://github.com/danijar/dreamerv2",
+                "website": null
+              },
+              {
+                "design": "DreamV1",
+                "paper": "Dream to Control: Learning Behaviors by Latent Imagination",
+                "arxiv": "https://arxiv.org/abs/1912.01603",
+                "github": "https://github.com/danijar/dreamer",
+                "website": null
+              },
+              {
+                "design": "PlaNet",
+                "paper": "Learning Latent Dynamics for Planning from Pixels",
+                "arxiv": "https://arxiv.org/abs/1811.04551",
+                "github": "https://github.com/google-research/planet",
+                "website": null
+              }
+            ]
+          },
+          {
+            "id": "object-centric-modeling",
+            "name": "Object-Centric Modeling",
+            "papers": [
+              {
+                "design": "LPWM",
+                "paper": "Latent Particle World Models: Self-supervised Object-centric Stochastic Dynamics Modeling",
+                "arxiv": "https://arxiv.org/abs/2603.04553",
+                "github": "https://github.com/taldatech/lpwm",
+                "website": null
+              },
+              {
+                "design": "FIOC-WM",
+                "paper": "Learning Interactive World Model for Object-Centric Reinforcement Learning",
+                "arxiv": "https://arxiv.org/abs/2511.02225",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "Dyn-o",
+                "paper": "Dyn-O: Building Structured World Models with Object-Centric Representations",
+                "arxiv": "https://arxiv.org/abs/2507.03298",
+                "github": "https://github.com/wangzizhao/dyn-O",
+                "website": null
+              },
+              {
+                "design": "SlotPi",
+                "paper": "SlotPi: Physics-informed Object-centric Reasoning Models",
+                "arxiv": "https://arxiv.org/abs/2506.10778",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Object-Centric World Model for Language-Guided Manipulation",
+                "arxiv": "https://arxiv.org/abs/2503.06170",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "DisWM",
+                "paper": "Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning",
+                "arxiv": "https://arxiv.org/abs/2503.08751",
+                "github": "https://github.com/qiwang067/DisWM",
+                "website": null
+              },
+              {
+                "design": "Objects matter",
+                "paper": "Objects matter: object-centric world models improve reinforcement learning in visually complex environments",
+                "arxiv": "https://arxiv.org/abs/2501.16443",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "Dreamweaver",
+                "paper": "Dreamweaver: Learning Compositional World Models from Pixels",
+                "arxiv": "https://arxiv.org/abs/2501.14174",
+                "github": "https://github.com/ahn-ml/dreamweaver-release",
+                "website": null
+              },
+              {
+                "design": "MEAD",
+                "paper": "Efficient Exploration and Discriminative World Model Learning with an Object-Centric Abstraction",
+                "arxiv": "https://arxiv.org/abs/2408.11816",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "slotSSM",
+                "paper": "Slot State Space Models",
+                "arxiv": "https://arxiv.org/abs/2406.12272",
+                "github": "https://github.com/JindongJiang/SlotSSMs",
+                "website": null
+              },
+              {
+                "design": "RoboDreamer",
+                "paper": "RoboDreamer: Learning Compositional World Models for Robot Imagination",
+                "arxiv": "https://arxiv.org/abs/2404.12377",
+                "github": "https://github.com/rainbow979/robodreamer",
+                "website": null
+              },
+              {
+                "design": "SSWM",
+                "paper": "Slot Structured World Models",
+                "arxiv": "https://arxiv.org/abs/2402.03326",
+                "github": "https://github.com/JonathanCollu/Slot-Structured-World-Models",
+                "website": null
+              },
+              {
+                "design": "cosmos",
+                "paper": "Neurosymbolic Grounding for Compositional World Models",
+                "arxiv": "https://arxiv.org/abs/2310.12690",
+                "github": "https://github.com/trishullab/cosmos",
+                "website": null
+              },
+              {
+                "design": "FOCUS",
+                "paper": "FOCUS: Object-Centric World Models for Robotics Manipulation",
+                "arxiv": "https://arxiv.org/abs/2307.02427",
+                "github": "https://github.com/StefanoFerraro/FOCUS",
+                "website": null
+              },
+              {
+                "design": "SlotFormer",
+                "paper": "SlotFormer: Unsupervised Visual Dynamics Simulation with Object-Centric Models",
+                "arxiv": "https://arxiv.org/abs/2210.05861",
+                "github": "https://github.com/pairlab/SlotFormer",
+                "website": null
+              },
+              {
+                "design": "HOWM",
+                "paper": "Toward Compositional Generalization in Object-Oriented World Modeling",
+                "arxiv": "https://arxiv.org/abs/2204.13661",
+                "github": "https://github.com/linfeng-z/HOWM",
+                "website": null
+              },
+              {
+                "design": "G-SWM",
+                "paper": "Improving Generative Imagination in Object-Centric World Models",
+                "arxiv": "https://arxiv.org/abs/2010.02054",
+                "github": "https://github.com/zhixuan-lin/G-SWM",
+                "website": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "other-architectures",
+        "name": "Other Architectures",
+        "subsubcategories": [
+          {
+            "id": "other-architectures",
+            "name": "Other Architectures",
+            "papers": [
+              {
+                "design": "PhysWorld",
+                "paper": "PhysWorld: From Real Videos to World Models of Deformable Objects via Physics-Aware Demonstration Synthesis",
+                "arxiv": "https://arxiv.org/abs/2510.21447",
+                "github": "https://github.com/AlanYoung123/PhysWorld",
+                "website": null
+              },
+              {
+                "design": "FASTopoWM",
+                "paper": "FASTopoWM: Fast-Slow Lane Segment Topology Reasoning with Latent World Models",
+                "arxiv": "https://arxiv.org/abs/2507.23325",
+                "github": "https://github.com/YimingYang23/FASTopoWM",
+                "website": null
+              },
+              {
+                "design": "GWM",
+                "paper": "Graph World Model",
+                "arxiv": "https://arxiv.org/abs/2507.10539",
+                "github": "https://github.com/ulab-uiuc/GWM",
+                "website": null
+              },
+              {
+                "design": "World4Drive",
+                "paper": "World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model",
+                "arxiv": "https://arxiv.org/abs/2507.00603",
+                "github": "https://github.com/ucaszyp/World4Drive",
+                "website": null
+              },
+              {
+                "design": "Orbis",
+                "paper": "Orbis: Overcoming Challenges of Long-Horizon Prediction in Driving World Models",
+                "arxiv": "https://arxiv.org/abs/2507.13162",
+                "github": "https://github.com/lmb-freiburg/orbis",
+                "website": null
+              },
+              {
+                "design": "LiDARWM",
+                "paper": "Towards foundational LiDAR world models with efficient latent flow matching",
+                "arxiv": "https://arxiv.org/abs/2506.23434",
+                "github": "https://github.com/Orbis36/OccFM-NeurIPS2025",
+                "website": null
+              },
+              {
+                "design": "ManiGaussian++",
+                "paper": "ManiGaussian++: General Robotic Bimanual Manipulation with Hierarchical Gaussian World Model",
+                "arxiv": "https://arxiv.org/abs/2506.19842",
+                "github": "https://github.com/April-Yz/ManiGaussian_Bimanual",
+                "website": null
+              },
+              {
+                "design": "GAF",
+                "paper": "GAF: Gaussian Action Field as a 4D Representation for Dynamic World Modeling in Robotic Manipulation",
+                "arxiv": "https://arxiv.org/abs/2506.14135",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "HWM",
+                "paper": "Humanoid World Models: Open World Foundation Models for Humanoid Robotics",
+                "arxiv": "https://arxiv.org/abs/2506.01182",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "DriveX",
+                "paper": "DriveX: Omni Scene Modeling for Learning Generalizable World Knowledge in Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2505.19239",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "OccProphet",
+                "paper": "OccProphet: Pushing Efficiency Frontier of Camera-Only 4D Occupancy Forecasting with Observer-Forecaster-Refiner Framework",
+                "arxiv": "https://arxiv.org/abs/2502.15180",
+                "github": "https://github.com/JLChen-C/OccProphet",
+                "website": null
+              },
+              {
+                "design": "FleetWM",
+                "paper": "Multi-Task Interactive Robot Fleet Learning with Visual World Models",
+                "arxiv": "https://arxiv.org/abs/2410.22689",
+                "github": "https://github.com/UT-Austin-RPL/sirius-fleet",
+                "website": null
+              },
+              {
+                "design": "GaussianWorld",
+                "paper": "GaussianWorld: Gaussian World Model for Streaming 3D Occupancy Prediction",
+                "arxiv": "https://arxiv.org/abs/2412.10373",
+                "github": "https://github.com/zuosc19/GaussianWorld",
+                "website": null
+              },
+              {
+                "design": "NeMo",
+                "paper": "Neural volumetric world models for autonomous driving",
+                "arxiv": null,
+                "github": null,
+                "website": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/02571.pdf"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "datasets-and-benchmarks",
+    "name": "Datasets \\& Benchmarks",
+    "subcategories": [
+      {
+        "id": "foundational-world-modeling",
+        "name": "Foundational World Modeling",
+        "subsubcategories": [
+          {
+            "id": "general-world-prediction-and-simulation",
+            "name": "General World Prediction and Simulation",
+            "papers": [
+              {
+                "design": "WR-Arena",
+                "paper": "World Reasoning Arena",
+                "arxiv": "https://arxiv.org/abs/2603.25887",
+                "github": "https://github.com/MBZUAI-IFM/WR-Arena",
+                "website": null
+              },
+              {
+                "design": "CoW-Bench",
+                "paper": "The Trinity of Consistency as a Defining Principle for General World Models",
+                "arxiv": "https://arxiv.org/abs/2602.23152",
+                "github": "https://github.com/openraiser/awesome-world-model-evolution",
+                "website": null
+              },
+              {
+                "design": "DynamicVerse",
+                "paper": "DynamicVerse: A Physically-Aware Multimodal Framework for 4D World Modeling",
+                "arxiv": "https://arxiv.org/abs/2512.03000",
+                "github": "https://github.com/Dynamics-X/DynamicVerse",
+                "website": "https://dynamic-verse.github.io/"
+              },
+              {
+                "design": "4DWorldBench",
+                "paper": "4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models",
+                "arxiv": "https://arxiv.org/abs/2511.19836",
+                "github": null,
+                "website": "https://yeppp27.github.io/4DWorldBench.github.io/"
+              },
+              {
+                "design": "Gen-ViRe",
+                "paper": "Can World Simulators Reason? Gen-ViRe: A Generative Visual Reasoning Benchmark",
+                "arxiv": "https://arxiv.org/abs/2511.13853",
+                "github": "https://github.com/L-CodingSpace/GVR",
+                "website": null
+              },
+              {
+                "design": "World-in-World",
+                "paper": "World-in-World: World Models in a Closed-Loop World",
+                "arxiv": "https://arxiv.org/abs/2510.18135",
+                "github": "https://github.com/World-In-World/world-in-world",
+                "website": null
+              },
+              {
+                "design": "OmniWorld",
+                "paper": "OmniWorld: A Multi-Domain and Multi-Modal Dataset for 4D World Modeling",
+                "arxiv": "https://arxiv.org/abs/2509.12201",
+                "github": "https://github.com/yangzhou24/OmniWorld",
+                "website": null
+              },
+              {
+                "design": "Sekai",
+                "paper": "Sekai: A Video Dataset towards World Exploration",
+                "arxiv": "https://arxiv.org/abs/2506.15675",
+                "github": "https://github.com/Lixsp11/sekai-codebase",
+                "website": null
+              },
+              {
+                "design": "WorldPrediction",
+                "paper": "WorldPrediction: A Benchmark for High-level World Modeling and Long-horizon Procedural Planning",
+                "arxiv": "https://www.arxiv.org/abs/2506.04363",
+                "github": null,
+                "website": "https://worldprediction.github.io/"
+              },
+              {
+                "design": "WorldScore",
+                "paper": "WorldScore: A Unified Evaluation Benchmark for World Generation",
+                "arxiv": "https://arxiv.org/abs/2504.00983",
+                "github": "https://github.com/haoyi-duan/WorldScore",
+                "website": null
+              },
+              {
+                "design": "MM-OR",
+                "paper": "MM-OR: A Large Multimodal Operating Room Dataset for Semantic Understanding of High-Intensity Surgical Environments",
+                "arxiv": "https://arxiv.org/abs/2503.02579",
+                "github": "https://github.com/egeozsoy/MM-OR",
+                "website": null
+              },
+              {
+                "design": "WorldModelBench",
+                "paper": "WorldModelBench: Judging Video Generation Models As World Models",
+                "arxiv": "https://arxiv.org/abs/2502.20694",
+                "github": "https://github.com/WorldModelBench-Team/WorldModelBench",
+                "website": null
+              },
+              {
+                "design": "OpenHumanVid",
+                "paper": "OpenHumanVid: A Large-Scale High-Quality Dataset for Enhancing Human-Centric Video Generation",
+                "arxiv": "https://arxiv.org/abs/2412.00115",
+                "github": "https://github.com/fudan-generative-vision/OpenHumanVid",
+                "website": null
+              },
+              {
+                "design": "EgoVid-5M",
+                "paper": "EgoVid-5M: A Large-Scale Video-Action Dataset for Egocentric Video Generation",
+                "arxiv": "https://arxiv.org/abs/2411.08380",
+                "github": "https://github.com/JeffWang987/EgoVid",
+                "website": null
+              },
+              {
+                "design": "Ego-Exo4D",
+                "paper": "Ego-Exo4D: Understanding Skilled Human Activity from First- and Third-Person Perspectives",
+                "arxiv": "https://arxiv.org/abs/2311.18259",
+                "github": null,
+                "website": "https://ego-exo4d-data.org/"
+              },
+              {
+                "design": "InternVid",
+                "paper": "InternVid: A Large-scale Video-Text Dataset for Multimodal Understanding and Generation",
+                "arxiv": "https://arxiv.org/abs/2307.06942",
+                "github": "https://github.com/OpenGVLab/InternVideo",
+                "website": null
+              },
+              {
+                "design": "Ego4D",
+                "paper": "Ego4D: Around the World in 3,000 Hours of Egocentric Video",
+                "arxiv": "http://arxiv.org/abs/2110.07058",
+                "github": "https://github.com/EGO4D",
+                "website": null
+              },
+              {
+                "design": "WebVid-2M",
+                "paper": "Frozen in Time: A Joint Video and Image Encoder for End-to-End Retrieval",
+                "arxiv": "https://arxiv.org/abs/2104.00650",
+                "github": "https://github.com/m-bain/webvid",
+                "website": null
+              },
+              {
+                "design": "EPIC-KITCHENS-100",
+                "paper": "Rescaling Egocentric Vision",
+                "arxiv": "https://arxiv.org/abs/2006.13256",
+                "github": "https://github.com/epic-kitchens",
+                "website": null
+              },
+              {
+                "design": "HowTo100M",
+                "paper": "HowTo100M: Learning a Text-Video Embedding by Watching Hundred Million Narrated Video Clips",
+                "arxiv": "https://arxiv.org/abs/1906.03327",
+                "github": "https://github.com/antoine77340/howto100m",
+                "website": null
+              },
+              {
+                "design": "COIN",
+                "paper": "COIN: A Large-scale Dataset for Comprehensive Instructional Video Analysis",
+                "arxiv": "https://arxiv.org/abs/1903.02874",
+                "github": "https://github.com/coin-dataset/",
+                "website": null
+              },
+              {
+                "design": "SSV2",
+                "paper": "The \"something something\" video database for learning and evaluating visual common sense",
+                "arxiv": "https://arxiv.org/abs/1706.04261",
+                "github": null,
+                "website": "https://www.qualcomm.com/developer/software/something-something-v-2-dataset"
+              },
+              {
+                "design": "Kinetics",
+                "paper": "The Kinetics Human Action Video Dataset",
+                "arxiv": "https://arxiv.org/abs/1705.06950",
+                "github": "https://github.com/cvdfoundation/kinetics-dataset",
+                "website": null
+              },
+              {
+                "design": "YouTube-8M",
+                "paper": "YouTube-8M: A Large-Scale Video Classification Benchmark",
+                "arxiv": "https://arxiv.org/abs/1609.08675",
+                "github": "https://github.com/google/youtube-8m",
+                "website": null
+              },
+              {
+                "design": "UCF101",
+                "paper": "UCF101: A Dataset of 101 Human Actions Classes From Videos in The Wild",
+                "arxiv": "https://arxiv.org/abs/1212.0402",
+                "github": null,
+                "website": "https://www.crcv.ucf.edu/data/UCF101.php"
+              }
+            ]
+          },
+          {
+            "id": "physics-and-causality-benchmark",
+            "name": "Physics and Causality Benchmark",
+            "papers": [
+              {
+                "design": "Omni-WorldBench",
+                "paper": "Omni-WorldBench: Towards a Comprehensive Interaction-Centric Evaluation for World Models",
+                "arxiv": "https://arxiv.org/abs/2603.22212",
+                "github": "https://github.com/AMAP-ML/Omni-WorldBench",
+                "website": null
+              },
+              {
+                "design": "WorldBench",
+                "paper": "WorldBench: Disambiguating Physics for Diagnostic Evaluation of World Models",
+                "arxiv": "https://arxiv.org/abs/2601.21282",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "VideoVerse",
+                "paper": "VideoVerse: How Far is Your T2V Generator from a World Model?",
+                "arxiv": "https://arxiv.org/abs/2510.08398",
+                "github": "https://github.com/Zeqing-Wang/VideoVerse",
+                "website": null
+              },
+              {
+                "design": "PAI-Bench",
+                "paper": "Physical ai bench: A comprehensive benchmark for physical ai generation and understanding",
+                "arxiv": null,
+                "github": "https://github.com/SHI-Labs/physical-ai-bench",
+                "website": null
+              },
+              {
+                "design": "PhysVidBench",
+                "paper": "Can Your Model Separate Yolks with a Water Bottle? Benchmarking Physical Commonsense Understanding in Video Generation Models",
+                "arxiv": "https://arxiv.org/abs/2507.15824",
+                "github": "https://github.com/ensanli/PhysVidBenchCode",
+                "website": null
+              },
+              {
+                "design": "PBench",
+                "paper": "PBench: A benchmark for evaluating generative models",
+                "arxiv": null,
+                "github": null,
+                "website": "https://research.nvidia.com/labs/dir/pbench/"
+              },
+              {
+                "design": "IntPhys 2",
+                "paper": "IntPhys 2: Benchmarking Intuitive Physics Understanding In Complex Synthetic Environments",
+                "arxiv": "https://arxiv.org/abs/2506.09849",
+                "github": "https://github.com/facebookresearch/IntPhys2",
+                "website": null
+              },
+              {
+                "design": "T2VPhysBench",
+                "paper": "T2VPhysBench: A First-Principles Benchmark for Physical Consistency in Text-to-Video Generation",
+                "arxiv": "https://arxiv.org/abs/2505.00337",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "PisaBench",
+                "paper": "PISA Experiments: Exploring Physics Post-Training for Video Diffusion Models by Watching Stuff Drop",
+                "arxiv": "https://arxiv.org/abs/2503.09595",
+                "github": "https://github.com/vision-x-nyu/pisa-experiments",
+                "website": null
+              },
+              {
+                "design": "WISA-32K",
+                "paper": "WISA: World Simulator Assistant for Physics-Aware Text-to-Video Generation",
+                "arxiv": "https://arxiv.org/abs/2503.08153",
+                "github": "https://github.com/360CVGroup/WISA",
+                "website": null
+              },
+              {
+                "design": "VideoPhy-2",
+                "paper": "VideoPhy-2: A Challenging Action-Centric Physical Commonsense Evaluation in Video Generation",
+                "arxiv": "https://arxiv.org/abs/2503.06800",
+                "github": "https://github.com/Hritikbansal/videophy",
+                "website": null
+              },
+              {
+                "design": "VBench-2.0",
+                "paper": "VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness",
+                "arxiv": "https://arxiv.org/abs/2503.21755",
+                "github": "https://github.com/Vchitect/VBench",
+                "website": null
+              },
+              {
+                "design": "PhyCoBench",
+                "paper": "A Physical Coherence Benchmark for Evaluating Video Generation Models via Optical Flow-guided Frame Prediction",
+                "arxiv": "https://arxiv.org/abs/2502.05503",
+                "github": "https://github.com/Jeckinchen/PhyCoBench",
+                "website": null
+              },
+              {
+                "design": "Physics-IQ",
+                "paper": "Do generative video models understand physical principles?",
+                "arxiv": "https://arxiv.org/abs/2501.09038",
+                "github": "https://github.com/google-deepmind/physics-IQ-benchmark",
+                "website": null
+              },
+              {
+                "design": "PhyGenBench",
+                "paper": "Towards World Simulator: Crafting Physical Commonsense-Based Benchmark for Video Generation",
+                "arxiv": "https://arxiv.org/abs/2410.05363",
+                "github": "https://github.com/OpenGVLab/PhyGenBench",
+                "website": null
+              },
+              {
+                "design": "PhyBench",
+                "paper": "PhyBench: A Physical Commonsense Benchmark for Evaluating Text-to-Image Models",
+                "arxiv": "https://arxiv.org/abs/2406.11802",
+                "github": "https://github.com/phybench-official/phybench",
+                "website": null
+              },
+              {
+                "design": "VideoPhy",
+                "paper": "VideoPhy: Evaluating Physical Commonsense for Video Generation",
+                "arxiv": "https://arxiv.org/abs/2406.03520",
+                "github": "https://github.com/Hritikbansal/videophy",
+                "website": null
+              },
+              {
+                "design": "Physion++",
+                "paper": "Physion++: Evaluating Physical Scene Understanding that Requires Online Inference of Different Physical Properties",
+                "arxiv": "https://arxiv.org/abs/2306.15668",
+                "github": null,
+                "website": "https://dingmyu.github.io/physion_v2/"
+              },
+              {
+                "design": "InfLevel",
+                "paper": "Benchmarking Progress to Infant-Level Physical Reasoning in AI",
+                "arxiv": null,
+                "github": "https://github.com/allenai/inflevel",
+                "website": null
+              },
+              {
+                "design": "VoE",
+                "paper": "A Benchmark for Modeling Violation-of-Expectation in Physical Reasoning Across Event Categories",
+                "arxiv": "https://arxiv.org/abs/2111.08826",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "Physion",
+                "paper": "Physion: Evaluating Physical Prediction from Vision in Humans and Machines",
+                "arxiv": "https://arxiv.org/abs/2106.08261",
+                "github": "https://github.com/cogtoolslab/physics-benchmarking-neurips2021",
+                "website": null
+              },
+              {
+                "design": "CoPhy",
+                "paper": "CoPhy: Counterfactual Learning of Physical Dynamics",
+                "arxiv": "https://arxiv.org/abs/1909.12000",
+                "github": "https://github.com/fabienbaradel/cophy",
+                "website": null
+              },
+              {
+                "design": "IntPhys",
+                "paper": "IntPhys: A Framework and Benchmark for Visual Intuitive Physics Reasoning",
+                "arxiv": "https://arxiv.org/abs/1803.07616",
+                "github": "https://github.com/rronan/IntPhys-Baselines",
+                "website": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "domain-specific-world-modeling",
+        "name": "Domain-specific World Modeling",
+        "subsubcategories": [
+          {
+            "id": "embodied-ai-and-robotics",
+            "name": "Embodied AI and Robotics",
+            "papers": [
+              {
+                "design": "WorldArena",
+                "paper": "WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models",
+                "arxiv": "https://arxiv.org/abs/2602.08971",
+                "github": "https://github.com/tsinghua-fib-lab/WorldArena",
+                "website": null
+              },
+              {
+                "design": "DreamDojo",
+                "paper": "DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos",
+                "arxiv": "https://arxiv.org/abs/2602.06949",
+                "github": "https://github.com/NVIDIA/DreamDojo",
+                "website": null
+              },
+              {
+                "design": "WoW-World-Eval",
+                "paper": "Wow, wo, val! A Comprehensive Embodied World Model Evaluation Turing Test",
+                "arxiv": "https://arxiv.org/abs/2601.04137",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "GigaWorld-0",
+                "paper": "GigaWorld-0: World Models as Data Engine to Empower Embodied AI",
+                "arxiv": "https://arxiv.org/abs/2511.19861",
+                "github": "https://github.com/open-gigaai/giga-world-0",
+                "website": "https://giga-world-0.github.io/"
+              },
+              {
+                "design": "Target-Bench",
+                "paper": "Target-Bench: Can World Models Achieve Mapless Path Planning with Semantic Targets",
+                "arxiv": "https://arxiv.org/abs/2511.17792",
+                "github": "https://github.com/TUM-AVS/target-bench",
+                "website": "https://target-bench.github.io/"
+              },
+              {
+                "design": "WoW",
+                "paper": "WoW: Towards a world omniscient world model through embodied interaction",
+                "arxiv": "https://arxiv.org/abs/2509.22642",
+                "github": "https://github.com/wow-world-model/wow-world-model",
+                "website": null
+              },
+              {
+                "design": "Meta-World+",
+                "paper": "Meta-World+: An improved, standardized, rl benchmark",
+                "arxiv": "https://arxiv.org/abs/2505.11289",
+                "github": "https://github.com/Farama-Foundation/Metaworld",
+                "website": null
+              },
+              {
+                "design": "AgiBot-World",
+                "paper": "AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems",
+                "arxiv": "https://arxiv.org/abs/2503.06669",
+                "github": "https://github.com/OpenDriveLab/AgiBot-World",
+                "website": null
+              },
+              {
+                "design": "RoboCasa",
+                "paper": "RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots",
+                "arxiv": "https://arxiv.org/abs/2406.02523",
+                "github": "https://github.com/robocasa/robocasa",
+                "website": null
+              },
+              {
+                "design": "DROID",
+                "paper": "DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset",
+                "arxiv": "https://arxiv.org/abs/2403.12945",
+                "github": "https://github.com/droid-dataset/droid_policy_learning",
+                "website": null
+              },
+              {
+                "design": "BEHAVIOR-1K",
+                "paper": "BEHAVIOR-1K: A Human-Centered, Embodied AI Benchmark with 1,000 Everyday Activities and Realistic Simulation",
+                "arxiv": "https://arxiv.org/abs/2403.09227",
+                "github": "https://github.com/StanfordVL/BEHAVIOR-1K",
+                "website": null
+              },
+              {
+                "design": "MimicGen",
+                "paper": "MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations",
+                "arxiv": "https://arxiv.org/abs/2310.17596",
+                "github": "https://github.com/NVlabs/mimicgen",
+                "website": null
+              },
+              {
+                "design": "OXE",
+                "paper": "Open X-Embodiment: Robotic Learning Datasets and RT-X Models",
+                "arxiv": "https://arxiv.org/abs/2310.08864",
+                "github": "https://github.com/google-deepmind/open_x_embodiment",
+                "website": null
+              },
+              {
+                "design": "RH20T",
+                "paper": "RH20T: A Comprehensive Robotic Dataset for Learning Diverse Skills in One-Shot",
+                "arxiv": "https://arxiv.org/abs/2307.00595",
+                "github": "https://github.com/rh20t/rh20t_api",
+                "website": null
+              },
+              {
+                "design": "VP²",
+                "paper": "A Control-Centric Benchmark for Video Prediction",
+                "arxiv": "https://arxiv.org/abs/2304.13723",
+                "github": "https://github.com/s-tian/vp2",
+                "website": null
+              },
+              {
+                "design": "RT-1",
+                "paper": "RT-1: Robotics Transformer for Real-World Control at Scale",
+                "arxiv": "https://arxiv.org/abs/2212.06817",
+                "github": "https://github.com/google-research/robotics_transformer",
+                "website": null
+              },
+              {
+                "design": "BC-Z",
+                "paper": "BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning",
+                "arxiv": "https://arxiv.org/abs/2202.02005",
+                "github": null,
+                "website": "https://sites.google.com/view/bc-z/home?pli=1"
+              },
+              {
+                "design": "CALVIN",
+                "paper": "CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks",
+                "arxiv": "https://arxiv.org/abs/2112.03227",
+                "github": "https://github.com/mees/calvin",
+                "website": null
+              },
+              {
+                "design": "BridgeData V2",
+                "paper": "BridgeData V2: A Dataset for Robot Learning at Scale",
+                "arxiv": "https://arxiv.org/abs/2308.12952",
+                "github": "https://github.com/rail-berkeley/bridge_data_v2",
+                "website": null
+              },
+              {
+                "design": "LIBERO",
+                "paper": "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning",
+                "arxiv": "https://arxiv.org/abs/2306.03310",
+                "github": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+                "website": null
+              },
+              {
+                "design": "Isaac Gym",
+                "paper": "Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning",
+                "arxiv": "https://arxiv.org/abs/2108.10470",
+                "github": "https://github.com/isaac-sim/IsaacGymEnvs",
+                "website": null
+              },
+              {
+                "design": "RoboNet",
+                "paper": "RoboNet: Large-Scale Multi-Robot Learning",
+                "arxiv": "https://arxiv.org/abs/1910.11215",
+                "github": "https://github.com/SudeepDasari/RoboNet",
+                "website": null
+              },
+              {
+                "design": "Meta-World",
+                "paper": "Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning",
+                "arxiv": "https://arxiv.org/abs/1910.10897",
+                "github": "https://github.com/Farama-Foundation/Metaworld",
+                "website": null
+              },
+              {
+                "design": "RLBench",
+                "paper": "RLBench: The Robot Learning Benchmark & Learning Environment",
+                "arxiv": "https://arxiv.org/abs/1909.12271",
+                "github": "https://github.com/stepjam/RLBench",
+                "website": null
+              }
+            ]
+          },
+          {
+            "id": "autonomous-driving",
+            "name": "Autonomous Driving",
+            "papers": [
+              {
+                "design": "WorldLens",
+                "paper": "WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World",
+                "arxiv": "https://arxiv.org/abs/2512.10958",
+                "github": "https://github.com/worldbench/WorldLens",
+                "website": "https://worldbench.github.io/worldlens"
+              },
+              {
+                "design": "ACT-Bench",
+                "paper": "ACT-Bench: Towards Action Controllable World Models for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2412.05337",
+                "github": "https://github.com/turingmotors/ACT-Bench",
+                "website": null
+              },
+              {
+                "design": "DrivingDojo",
+                "paper": "DrivingDojo Dataset: Advancing Interactive and Knowledge-Enriched Driving World Model",
+                "arxiv": "https://arxiv.org/abs/2410.10738",
+                "github": "https://github.com/Robertwyq/Drivingdojo",
+                "website": null
+              },
+              {
+                "design": "DriveArena",
+                "paper": "DriveArena: A Closed-loop Generative Simulation Platform for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2408.00415",
+                "github": "https://github.com/PJLab-ADG/DriveArena",
+                "website": null
+              },
+              {
+                "design": "NAVSIM",
+                "paper": "NAVSIM: Data-Driven Non-Reactive Autonomous Vehicle Simulation and Benchmarking",
+                "arxiv": "https://arxiv.org/abs/2406.15349",
+                "github": "https://github.com/autonomousvision/navsim",
+                "website": null
+              },
+              {
+                "design": "CarDreamer",
+                "paper": "CarDreamer: Open-Source Learning Platform for World Model based Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2405.09111",
+                "github": "https://github.com/ucd-dare/CarDreamer",
+                "website": null
+              },
+              {
+                "design": "OpenDV-2K",
+                "paper": "GenAD: Generalized Predictive Model for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2403.09630",
+                "github": "https://github.com/OpenDriveLab/DriveAGI",
+                "website": null
+              },
+              {
+                "design": "ZOD",
+                "paper": "Zenseact Open Dataset: A Large-Scale and Diverse Multimodal Dataset for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2305.02008",
+                "github": "https://github.com/zenseact/zod",
+                "website": null
+              },
+              {
+                "design": "Occ3D",
+                "paper": "Occ3D: A Large-Scale 3D Occupancy Prediction Benchmark for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2304.14365",
+                "github": "https://github.com/Tsinghua-MARS-Lab/Occ3D",
+                "website": null
+              },
+              {
+                "design": "OpenOccupancy",
+                "paper": "OpenOccupancy: A Large Scale Benchmark for Surrounding Semantic Occupancy Perception",
+                "arxiv": "https://arxiv.org/abs/2303.03991",
+                "github": "https://github.com/JeffWang987/OpenOccupancy",
+                "website": null
+              },
+              {
+                "design": "Argoverse 2",
+                "paper": "Argoverse 2: Next Generation Datasets for Self-Driving Perception and Forecasting",
+                "arxiv": "https://arxiv.org/abs/2301.00493",
+                "github": "https://github.com/argoverse/av2-api",
+                "website": null
+              },
+              {
+                "design": "KITTI-360",
+                "paper": "KITTI-360: A Novel Dataset and Benchmarks for Urban Scene Understanding in 2D and 3D",
+                "arxiv": "https://arxiv.org/abs/2109.13410",
+                "github": "https://github.com/autonomousvision/kitti360Scripts",
+                "website": null
+              },
+              {
+                "design": "NuPlan",
+                "paper": "NuPlan: A closed-loop ML-based planning benchmark for autonomous vehicles",
+                "arxiv": "https://arxiv.org/abs/2106.11810",
+                "github": "https://github.com/motional/nuplan-devkit",
+                "website": null
+              },
+              {
+                "design": "ONCE",
+                "paper": "One Million Scenes for Autonomous Driving: ONCE Dataset",
+                "arxiv": "https://arxiv.org/abs/2106.11037",
+                "github": "https://github.com/PointsCoder/ONCE_Benchmark",
+                "website": null
+              },
+              {
+                "design": "WOMD",
+                "paper": "Large Scale Interactive Motion Forecasting for Autonomous Driving: The Waymo Open Motion Dataset",
+                "arxiv": "https://arxiv.org/abs/2104.10133",
+                "github": "https://github.com/waymo-research/waymo-open-dataset",
+                "website": null
+              },
+              {
+                "design": "Lyft Level 5",
+                "paper": "One Thousand and One Hours: Self-driving Motion Prediction Dataset",
+                "arxiv": "https://arxiv.org/abs/2006.14480",
+                "github": "https://github.com/JerryIshihara/lyft-motion-prediction-for-autonomous-vehicle",
+                "website": null
+              },
+              {
+                "design": "A2D2",
+                "paper": "A2D2: Audi Autonomous Driving Dataset",
+                "arxiv": "https://arxiv.org/abs/2004.06320",
+                "github": "https://github.com/tum-gis/a2d2_ros_preparer",
+                "website": null
+              },
+              {
+                "design": "Waymo",
+                "paper": "Scalability in Perception for Autonomous Driving: Waymo Open Dataset",
+                "arxiv": "https://arxiv.org/abs/1912.04838",
+                "github": "https://github.com/waymo-research/waymo-open-dataset",
+                "website": null
+              },
+              {
+                "design": "Argoverse",
+                "paper": "Argoverse: 3D Tracking and Forecasting With Rich Maps",
+                "arxiv": "https://arxiv.org/abs/1911.02620",
+                "github": "https://github.com/argoverse/argoverse-api",
+                "website": null
+              },
+              {
+                "design": "INTERACTION",
+                "paper": "INTERACTION Dataset: An INTERnational, Adversarial and Cooperative moTION Dataset in Interactive Driving Scenarios with Semantic Maps",
+                "arxiv": "https://arxiv.org/abs/1910.03088",
+                "github": "https://github.com/interaction-dataset/interaction-dataset",
+                "website": null
+              },
+              {
+                "design": "SemanticKITTI",
+                "paper": "SemanticKITTI: A Dataset for Semantic Scene Understanding of LiDAR Sequences",
+                "arxiv": "https://arxiv.org/abs/1904.01416",
+                "github": "https://github.com/PRBonn/semantic-kitti-api",
+                "website": null
+              },
+              {
+                "design": "nuScenes",
+                "paper": "nuScenes: A Multimodal Dataset for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/1903.11027",
+                "github": "https://github.com/nutonomy/nuscenes-devkit",
+                "website": null
+              },
+              {
+                "design": "BDD100K",
+                "paper": "BDD100K: A Diverse Driving Dataset for Heterogeneous Multitask Learning",
+                "arxiv": "https://arxiv.org/abs/1805.04687",
+                "github": "https://github.com/bdd100k/bdd100k",
+                "website": null
+              },
+              {
+                "design": "ApolloScape",
+                "paper": "The ApolloScape Dataset for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/1803.06184",
+                "github": "https://github.com/ApolloScapeAuto/dataset-api",
+                "website": null
+              },
+              {
+                "design": "CARLA",
+                "paper": "CARLA: An Open Urban Driving Simulator",
+                "arxiv": "https://arxiv.org/abs/1711.03938",
+                "github": "https://github.com/carla-simulator/carla",
+                "website": null
+              },
+              {
+                "design": "KITTI",
+                "paper": "Are we ready for autonomous driving? The KITTI vision benchmark suite",
+                "arxiv": null,
+                "github": null,
+                "website": "https://ieeexplore.ieee.org/document/6248074"
+              }
+            ]
+          },
+          {
+            "id": "interactive-environments-and-gaming",
+            "name": "Interactive Environments and Gaming",
+            "papers": [
+              {
+                "design": "WildWorld",
+                "paper": "WildWorld: A Large-Scale Dataset for Dynamic World Modeling with Actions and Explicit State toward Generative ARPG",
+                "arxiv": "https://arxiv.org/abs/2603.23497",
+                "github": "https://github.com/ShandaAI/WildWorld",
+                "website": null
+              },
+              {
+                "design": "Matrix-Game-MC",
+                "paper": "Matrix-Game: Interactive World Foundation Model",
+                "arxiv": "https://arxiv.org/abs/2506.18701",
+                "github": "https://github.com/SkyworkAI/Matrix-Game",
+                "website": null
+              },
+              {
+                "design": "LOOPNAV",
+                "paper": "Toward Memory-Aided World Models: Benchmarking via Spatial Consistency",
+                "arxiv": "https://arxiv.org/abs/2505.22976",
+                "github": "https://github.com/Kevin-lkw/LoopNav",
+                "website": null
+              },
+              {
+                "design": "JARVIS-VLA",
+                "paper": "JARVIS-VLA: Post-Training Large-Scale Visual Language Models to Play Visual Games with Keyboards and Mouse",
+                "arxiv": "https://arxiv.org/abs/2503.16365",
+                "github": "https://github.com/CraftJarvis/JarvisVLA",
+                "website": null
+              },
+              {
+                "design": "GF-Minecraft",
+                "paper": "GameFactory: Creating New Games with Generative Interactive Videos",
+                "arxiv": "https://arxiv.org/abs/2501.08325",
+                "github": "https://github.com/KwaiVGI/GameFactory",
+                "website": null
+              },
+              {
+                "design": "The Matrix",
+                "paper": "The Matrix: Infinite-Horizon World Generation with Real-Time Moving Control",
+                "arxiv": "https://arxiv.org/abs/2412.03568",
+                "github": null,
+                "website": "https://thematrix1999.github.io/"
+              },
+              {
+                "design": "GameGen-X",
+                "paper": "GameGen-X: Interactive Open-world Game Video Generation",
+                "arxiv": "https://arxiv.org/abs/2411.00769",
+                "github": "https://github.com/GameGen-X/GameGen-X",
+                "website": null
+              },
+              {
+                "design": "Mars",
+                "paper": "Mars: Situated Inductive Reasoning in an Open-World Environment",
+                "arxiv": "https://arxiv.org/abs/2410.08126",
+                "github": "https://github.com/XiaojuanTang/Mars",
+                "website": null
+              },
+              {
+                "design": "Crafter",
+                "paper": "Benchmarking the Spectrum of Agent Capabilities",
+                "arxiv": "https://arxiv.org/abs/2109.06780",
+                "github": "https://github.com/danijar/crafter",
+                "website": null
+              },
+              {
+                "design": "CS-Deathmatch",
+                "paper": "Counter-Strike Deathmatch with Large-Scale Behavioural Cloning",
+                "arxiv": "https://arxiv.org/abs/2104.04258",
+                "github": "https://github.com/TeaPearce/Counter-Strike_Behavioural_Cloning",
+                "website": null
+              },
+              {
+                "design": "MineRL",
+                "paper": "The MineRL 2020 Competition on Sample Efficient Reinforcement Learning using Human Priors",
+                "arxiv": "https://arxiv.org/abs/2101.11071",
+                "github": "https://github.com/minerllabs/minerl",
+                "website": null
+              },
+              {
+                "design": "NLE",
+                "paper": "The NetHack Learning Environment",
+                "arxiv": "https://arxiv.org/abs/2006.13760",
+                "github": "https://github.com/facebookresearch/nle",
+                "website": null
+              },
+              {
+                "design": "Procgen",
+                "paper": "Leveraging Procedural Generation to Benchmark Reinforcement Learning",
+                "arxiv": "https://arxiv.org/abs/1912.01588",
+                "github": "https://github.com/openai/train-procgen",
+                "website": null
+              },
+              {
+                "design": "DMC",
+                "paper": "DeepMind Control Suite",
+                "arxiv": "https://arxiv.org/abs/1801.00690",
+                "github": "https://github.com/google-deepmind/dm_control",
+                "website": null
+              },
+              {
+                "design": "ALE",
+                "paper": "The Arcade Learning Environment: An Evaluation Platform for General Agents",
+                "arxiv": "https://arxiv.org/abs/1207.4708",
+                "github": "https://github.com/Farama-Foundation/Arcade-Learning-Environment",
+                "website": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "others",
+    "name": "Others",
+    "subcategories": [
+      {
+        "id": "survey",
+        "name": "Survey",
+        "subsubcategories": [
+          {
+            "id": "survey",
+            "name": "Survey",
+            "papers": [
+              {
+                "design": null,
+                "paper": "OpenWorldLib: A Unified Codebase and Definition of Advanced World Models",
+                "arxiv": "https://arxiv.org/abs/2604.04707",
+                "github": "https://github.com/OpenDCAI/OpenWorldLib",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Video Generation Models as World Models: Efficient Paradigms, Architectures and Algorithms",
+                "arxiv": "https://arxiv.org/abs/2603.28489v1",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Learning to Model the World: A Survey of World Models in Artificial Intelligence",
+                "arxiv": null,
+                "github": "https://github.com/JiahuaDong/Awesome-World-Models",
+                "website": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.177274570.09578608/v1"
+              },
+              {
+                "design": null,
+                "paper": "Towards Generalist Embodied AI: A Survey on World Models for VLA Agents",
+                "arxiv": null,
+                "github": null,
+                "website": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.176948355.54623875/v1"
+              },
+              {
+                "design": null,
+                "paper": "Video Generation Models in Robotics -- Applications, Research Challenges, Future Directions",
+                "arxiv": "https://arxiv.org/abs/2601.07823",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Digital Twin AI: Opportunities and Challenges from Large Language Models to World Models",
+                "arxiv": "https://arxiv.org/abs/2601.01321",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Progressive Robustness-Aware World Models in Autonomous Driving: A Review and Outlook",
+                "arxiv": null,
+                "github": null,
+                "website": "https://www.techrxiv.org/users/1003906/articles/1364209-progressive-robustness-aware-world-models-in-autonomous-driving-a-review-and-outlook"
+              },
+              {
+                "design": null,
+                "paper": "Simulating the Visual World with Artificial Intelligence: A Roadmap",
+                "arxiv": "http://arxiv.org/abs/2511.08585",
+                "github": "https://github.com/ziqihuangg/Awesome-From-Video-Generation-to-World-Model",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A Step Toward World Models: A Survey on Robotic Manipulation",
+                "arxiv": "http://arxiv.org/abs/2511.02097",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "The Safety Challenge of World Models for Embodied AI Agents: A Review",
+                "arxiv": "http://arxiv.org/abs/2510.05865",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A Comprehensive Survey on World Models for Embodied AI",
+                "arxiv": "https://www.arxiv.org/abs/2510.16732",
+                "github": "https://github.com/Li-Zn-H/AwesomeWorldModels",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "3D and 4D World Modeling: A Survey",
+                "arxiv": "https://arxiv.org/abs/2509.07996",
+                "github": "https://github.com/worldbench/survey",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Large Model Empowered Embodied AI: A Survey on Decision-Making and Embodied Learning",
+                "arxiv": "https://arxiv.org/abs/2508.10399",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A Survey: Learning Embodied Intelligence from Physical Simulators and World Models",
+                "arxiv": "http://arxiv.org/abs/2507.00917",
+                "github": "https://github.com/NJU3DV-LoongGroup/Embodied-World-Models-Survey",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "From 2D to 3D Cognition: A Brief Survey of General World Models",
+                "arxiv": "https://arxiv.org/abs/2506.20134",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A Survey on World Models Grounded in Acoustic Physical Information",
+                "arxiv": "https://arxiv.org/abs/2506.13833",
+                "github": "https://github.com/soundai2016/survey_acoustic_world_models",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "World Models in Artificial Intelligence: Sensing, Learning, and Reasoning Like a Child",
+                "arxiv": "https://arxiv.org/abs/2503.15168",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "The Role of World Models in Shaping Autonomous Driving: A Comprehensive Survey",
+                "arxiv": "https://arxiv.org/abs/2502.10498",
+                "github": "https://github.com/LMD0311/Awesome-World-Model",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A Survey of World Models for Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2501.11260",
+                "github": "https://github.com/FengZicai/WMAD-Benchmarks",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Understanding World or Predicting Future? A Comprehensive Survey of World Models",
+                "arxiv": "https://arxiv.org/abs/2411.14499",
+                "github": "https://github.com/tsinghua-fib-lab/World-Model",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Is Sora a World Simulator? A Comprehensive Survey on General World Models and Beyond",
+                "arxiv": "https://arxiv.org/abs/2405.03520",
+                "github": "https://github.com/GigaAI-research/General-World-Models-Survey",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "World Models for Autonomous Driving: An Initial Survey",
+                "arxiv": "https://arxiv.org/abs/2403.02622",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A Path Towards Autonomous Machine Intelligence",
+                "arxiv": null,
+                "github": null,
+                "website": "https://yschoe.github.io/2022/08/24/LeCun-A-path-towards-autonomous-machine-intelligence.html"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "github-repo",
+        "name": "GitHub Repo",
+        "subsubcategories": [
+          {
+            "id": "github-repo",
+            "name": "GitHub Repo",
+            "papers": [
+              {
+                "design": null,
+                "paper": "Awesome From Video Generation to World Model",
+                "arxiv": null,
+                "github": "https://github.com/ziqihuangg/Awesome-From-Video-Generation-to-World-Model",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A Curated List of Amazing Works in World Modeling, spanning applications in Embodied AI, Autonomous Driving, Natural Laguage Processing and Agents",
+                "arxiv": null,
+                "github": "https://github.com/knightnemo/Awesome-World-Models",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A curated list of papers for World Models for General Video Generation, Embodied AI, and Autonomous Driving",
+                "arxiv": null,
+                "github": "https://github.com/leofan90/Awesome-World-Models",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "World Models for Autonomous Driving (and Robotic) papers",
+                "arxiv": null,
+                "github": "https://github.com/LMD0311/Awesome-World-Model",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Awesome 3D and 4D World Models",
+                "arxiv": null,
+                "github": "https://github.com/worldbench/survey",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Simulating the Real World: Survey & Resources",
+                "arxiv": null,
+                "github": "https://github.com/ALEEEHU/World-Simulator",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A curated list of world models for autonomous driving",
+                "arxiv": null,
+                "github": "https://github.com/HaoranZhuExplorer/World-Models-Autonomous-Driving-Latest-Survey",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A curated list of resources related to World Models for Autonomous Driving (WMAD)",
+                "arxiv": null,
+                "github": "https://github.com/FengZicai/AwesomeWMAD",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A Survey: Learning Embodied Intelligence from Physical Simulators and World Models",
+                "arxiv": null,
+                "github": "https://github.com/NJU3DV-LoongGroup/Embodied-World-Models-Survey",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A Comprehensive Survey on World Models for Embodied AI",
+                "arxiv": null,
+                "github": "https://github.com/Li-Zn-H/AwesomeWorldModels",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A Survey on World Models Grounded in Acoustic Physical Information",
+                "arxiv": null,
+                "github": "https://github.com/soundai2016/survey_acoustic_world_models",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "A Comprehensive Survey on General World Models and Beyond",
+                "arxiv": null,
+                "github": "https://github.com/GigaAI-research/General-World-Models-Survey",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Understanding World or Predicting Future? A Comprehensive Survey of World Models",
+                "arxiv": null,
+                "github": "https://github.com/tsinghua-fib-lab/World-Model",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "From Masks to Worlds: A Hitchhiker's Guide to World Models",
+                "arxiv": null,
+                "github": "https://github.com/M-E-AGI-Lab/Awesome-World-Models",
+                "website": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "workshop",
+        "name": "Workshop",
+        "subsubcategories": [
+          {
+            "id": "workshop",
+            "name": "Workshop",
+            "papers": [
+              {
+                "design": "ICLR 2026",
+                "paper": "Workshop on World Models: Understanding, Modelling and Scaling",
+                "arxiv": null,
+                "github": null,
+                "website": "https://sites.google.com/view/iclr-2026-workshop-world-model/home"
+              },
+              {
+                "design": "NeurIPS 2025",
+                "paper": "Workshop on Bridging Language, Agent, and World Models for Reasoning and Planning",
+                "arxiv": null,
+                "github": null,
+                "website": "https://sites.google.com/view/law-2025"
+              },
+              {
+                "design": "NeurIPS 2025",
+                "paper": "Embodied World Models for Decision Making",
+                "arxiv": null,
+                "github": null,
+                "website": "https://embodied-world-models.github.io/"
+              },
+              {
+                "design": "ICCV 2025",
+                "paper": "Reliable and Interactable World Models: Geometry, Physics, Interactivity and Real-World Generalization",
+                "arxiv": null,
+                "github": null,
+                "website": "https://riwm-2025.github.io/RIWM-2025/"
+              },
+              {
+                "design": "ICML 2025",
+                "paper": "Building Physically Plausible World Models",
+                "arxiv": null,
+                "github": null,
+                "website": "https://physical-world-modeling.github.io/"
+              },
+              {
+                "design": "CVPR 2025",
+                "paper": "Benchmarking World Models",
+                "arxiv": null,
+                "github": null,
+                "website": "https://worldmodelbench.github.io/"
+              },
+              {
+                "design": "ICLR 2025",
+                "paper": "World Models: Understanding, Modelling, and Scaling",
+                "arxiv": null,
+                "github": null,
+                "website": "https://sites.google.com/view/worldmodel-iclr2025/"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "theory",
+        "name": "Theory",
+        "subsubcategories": [
+          {
+            "id": "theory",
+            "name": "Theory",
+            "papers": [
+              {
+                "design": "EB-JEPA",
+                "paper": "A Lightweight Library for Energy-Based Joint-Embedding Predictive Architectures",
+                "arxiv": "https://arxiv.org/abs/2602.03604",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Research on World Models Is Not Merely Injecting World Knowledge into Specific Tasks",
+                "arxiv": "https://arxiv.org/abs/2602.01630",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "What Drives Success in Physical Planning with Joint-Embedding Predictive World Models?",
+                "arxiv": "https://arxiv.org/abs/2512.24497",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Closing the Train-Test Gap in World Models for Gradient-Based Planning",
+                "arxiv": "https://arxiv.org/abs/2512.09929",
+                "github": "https://github.com/qw3rtman/robust-world-model-planning",
+                "website": null
+              },
+              {
+                "design": "WWM",
+                "paper": "Web World Model",
+                "arxiv": "https://arxiv.org/abs/2512.23676",
+                "github": "https://github.com/Princeton-AI2-Lab/Web-World-Models",
+                "website": "https://princeton-ai2-lab.github.io/Web-World-Models/"
+              },
+              {
+                "design": "DWM",
+                "paper": "Dexterous World Models",
+                "arxiv": "https://arxiv.org/abs/2512.17907",
+                "github": "https://github.com/snuvclab/dwm",
+                "website": "https://snuvclab.github.io/dwm/"
+              },
+              {
+                "design": "PRISM-WM",
+                "paper": "Prismatic World Model: Learning Compositional Dynamics for Planning in Hybrid Systems",
+                "arxiv": "https://arxiv.org/abs/2512.08411",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "From Word to World: Can Large Language Models be Implicit Text-based World Models?",
+                "arxiv": "https://arxiv.org/abs/2512.18832",
+                "github": "https://github.com/X1AOX1A/Word2World",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Beyond World Models: Rethinking Understanding in AI Models",
+                "arxiv": "https://arxiv.org/abs/2511.12239",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "Cambrian-S",
+                "paper": "Cambrian-S: Towards Spatial Supersensing in Video",
+                "arxiv": "https://arxiv.org/abs/2511.04670",
+                "github": null,
+                "website": "https://cambrian-mllm.github.io/"
+              },
+              {
+                "design": null,
+                "paper": "World Models Should Prioritize the Unification of Physical and Social Dynamics",
+                "arxiv": "https://arxiv.org/abs/2510.21219",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "GRWM",
+                "paper": "Clone Deterministic 3D Worlds with Geometrically-Regularized World Models",
+                "arxiv": "https://arxiv.org/abs/2510.26782",
+                "github": "https://github.com/M-E-AGI-Lab/Awesome-World-Models",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "From Masks to Worlds: A Hitchhiker’s Guide to World Models",
+                "arxiv": "https://arxiv.org/abs/2510.20668",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "AutumnBench",
+                "paper": "Benchmarking World-Model Learning",
+                "arxiv": "https://arxiv.org/abs/2510.19788",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "S3AP",
+                "paper": "Social World Models",
+                "arxiv": "https://arxiv.org/abs/2509.00559",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "UniVid",
+                "paper": "UniVid: Unifying Vision Tasks with Pre-trained Video Generation Models",
+                "arxiv": "https://arxiv.org/abs/2509.21760",
+                "github": "https://github.com/CUC-MIPG/UniVid",
+                "website": null
+              },
+              {
+                "design": "Veo 3",
+                "paper": "Video models are zero-shot learners and reasoners",
+                "arxiv": "https://arxiv.org/abs/2509.20328",
+                "github": null,
+                "website": "https://video-zero-shot.github.io/"
+              },
+              {
+                "design": "PSI",
+                "paper": "World Modeling with Probabilistic Structure Integration",
+                "arxiv": "https://arxiv.org/abs/2509.09737",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "What Does it Mean for a Neural Network to Learn a “World Model”?",
+                "arxiv": "https://arxiv.org/abs/2507.21513",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "PAN",
+                "paper": "Critiques of World Models",
+                "arxiv": "https://arxiv.org/abs/2507.05169",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models",
+                "arxiv": "https://arxiv.org/abs/2507.06952",
+                "github": "https://github.com/keyonvafa/inductive-bias-probes",
+                "website": null
+              },
+              {
+                "design": "PIN-WM",
+                "paper": "PIN-WM: Learning Physics-INformed World Models for Non-Prehensile Manipulation",
+                "arxiv": "https://arxiv.org/abs/2504.16693",
+                "github": "https://github.com/XuAdventurer/PIN-WM",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Position: Interactive Generative Video as Next-Generation Game Engine",
+                "arxiv": "https://arxiv.org/abs/2503.17359",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Four Principles for Physically Interpretable World Models",
+                "arxiv": "https://arxiv.org/abs/2503.02143",
+                "github": "https://github.com/trustworthy-engineered-autonomy-lab/piwm-principles",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "How Far is Video Generation from World Model: A Physical Law Perspective",
+                "arxiv": "https://arxiv.org/abs/2411.02385",
+                "github": "https://github.com/phyworld/phyworld",
+                "website": null
+              },
+              {
+                "design": "CWM",
+                "paper": "Unifying (Machine) Vision via Counterfactual World Modeling",
+                "arxiv": "https://arxiv.org/abs/2306.01828",
+                "github": null,
+                "website": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "world-models-for-downstream-tasks",
+        "name": "World Models for Downstream Tasks",
+        "subsubcategories": [
+          {
+            "id": "world-models-for-downstream-tasks",
+            "name": "World Models for Downstream Tasks",
+            "papers": [
+              {
+                "design": "CoWVLA",
+                "paper": "Chain of World: World Model Thinking in Latent Motion",
+                "arxiv": "https://arxiv.org/abs/2603.03195",
+                "github": "https://github.com/fx-hit/CoWVLA",
+                "website": null
+              },
+              {
+                "design": "WoG",
+                "paper": "World Guidance: World Modeling in Condition Space for Action Generation",
+                "arxiv": "https://arxiv.org/abs/2602.22010",
+                "github": "https://github.com/Selen-Suyue/WoG",
+                "website": null
+              },
+              {
+                "design": "AdaWorldPolicy",
+                "paper": "AdaWorldPolicy: World-Model-Driven Diffusion Policy with Online Adaptive Learning for Robotic Manipulation",
+                "arxiv": "https://arxiv.org/abs/2602.20057",
+                "github": null,
+                "website": "https://adaworldpolicy.github.io/"
+              },
+              {
+                "design": "DreamZero",
+                "paper": "World Action Models are Zero-shot Policies",
+                "arxiv": "https://arxiv.org/abs/2602.15922",
+                "github": "https://github.com/dreamzero0/dreamzero",
+                "website": null
+              },
+              {
+                "design": "Act2Goal",
+                "paper": "Act2Goal: From World Model To General Goal-conditioned Policy",
+                "arxiv": "https://arxiv.org/abs/2512.23541",
+                "github": null,
+                "website": "https://act2goal.github.io/"
+              },
+              {
+                "design": "DexWM",
+                "paper": "World Models Can Leverage Human Videos for Dexterous Manipulation",
+                "arxiv": "https://arxiv.org/abs/2512.13644",
+                "github": null,
+                "website": "https://raktimgg.github.io/dexwm/"
+              },
+              {
+                "design": "WorldLM",
+                "paper": "Can World Models Benefit VLMs for World Dynamics?",
+                "arxiv": "https://arxiv.org/abs/2510.00855",
+                "github": "https://github.com/zyzkevin/dyva-worldlm",
+                "website": "https://dyva-worldlm.github.io/"
+              },
+              {
+                "design": "WMPO",
+                "paper": "WMPO: World Model-based Policy Optimization for Vision-Language-Action Models",
+                "arxiv": "https://arxiv.org/abs/2511.09515",
+                "github": "https://github.com/WM-PO/WMPO",
+                "website": null
+              },
+              {
+                "design": "PhysWorld",
+                "paper": "Robot Learning from a Physical World Model",
+                "arxiv": "https://arxiv.org/abs/2511.07416",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Scalable Policy Evaluation with Video World Models",
+                "arxiv": "https://arxiv.org/abs/2511.11520",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "NORA-1.5",
+                "paper": "NORA-1.5: A Vision-Language-Action Model Trained using World Model and Action-based Preference Rewards",
+                "arxiv": "https://arxiv.org/abs/2511.14659",
+                "github": "https://github.com/declare-lab/nora-1.5",
+                "website": null
+              },
+              {
+                "design": "GigaBrain-0",
+                "paper": "GigaBrain-0: A World Model-Powered Vision-Language Action Model",
+                "arxiv": "https://arxiv.org/abs/2510.19430",
+                "github": "https://github.com/open-gigaai/giga-brain-0",
+                "website": null
+              },
+              {
+                "design": "DriveVLA-W0",
+                "paper": "DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving",
+                "arxiv": "https://arxiv.org/abs/2510.12796",
+                "github": "https://github.com/BraveGroup/DriveVLA-W0",
+                "website": null
+              },
+              {
+                "design": "Ctrl-World",
+                "paper": "Ctrl-World: A Controllable Generative World Model for Robot Manipulation",
+                "arxiv": "https://arxiv.org/abs/2510.10125",
+                "github": "https://github.com/Robert-gyj/Ctrl-World",
+                "website": null
+              },
+              {
+                "design": "WorldLM",
+                "paper": "Can World Models Benefit VLMs for World Dynamics?",
+                "arxiv": "https://arxiv.org/abs/2510.00855",
+                "github": "https://github.com/zyzkevin/dyva-worldlm",
+                "website": null
+              },
+              {
+                "design": "World-Env",
+                "paper": "World-Env: Leveraging World Model as a Virtual Environment for VLA Post-Training",
+                "arxiv": "https://arxiv.org/abs/2509.24948",
+                "github": "https://github.com/amap-cvlab/world-env",
+                "website": null
+              },
+              {
+                "design": "GVF-TAPE",
+                "paper": "Generative Visual Foresight Meets Task-Agnostic Pose Estimation in Robotic Table-Top Manipulation",
+                "arxiv": "https://arxiv.org/abs/2509.00361",
+                "github": "https://github.com/Xiaoxiongzzzz/GVF-TAPE-Video-Generation",
+                "website": null
+              },
+              {
+                "design": "DiWA",
+                "paper": "DiWA: Diffusion Policy Adaptation with World Models",
+                "arxiv": "https://arxiv.org/abs/2508.03645",
+                "github": "https://github.com/acl21/diwa",
+                "website": null
+              },
+              {
+                "design": "RIGVid",
+                "paper": "Robotic Manipulation by Imitating Generated Videos Without Physical Demonstrations",
+                "arxiv": "https://arxiv.org/abs/2507.00990",
+                "github": "https://github.com/shivanshpatel35/rigvid",
+                "website": null
+              },
+              {
+                "design": "KL-tracing",
+                "paper": "Taming generative video models for zero-shot optical flow extraction",
+                "arxiv": "https://arxiv.org/abs/2507.09082",
+                "github": "https://github.com/neuroailab/kl_tracing",
+                "website": null
+              },
+              {
+                "design": "MindJourney",
+                "paper": "MindJourney: Test-Time Scaling with World Models for Spatial Reasoning",
+                "arxiv": "https://arxiv.org/abs/2507.12508",
+                "github": "https://github.com/UMass-Embodied-AGI/MindJourney",
+                "website": null
+              },
+              {
+                "design": "Cosmos-Drive-Dreams",
+                "paper": "Cosmos-Drive-Dreams: Scalable Synthetic Driving Data Generation with World Foundation Models",
+                "arxiv": "https://arxiv.org/abs/2506.09042",
+                "github": "https://github.com/nv-tlabs/Cosmos-Drive-Dreams",
+                "website": null
+              },
+              {
+                "design": "WoMAP",
+                "paper": "WoMAP: World Models For Embodied Open-Vocabulary Object Localization",
+                "arxiv": "https://arxiv.org/abs/2506.01600",
+                "github": null,
+                "website": "https://robot-womap.github.io/"
+              },
+              {
+                "design": null,
+                "paper": "General agents contain world models",
+                "arxiv": "https://arxiv.org/abs/2506.01622",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "WorldGym",
+                "paper": "WorldGym: World Model as An Environment for Policy Evaluation",
+                "arxiv": "https://arxiv.org/abs/2506.00613",
+                "github": "https://github.com/world-model-eval/world-model-eval",
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "World Models for Anomaly Detection during Model-Based Reinforcement Learning Inference",
+                "arxiv": "https://arxiv.org/abs/2503.02552",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "WorldEval",
+                "paper": "WorldEval: World Model as Real-World Robot Policies Evaluator",
+                "arxiv": "https://arxiv.org/abs/2505.19017",
+                "github": "https://github.com/liyaxuanliyaxuan/Worldeval",
+                "website": null
+              },
+              {
+                "design": "DEMO3",
+                "paper": "Multi-Stage Manipulation with Demonstration-Augmented Reward, Policy, and World Model Learning",
+                "arxiv": "https://arxiv.org/abs/2503.01837",
+                "github": "https://github.com/adrialopezescoriza/demo3",
+                "website": null
+              },
+              {
+                "design": "ReconDreamer",
+                "paper": "ReconDreamer: Crafting World Models for Driving Scene Reconstruction via Online Restoration",
+                "arxiv": "http://arxiv.org/abs/2411.19548",
+                "github": "https://github.com/GigaAI-research/ReconDreamer",
+                "website": null
+              },
+              {
+                "design": "DriveDreamer4D",
+                "paper": "DriveDreamer4D: World Models Are Effective Data Machines for 4D Driving Scene Representation",
+                "arxiv": "http://arxiv.org/abs/2410.13571",
+                "github": "https://github.com/GigaAI-research/DriveDreamer4D",
+                "website": null
+              },
+              {
+                "design": "JOWA",
+                "paper": "Scaling Offline Model-Based RL via Jointly-Optimized World-Action Model Pretraining",
+                "arxiv": "https://arxiv.org/abs/2410.00564",
+                "github": "https://github.com/CJReinforce/JOWA",
+                "website": null
+              },
+              {
+                "design": "PWM",
+                "paper": "PWM: Policy Learning with Multi-Task World Models",
+                "arxiv": "https://arxiv.org/abs/2407.02466",
+                "github": "https://github.com/imgeorgiev/PWM",
+                "website": null
+              },
+              {
+                "design": "VLP",
+                "paper": "Video Language Planning",
+                "arxiv": "https://arxiv.org/abs/2310.10625",
+                "github": "https://github.com/video-language-planning/vlp_code",
+                "website": null
+              },
+              {
+                "design": "Surfer",
+                "paper": "Surfer: Progressive Reasoning with World Models for Robotic Manipulation",
+                "arxiv": "https://arxiv.org/abs/2306.11335",
+                "github": "https://github.com/pzhren/Surfer",
+                "website": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "other-perspectives-of-world-modeling",
+        "name": "Other Perspectives of World Modeling",
+        "subsubcategories": [
+          {
+            "id": "other-perspectives-of-world-modeling",
+            "name": "Other Perspectives of World Modeling",
+            "papers": [
+              {
+                "design": "Motus",
+                "paper": "Motus: A Unified Latent Action World Model",
+                "arxiv": "https://arxiv.org/abs/2512.13030",
+                "github": "https://github.com/thu-ml/Motus",
+                "website": "https://motus-robotics.github.io/motus"
+              },
+              {
+                "design": "Visionary",
+                "paper": "Visionary: The World Model Carrier Built on WebGPU-Powered Gaussian Splatting Platform",
+                "arxiv": "https://arxiv.org/abs/2512.08478",
+                "github": null,
+                "website": "https://visionary-laboratory.github.io/visionary/"
+              },
+              {
+                "design": "R-WoM",
+                "paper": "R-WoM: Retrieval-augmented World Model For Computer-use Agents",
+                "arxiv": "https://arxiv.org/abs/2510.11892",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": null,
+                "paper": "Context and Diversity Matter: The Emergence of In-Context Learning in World Models",
+                "arxiv": "https://arxiv.org/abs/2509.22353",
+                "github": "https://github.com/airs-cuhk/airsoul",
+                "website": null
+              },
+              {
+                "design": "UnifoLM-WMA-0",
+                "paper": "UnifoLM-WMA-0: A World-Model-Action (WMA) Framework under UnifoLM Family",
+                "arxiv": null,
+                "github": "https://github.com/unitreerobotics/unifolm-world-model-action",
+                "website": "https://unigen-x.github.io/unifolm-world-model-action.github.io/"
+              },
+              {
+                "design": "FantasyWorld",
+                "paper": "FantasyWorld: Geometry-Consistent World Modeling via Unified Video and 3D Prediction",
+                "arxiv": "https://arxiv.org/abs/2509.21657",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "KeyWorld",
+                "paper": "KeyWorld: Key Frame Reasoning Enables Effective and Efficient World Models",
+                "arxiv": "https://arxiv.org/abs/2509.21027",
+                "github": null,
+                "website": "https://anonymous.4open.science/r/Keyworld-E43D/"
+              },
+              {
+                "design": "HERO",
+                "paper": "HERO: Hierarchical Extrapolation and Refresh for Efficient World Models",
+                "arxiv": "https://arxiv.org/abs/2508.17588",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "ReOI",
+                "paper": "Reimagination with Test-time Observation Interventions: Distractor-Robust World Model Predictions for Visual Model Predictive Control",
+                "arxiv": "https://arxiv.org/abs/2506.16565",
+                "github": null,
+                "website": null
+              },
+              {
+                "design": "Vid2World",
+                "paper": "Vid2World: Crafting Video Diffusion Models to Interactive World Models",
+                "arxiv": "https://arxiv.org/abs/2505.14357",
+                "github": null,
+                "website": "https://knightnemo.github.io/vid2world/"
+              },
+              {
+                "design": "SWIFT",
+                "paper": "Can Test-Time Scaling Improve World Foundation Model",
+                "arxiv": "https://arxiv.org/abs/2503.24320",
+                "github": "https://github.com/VITA-Group/WFM-TTS",
+                "website": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
