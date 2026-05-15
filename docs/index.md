@@ -28,6 +28,8 @@ features:
 
 > 论文原始仓库：[Awesome-Vision-World-Model](https://github.com/AIWorldLab/Awesome-Vision-World-Model)
 
+本笔记库由 **Trae Solo** 与 **DeepSeek V4 Pro** 联合制作。**独特之处：帮你省 Token** — 笔记内容经过精心提炼与压缩，在保留核心知识的同时大幅减少无关文字，让你用最少的 Token 掌握最精华的内容。部分笔记还融入了作者在学习和实践过程中的一点心得，希望能给你带来额外的启发。
+
 ## 🏗️ 分类体系概览
 
 综述将视觉世界模型按**架构范式**划分为四大类别：

@@ -1,10 +1,17 @@
 import { defineConfig } from 'vitepress'
+import mathjax3 from 'markdown-it-mathjax3'
 
 export default defineConfig({
   title: '世界模型学习笔记库',
   description: '基于 Awesome-Vision-World-Model 综述的视觉世界模型学习笔记',
   base: '/world-model-notes/',
   lang: 'zh-CN',
+
+  markdown: {
+    config: (md) => {
+      md.use(mathjax3)
+    }
+  },
 
   themeConfig: {
     search: {
