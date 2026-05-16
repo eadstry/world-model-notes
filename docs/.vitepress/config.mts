@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 import mathjax3 from 'markdown-it-mathjax3'
 
 export default defineConfig({
-  title: '世界模型学习笔记库',
-  description: '基于 Awesome-Vision-World-Model 综述的视觉世界模型学习笔记',
+  title: '世界模型与视频生成学习笔记库',
+  description: '视觉世界模型与视频生成后训练的系统性学习笔记',
   base: '/world-model-notes/',
   lang: 'zh-CN',
 
@@ -23,6 +23,7 @@ export default defineConfig({
       { text: 'Designs', link: '/designs/' },
       { text: 'Datasets & Benchmarks', link: '/datasets/' },
       { text: 'Others', link: '/others/' },
+      { text: 'Video Generation', link: '/video-generation/' },
     ],
 
     sidebar: {

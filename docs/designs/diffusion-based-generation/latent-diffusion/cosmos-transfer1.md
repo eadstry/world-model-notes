@@ -55,3 +55,44 @@ Cosmos-Transfer1 的愿景是桥接仿真与现实之间的感知鸿沟（World-
 - 机器人Sim2Real场景增强实验验证了数据扩充的有效性
 - 自动驾驶数据扩充实验表明生成数据可提升下游模型性能
 - GB200 NVL72上的推理扩展实现实时世界生成
+
+## Transfer2.5 升级与对比
+
+Transfer2.5 在 Transfer1 的基础上进行了全面升级，以下是关键变化：
+
+**1. 2B轻量模型 + Edge蒸馏**：Transfer2.5 提供 2B 参数规模的轻量模型（vs Transfer1 的 7B），显著降低部署门槛。同时提供 Edge Distilled 版本，支持单步推理（1-step），实现边缘设备实时世界生成。
+
+**2. JSON controlnet_specs 配置式控制**：v2.5 采用 JSON 格式的 declarative 控制配置，替代 v1 的硬编码控制模式。用户可通过 `controlnet_specs` 数组灵活指定多模态控制权重：
+
+```json
+[
+  {"controlnet_modality_name": "depth", "scale": 0.7},
+  {"controlnet_modality_name": "edge", "scale": 0.5},
+  {"controlnet_modality_name": "segmentation", "scale": 0.3}
+]
+```
+
+**3. Auto/Multiview 自动驾驶专用后训练**：v2.5 提供专为自动驾驶场景后训练的 Auto/Multiview 模型，支持从单路前视视频生成 7 路环视视频。仓库路径：`Cosmos-Transfer2.5-2B/auto`。
+
+**4. Robot Multiview Control**：新增机器人多视图控制模型（robot-multiview-control），支持 4 种控制类型（depth、edge、visual blur、segmentation），专为机器人操作臂工作空间设计。
+
+**5. 自回归滑动窗口生成长视频**：新增 autoregressive sliding window 生成模式，以上一帧生成结果作为下一帧条件，实现无限时长视频生成。
+
+**6. 完整工具链生态**：配套 Cosmos Cookbook（nvidia-cosmos.github.io/cosmos-cookbook）、Cosmos Curator 数据管理、Cosmos Evaluator 评测工具。
+
+::: tip 版本对比
+| 特性 | Transfer1 | Transfer2.5 |
+|------|-----------|-------------|
+| 参数规模 | 7B | 2B |
+| 控制配置 | 硬编码 | JSON declarative |
+| 条件模态数 | 6+ | 6+（新增blur等） |
+| 蒸馏推理 | 36→1步 | Edge Distilled 1步 |
+| 自动驾驶 | 基础Single2MultiView | Auto/Multiview 7路环视 |
+| 机器人 | 通用 | Robot Multiview Control 专用 |
+| 滑动窗口 | 不支持 | 支持自回归滑动窗口 |
+| 推理框架 | Diffusers only | Diffusers + Native CLI |
+:::
+
+Transfer2.5 仓库: [https://github.com/nvidia-cosmos/cosmos-transfer2.5](https://github.com/nvidia-cosmos/cosmos-transfer2.5)
+Transfer2.5 论文: [https://arxiv.org/abs/2511.00062](https://arxiv.org/abs/2511.00062)
+HuggingFace 模型: [https://huggingface.co/nvidia/Cosmos-Transfer2.5-2B](https://huggingface.co/nvidia/Cosmos-Transfer2.5-2B)

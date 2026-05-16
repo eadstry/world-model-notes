@@ -1,0 +1,22 @@
+- [ ] `scripts/parse-video-gen.mjs` 正确解析所有条目，无遗漏
+- [ ] `video-gen-papers.json` 包含完整的数据集（~20）、基准（~23）、会议论文（~55）、arXiv 论文（~60）
+- [ ] `docs/video-generation/` 目录结构完整（methods/、datasets/、benchmarks/ 及子目录）
+- [ ] 每篇论文/数据集/基准的 markdown 文件已创建（含 frontmatter 元数据）
+- [ ] VitePress 导航栏包含"World Models"和"Video Generation"两大入口
+- [ ] VitePress 侧边栏包含 video-generation 完整三级导航
+- [ ] 首页 `docs/index.md` 重构为统一门户（两大领域入口）
+- [ ] `docs/video-generation/index.md` 综述笔记完整（含四大方法分类概述）
+- [ ] `docs/video-generation/methods/index.md` 综述笔记完整
+- [ ] `docs/video-generation/methods/conference-papers/index.md` 综述笔记完整
+- [ ] `docs/video-generation/methods/arxiv-papers/index.md` 综述笔记完整
+- [ ] `docs/video-generation/datasets/index.md` 综述笔记完整
+- [ ] `docs/video-generation/benchmarks/index.md` 综述笔记完整
+- [ ] 所有数据集笔记（~20 篇）填充完毕
+- [ ] 所有基准笔记（~23 篇）填充完毕
+- [ ] 所有会议论文笔记（~55 篇）填充完毕
+- [ ] 所有 arXiv 论文笔记（~60 篇）填充完毕
+- [ ] 每篇论文笔记包含：元信息、核心思想、技术方法分析、代码实现要点
+- [ ] `npm run docs:build` 构建无报错（exit code 0）
+- [ ] 全仓零占位符残留（grep "此部分待补充" 返回 0 matches）
+- [ ] 侧边栏导航三级皆可点击展开
+- [ ] 现有 world model 内容（designs/、datasets/、others/）路径和链接均未破坏
