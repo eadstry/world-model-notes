@@ -41,16 +41,16 @@ features:
 
 ### 🌍 世界模型 — 架构设计 (Designs)
 
-| 范式 | 子方向 | 入口 | 核心思想 |
-|------|--------|------|----------|
-| **Sequential Generation** | Visual Autoregressive Modeling | [→ 入口](/designs/sequential-generation/visual-autoregressive-modeling/) | 逐帧自回归预测未来视频 |
-| | MLLM-guided Multimodal AR | [→ 入口](/designs/sequential-generation/mllm-guided-multimodal-autoregressive-model/) | 大语言模型引导视觉世界生成 |
-| **Diffusion-based Generation** | Latent Diffusion | [→ 入口](/designs/diffusion-based-generation/latent-diffusion/) | 隐空间扩散去噪生成未来 |
-| | Autoregressive Diffusion | [→ 入口](/designs/diffusion-based-generation/autoregressive-diffusion/) | 自回归 + 扩散的混合生成 |
-| **Embedding Prediction** | JEPA Family | [→ 入口](/designs/embedding-prediction/jepa/) | 嵌空间预测，不生成像素 |
-| **State Transition** | Latent State-Space Modeling | [→ 入口](/designs/state-transition/latent-state-space-modeling/) | 隐状态动力学 + 规划 |
-| | Object-Centric Modeling | [→ 入口](/designs/state-transition/object-centric-modeling/) | 对象级状态分解与交互 |
-| **Other Architectures** | 混合架构 | [→ 入口](/designs/other-architectures/other-architectures/) | 高斯溅射、LiDAR 等新兴范式 |
+| 范式 | 子方向 | 入口 | 核心思想 | 代表工作 |
+|------|--------|------|----------|----------|
+| **Sequential Generation** | Visual Autoregressive Modeling | [→](/designs/sequential-generation/visual-autoregressive-modeling/) | 逐帧自回归预测未来视频 | Genie, iVideoGPT, VideoWorld, MineWorld, Genie 3 |
+| | MLLM-guided Multimodal AR | [→](/designs/sequential-generation/mllm-guided-multimodal-autoregressive-model/) | 大语言模型引导世界生成 | 3D-VLA, WorldGPT, GR00T N1, AstraNav-World |
+| **Diffusion-based Generation** | Latent Diffusion | [→](/designs/diffusion-based-generation/latent-diffusion/) | 隐空间扩散去噪生成未来 | Cosmos, GAIA-2, DriveDreamer, GenAD, UniPi |
+| | Autoregressive Diffusion | [→](/designs/diffusion-based-generation/autoregressive-diffusion/) | 自回归 + 扩散的混合生成 | GameNGen, Oasis, Genie 2, Matrix-Game |
+| **Embedding Prediction** | JEPA Family | [→](/designs/embedding-prediction/jepa/) | 嵌空间预测，不生成像素 | V-JEPA, V-JEPA 2, DINO-WM, seq-JEPA |
+| **State Transition** | Latent State-Space Modeling | [→](/designs/state-transition/latent-state-space-modeling/) | 隐状态动力学 + 规划 | DreamerV3, TD-MPC2, STORM, IRIS, PlaNet |
+| | Object-Centric Modeling | [→](/designs/state-transition/object-centric-modeling/) | 对象级状态分解与交互 | SlotFormer, slotSSM, SSWM |
+| **Other Architectures** | 混合架构 | [→](/designs/other-architectures/other-architectures/) | 高斯溅射、LiDAR 等新兴范式 | PhysWorld, GaussianWorld, LiDARWM, NeMo |
 
 > 📖 [Designs 总览 →](/designs/) 四种核心范式的全景比较与架构选择指南
 
