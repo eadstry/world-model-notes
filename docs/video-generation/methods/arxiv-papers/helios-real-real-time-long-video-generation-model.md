@@ -1,21 +1,46 @@
 ---
-title: "Helios: Real Real-Time Long Video Generation Model"
-arxiv: https://arxiv.org/abs/2603.04379
-github: https://github.com/PKU-YuanGroup/Helios
-website: https://pku-yuangroup.github.io/Helios-Page
-venue: arXiv
-year: 2026
+title: "Helios：真正的实时长视频生成模型"
+source: "arxiv"
+arxiv_id: "2603.04379"
+tags:
+  - "长视频生成"
+  - "自回归扩散模型"
+  - "实时推理"
+  - "漂移抑制"
+status: "已读"
 ---
-
-# Helios: Real Real-Time Long Video Generation Model
-
-::: info 论文信息
-- **Venue**: arXiv (2026)
-- **arXiv**: [https://arxiv.org/abs/2603.04379](https://arxiv.org/abs/2603.04379)
-- **GitHub**: [https://github.com/PKU-YuanGroup/Helios](https://github.com/PKU-YuanGroup/Helios)
-- **Website**: [https://pku-yuangroup.github.io/Helios-Page](https://pku-yuangroup.github.io/Helios-Page)
-:::
-
 ## 学习笔记
 
-*此部分待补充。*
+### 核心贡献
+
+- 推出 Helios，首个 14B 参数视频生成模型，在单张 NVIDIA H100 GPU 上以 19.5 FPS 实时运行，支持分钟级长视频生成，且质量与强基线持平。
+- 沿三个关键维度实现突破：(1) 长视频生成的漂移鲁棒性，无需 self-forcing、error-banks 或 keyframe sampling 等常见抗漂移启发式方法；(2) 实时生成，无需 KV-cache、稀疏/线性注意力或量化等标准加速技术；(3) 训练无需并行或分片框架，在 80 GB GPU 显存内可容纳最多 4 个 14B 模型，实现图像扩散模型级别的批量大小。
+- 提出统一输入表示的 14B 自回归扩散模型，原生支持 T2V、I2V、V2V 任务。
+- 通过训练时显式模拟漂移的策略从根本上消除重复运动问题，同时大幅压缩历史和噪声上下文并减少采样步数。
+- 计划开源代码、基础模型和蒸馏模型。
+
+### 方法细节
+
+- **架构**：Helios 是一个 14B 参数的自回归扩散模型（Autoregressive Diffusion Model），采用统一输入表示，原生支持文本到视频（T2V）、图像到视频（I2V）和视频到视频（V2V）三种任务。
+- **抗漂移训练策略**：
+  - 首先对长视频生成中的典型漂移失败模式进行系统表征（characterize typical failure modes）。
+  - 提出在训练阶段显式模拟漂移（simulate drifting during training）的策略，使模型在训练过程中即学习如何应对漂移。
+  - 从根本上消除重复运动（repetitive motion）的源头，而非依赖后处理或推理时的启发式方法。
+- **效率优化**：
+  - 大幅压缩历史上下文（historical context）和噪声上下文（noisy context），减少计算开销。
+  - 减少采样步数（reduced sampling steps），在维持质量的前提下提升推理速度。
+- **训练效率**：模型设计使得训练无需数据并行或模型分片框架（如 FSDP、DeepSpeed），在 80 GB GPU 显存上单卡可训练 14B 模型，并支持图像扩散模型级别的大批量大小。
+
+### 关键发现
+
+- Helios 在单张 H100 上达到 19.5 FPS 的推理速度，实现真正实时生成，同时视频质量与强基线方法持平。
+- 所提出的训练时漂移模拟策略有效消除了长视频生成中常见的漂移和重复运动问题，无需任何推理时的抗漂移启发式方法。
+- 通过对历史和噪声上下文的大幅压缩以及采样步数减少，在几乎不牺牲视频质量的前提下显著提升了效率。
+- 模型架构的内存效率极高，80 GB 显存可同时容纳最多 4 个完整的 14B 模型，极大降低了训练门槛。
+
+### 方法归类
+
+- **所属范式**：自回归扩散模型（Autoregressive Diffusion Model）
+- **技术路线**：统一输入表示 + 训练时漂移模拟 + 上下文压缩 + 少步采样
+- **相关方法**：Sora、MovieGen、VideoPoet、CogVideoX、OpenSora 等长视频生成模型；自回归视频生成方法（如 VideoGPT、TATS）
+- **应用领域**：长视频生成、实时视频生成、T2V/I2V/V2V

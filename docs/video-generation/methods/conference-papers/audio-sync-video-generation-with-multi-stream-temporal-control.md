@@ -1,21 +1,43 @@
 ---
 title: "Audio-Sync Video Generation with Multi-Stream Temporal Control"
-arxiv: https://arxiv.org/abs/2506.08003v1
-github: https://github.com/suimuc/MTV_Framework
-website: https://hjzheng.net/projects/MTV/
-venue: NeurIPS
+arxiv: https://arxiv.org/abs/2506.08003
+github: ""
+website: ""
+venue: arXiv
 year: 2025
 ---
 
 # Audio-Sync Video Generation with Multi-Stream Temporal Control
 
 ::: info 论文信息
-- **Venue**: NeurIPS (2025)
-- **arXiv**: [https://arxiv.org/abs/2506.08003v1](https://arxiv.org/abs/2506.08003v1)
-- **GitHub**: [https://github.com/suimuc/MTV_Framework](https://github.com/suimuc/MTV_Framework)
-- **Website**: [https://hjzheng.net/projects/MTV/](https://hjzheng.net/projects/MTV/)
+- **Venue**: arXiv (2025)
+- **arXiv**: [https://arxiv.org/abs/2506.08003](https://arxiv.org/abs/2506.08003)
+- **GitHub**: 
+- **Website**: 
 :::
 
 ## 学习笔记
 
-*此部分待补充。*
+### 核心贡献
+- 提出 MTV 框架，将音频显式解耦为语音、音效、音乐三轨，实现对视频生成的细粒度分离控制
+- 语音轨驱动唇部运动与口型同步，音效轨控制事件触发时序（如爆炸、碰撞），音乐轨引导整体视觉情绪与氛围
+- 贡献 DEMIX 数据集，包含高质量电影视频与分离音频轨，划分为 5 个重叠子集以支持多阶段可扩展训练
+- 在 6 项标准指标上达到 SOTA，覆盖视频质量、文本-视频一致性、音视频对齐三个维度
+
+### 方法细节
+- 多流音频解耦架构：输入复合音频被显式分离为三条独立控制流，分别注入视频扩散模型不同层级
+- 语音流通过唇部区域注意力机制，驱动角色口型与发音精确同步
+- 音效流通过时序触发器，在帧序列中定位并激活对应视觉事件（如物体碰撞、爆炸闪光）
+- 音乐流通过全局风格嵌入，调控视频整体色调、节奏与氛围感受
+- DEMIX 数据集：从电影级素材中分离音频轨并构建 5 个子集，按任务难度递进，支撑从单轨到全轨的渐进式训练
+- 多阶段训练策略：由简单子集逐步过渡到全音频混合场景，提升模型对复杂音频的泛化能力
+
+### 关键发现
+- 跨 6 项标准指标（含 FVD、CLIPScore、音视频同步精度等）均达到最优性能
+- 音视频同步精度显著优于现有单轨方法，尤其在包含语音、音效、音乐混合的复杂场景下
+- 显式解耦音频流的设计带来了更强的可控性与可解释性，优于隐式融合方式
+
+### 方法归类
+- **范式**: 可控视频生成 + 音频驱动
+- **关键技术**: 多流音频解耦控制、DEMIX 数据集、多阶段渐进训练、唇部-事件-氛围分离建模
+- **适用场景**: 音频同步视频生成、电影与影视后期制作、多模态 AIGC 内容创作

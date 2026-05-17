@@ -1,21 +1,37 @@
 ---
-title: "LongVie 2: Multimodal Controllable Ultra-Long Video World Model"
-arxiv: https://arxiv.org/abs/2512.13604
-github: https://github.com/Vchitect/LongVie
-website: https://vchitect.github.io/LongVie2-project/
-venue: arXiv
-year: 2025
+title: "LongVie 2: 多模态可控的超长视频世界模型"
+source: "arxiv"
+arxiv_id: "2512.13604"
+tags: ["video-generation","world-model","long-video","controllable","autoregressive","temporal-consistency"]
+status: "已读"
 ---
-
-# LongVie 2: Multimodal Controllable Ultra-Long Video World Model
-
-::: info 论文信息
-- **Venue**: arXiv (2025)
-- **arXiv**: [https://arxiv.org/abs/2512.13604](https://arxiv.org/abs/2512.13604)
-- **GitHub**: [https://github.com/Vchitect/LongVie](https://github.com/Vchitect/LongVie)
-- **Website**: [https://vchitect.github.io/LongVie2-project/](https://vchitect.github.io/LongVie2-project/)
-:::
-
 ## 学习笔记
 
-*此部分待补充。*
+### 核心贡献
+
+- 基于预训练视频生成模型构建视频世界模型，聚焦三大关键属性：可控性、长时间视觉质量、时序一致性。
+- 提出三阶段自回归训练范式，依次注入多模态引导、退化感知学习、历史上下文引导。
+- 引入 LongVGenBench 评测基准，包含 100 段高分辨率一分钟视频，用于标准化评估超长视频生成质量。
+- 支持最长持续生成五分钟的视频序列。
+
+### 方法细节
+
+- **整体流水线**：以预训练视频扩散模型为基础，将其改造为自回归视频世界模型。每一段生成以上一段末尾帧为条件，逐段推进。
+- **阶段一：多模态引导（Multi-modal Guidance）**：同时整合密集控制信号（如深度图、语义分割、光流）与稀疏控制信号（如文本指令、运动方向、摄像头参数），构建世界级监督。密集信号通过 ControlNet 类 adapter 注入，稀疏信号通过 cross-attention 注入。
+- **阶段二：退化感知训练（Degradation-aware Training）**：核心困难在于训练时的条件帧是真实帧，而推理时条件帧是模型自己生成的帧（存在质量退化）。该阶段在训练时有意识地引入图像退化（模糊、压缩伪影、低分辨率等）到输入条件帧上，使模型学会处理「非完美条件输入」，弥合训练-推理分布差距。
+- **阶段三：历史上下文引导（History-context Guidance）**：引入对更长历史帧（而不仅仅是上一段末尾帧）的注意力/条件机制，增强跨段落的时序一致性。通过维护历史帧的 latent 状态或特征缓存，使当前段落感知更远的过去信息，减少长视频中的 drift 与风格/内容偏移。
+- **推理时**：三阶段训练后的模型以滑窗方式逐段生成，每段约 2–5 秒，历史缓存随生成逐步更新。
+
+### 关键发现
+
+- 三阶段训练中每阶段均带来独立的性能增益。退化感知训练对弥合训练-推理 gap 贡献最大，尤其在 30 秒以上的视频段中效果显著。
+- 历史上下文引导有效抑制了长视频生成中常见的「内容漂移」问题，在色彩、纹理、物体一致性上提升明显。
+- LongVGenBench 上评估显示一分钟后仍维持较高视觉质量与结构一致性，与其他长视频方法（如 StreamingT2V、FreeNoise）相比在 FVD 与主题一致性指标上均更优。
+- 控制信号的稀疏/密集联合注入比单一控制方式更灵活且鲁棒。
+
+### 方法归类
+
+- **方法类型**：自回归长视频生成 + 可控视频世界模型。
+- **适用阶段**：训练框架（多阶段微调预训练模型）。
+- **核心技术**：退化感知训练、历史上下文引导、多模态密集+稀疏控制。
+- **相关方法**：StreamingT2V、Genie、Sora、Vista、VideoPoet、Vchitect 前作。

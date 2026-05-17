@@ -1,21 +1,47 @@
 ---
-title: "HuMo: Human-Centric Video Generation via Collaborative Multi-Modal Conditioning"
-arxiv: https://arxiv.org/abs/2509.08519v1
-github: https://github.com/Phantom-video/HuMo
-website: https://phantom-video.github.io/HuMo/
-venue: arXiv
-year: 2025
+title: "HuMo：通过协作多模态条件控制的人体中心视频生成"
+source: "arxiv"
+arxiv_id: "2509.08519"
+tags:
+  - "人体视频生成"
+  - "多模态条件控制"
+  - "音频-视觉同步"
+  - "主体保持"
+status: "已读"
 ---
-
-# HuMo: Human-Centric Video Generation via Collaborative Multi-Modal Conditioning
-
-::: info 论文信息
-- **Venue**: arXiv (2025)
-- **arXiv**: [https://arxiv.org/abs/2509.08519v1](https://arxiv.org/abs/2509.08519v1)
-- **GitHub**: [https://github.com/Phantom-video/HuMo](https://github.com/Phantom-video/HuMo)
-- **Website**: [https://phantom-video.github.io/HuMo/](https://phantom-video.github.io/HuMo/)
-:::
-
 ## 学习笔记
 
-*此部分待补充。*
+### 核心贡献
+
+- 提出 HuMo，一个统一的人体中心视频生成（Human-Centric Video Generation, HCVG）框架，支持文本、参考图像和音频三种模态的协作条件控制。
+- 针对多模态人体视频数据稀缺问题，构建了一个高质量数据集，包含多样化且成对的文本、参考图像和音频三元组标注。
+- 提出两阶段渐进式多模态训练范式（two-stage progressive multimodal training），针对主体保持（subject preservation）和音画同步（audio-visual sync）两个子任务分别设计专用策略。
+- 设计时间自适应分类器自由引导（time-adaptive Classifier-Free Guidance）策略，在推理时动态调整各模态条件的引导权重，实现灵活精细的多模态控制。
+- 提出聚焦预测（focus-by-predicting）策略，隐式引导模型将音频特征与面部区域关联，增强音画同步效果。
+
+### 方法细节
+
+- **整体框架**：HuMo 基于预训练视频生成基础模型（foundation model），通过渐进式多模态训练逐步注入图像和音频条件控制能力。
+- **两阶段训练范式**：
+  - **阶段一：主体保持（Subject Preservation）**
+    - 采用最小侵入式图像注入策略（minimal-invasive image injection），最大限度保留基础模型的提示跟随和视觉生成能力。
+    - 参考图像作为外观条件输入，指导生成人物的身份一致性。
+  - **阶段二：音画同步（Audio-Visual Sync）**
+    - 在已获得的主体保持能力基础上，渐进引入音画同步任务。
+    - 除常用的音频交叉注意力层（audio cross-attention layer）外，额外提出聚焦预测策略：通过预测面部区域运动来隐式引导模型将音频信号与面部动作关联，增强口型同步和表情自然度。
+- **推理时控制**：时间自适应 CFG（time-adaptive Classifier-Free Guidance）在去噪过程的不同时间步动态调整各条件信号（文本、图像、音频）的引导强度，实现细粒度的多模态控制。
+
+### 关键发现
+
+- 所构建的高质量成对三元组数据集有效缓解了 HCVG 领域训练数据稀缺的问题。
+- 最小侵入式图像注入策略在保留基础模型生成能力的同时实现了高质量的主体保持，优于简单的图像条件注入方法。
+- 聚焦预测策略显著提升了音频-视觉同步质量，尤其在口型同步和面部表情与语音的对齐方面。
+- 时间自适应 CFG 策略在推理时提供了更灵活的多模态控制能力，用户可按需调整不同条件模态的权重。
+- 渐进式训练（先主体保持，再音画同步）效果优于同时联合训练，验证了任务解耦训练范式的有效性。
+
+### 方法归类
+
+- **所属范式**：多模态条件视频生成
+- **技术路线**：基于预训练视频基础模型 + 渐进式多模态注入 + 自适应 CFG
+- **相关方法**：EMO、Animate Anyone、Champ、MuseTalk 等人体/人脸视频生成方法；Audio2Video 系列音频驱动视频生成方法
+- **应用领域**：人体视频生成、音频驱动动画、虚拟人 / 数字人、影视特效

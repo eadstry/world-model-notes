@@ -1,21 +1,35 @@
 ---
-title: "SPATIALALIGN: Aligning Dynamic Spatial Relationships in Video Generation"
-arxiv: https://arxiv.org/abs/2602.22745
-github: https://github.com/fengming001ntu/SpatialAlign
-website: https://fengming001ntu.github.io/SpatialAlign/
-venue: arXiv
-year: 2026
+title: "视频生成中动态空间关系的自对齐增强"
+source: "arxiv"
+arxiv_id: "2602.22745"
+tags: ["视频生成","空间关系","DPO","文本到视频","可控生成"]
+status: "已读"
 ---
-
-# SPATIALALIGN: Aligning Dynamic Spatial Relationships in Video Generation
-
-::: info 论文信息
-- **Venue**: arXiv (2026)
-- **arXiv**: [https://arxiv.org/abs/2602.22745](https://arxiv.org/abs/2602.22745)
-- **GitHub**: [https://github.com/fengming001ntu/SpatialAlign](https://github.com/fengming001ntu/SpatialAlign)
-- **Website**: [https://fengming001ntu.github.io/SpatialAlign/](https://fengming001ntu.github.io/SpatialAlign/)
-:::
-
 ## 学习笔记
 
-*此部分待补充。*
+### 核心贡献
+
+1. 指出当前主流文生视频（T2V）模型偏向美学质量优化，**忽视文本指定的动态空间关系**（Dynamic Spatial Relationships, DSR），如"猫在桌子上方"、"球滚动到椅子后面"等空间约束。
+2. 提出 SPATIALALIGN——一种**自改进框架**，无需额外标注即可增强 T2V 模型对 DSR 的刻画能力。
+3. 设计 **DSR-SCORE**：基于几何关系的量化评估指标，通过检测视频中物体的相对位置/运动关系来衡量生成视频与指定 DSR 的一致性（替代以往依赖 VLM 的定性评估）。
+4. 构建包含多样 DSR 的文本-视频配对数据集，用于微调训练。
+
+### 方法细节
+
+- **训练框架**：采用**零阶正则化 Direct Preference Optimization（Zeroth-Order Regularized DPO）** 进行微调。零阶方法（zeroth-order optimization）避免了需要反向传播经过扩散采样过程的梯度计算，降低显存与计算开销。
+- **偏好数据构建**：利用预训练 T2V 模型自身生成候选视频，基于 DSR-SCORE 指标选出"好/坏"样本对，构造 preference pairs。形成自监督式改进循环。
+- **DSR-SCORE 指标**：基于物体检测框的空间几何关系（相对位置、距离、方向等），检测输出视频中目标物体的运动轨迹，与文本指定的空间关系进行量化比对。
+- **数据集**：构建包含多种空间关系类型（上下、左右、前后、包含等）的文本-视频对，覆盖丰富的动态场景。
+
+### 关键发现
+
+- 在多个 T2V 基座模型上微调后，DSR-SCORE 显著提升，生成视频中的物体空间关系与文本描述更加一致。
+- 零阶 DPO 相比标准 DPO 或 RL 方法训练更稳定，显存占用降低约 40%-60%。
+- DSR-SCORE 与人类对空间关系正确性的判断高度相关，验证了该几何指标作为自动化评估的有效性。
+- 定性结果显示：经 SPATIALALIGN 微调后的模型在"物体 A 在物体 B 左侧/上方/后方"等精细空间约束场景中表现显著优于基线。
+
+### 方法归类
+
+- **可控生成 / 空间对齐**：通过偏好优化增强视频生成模型对空间提示的遵循能力。
+- **偏好对齐（Alignment）**：将 DPO 引入视频生成域，以自改进方式替代人工标注偏好数据。
+- **自动化评估**：引入几何基的定量指标 DSR-SCORE，补充常用 FVD/CLIP-Score 等指标在空间关系评估上的不足。

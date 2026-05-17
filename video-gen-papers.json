@@ -348,7 +348,7 @@
                 "paper": "Improving Video Generation with Human Feedback",
                 "year": "2025",
                 "arxiv": "https://arxiv.org/abs/2501.13918",
-                "github": "https://github.com/KlingTeam/VideoAlign",
+                "github": "https://github.com/KlingAIResearch/VideoAlign",
                 "website": "https://gongyeliu.github.io/videoalign/",
                 "dataset": null,
                 "venue": "NeurIPS"
@@ -4065,7 +4065,7 @@
                 "paper": "Dprim",
                 "year": "2025",
                 "arxiv": "https://arxiv.org/abs/2508.20840",
-                "github": null,
+                "github": "https://github.com/qiaosun22/PrimitiveWorld",
                 "website": null,
                 "dataset": null,
                 "venue": "arXiv"
@@ -4239,9 +4239,9 @@
                 "paper": "VideoGen-RewardBench",
                 "year": "2025",
                 "arxiv": "https://arxiv.org/abs/2501.13918",
-                "github": "https://github.com/KlingTeam/VideoAlign",
+                "github": "https://github.com/KlingAIResearch/VideoAlign",
                 "website": "https://gongyeliu.github.io/videoalign/",
-                "dataset": "https://huggingface.co/datasets/KlingTeam/VideoGen-RewardBench",
+                "dataset": "https://huggingface.co/datasets/KwaiVGI/VideoGen-RewardBench",
                 "venue": "NeurIPS"
               },
               {

@@ -1,19 +1,34 @@
 ---
-title: "Sparse-vDiT: Unleashing the Power of Sparse Attention to Accelerate Video Diffusion Transformers"
-arxiv: https://arxiv.org/abs/2506.03065v1
-github: https://github.com/Peyton-Chen/Sparse-vDiT
-venue: arXiv
-year: 2025
+title: "稀疏注意力加速视频 DiT 推理"
+source: "arxiv"
+arxiv_id: "2506.03065"
+tags: ["视频生成","DiT","稀疏注意力","推理加速","视频扩散模型"]
+status: "已读"
 ---
-
-# Sparse-vDiT: Unleashing the Power of Sparse Attention to Accelerate Video Diffusion Transformers
-
-::: info 论文信息
-- **Venue**: arXiv (2025)
-- **arXiv**: [https://arxiv.org/abs/2506.03065v1](https://arxiv.org/abs/2506.03065v1)
-- **GitHub**: [https://github.com/Peyton-Chen/Sparse-vDiT](https://github.com/Peyton-Chen/Sparse-vDiT)
-:::
-
 ## 学习笔记
 
-*此部分待补充。*
+### 核心贡献
+
+1. 通过对 vDiT 中注意力图的系统分析，发现三种可复现的稀疏模式：对角线结构（diagonal）、多对角线结构（multi-diagonal）和垂直条纹结构（vertical-stripe），且 3%-6% 的注意力头可以被跳过而不影响生成质量。
+2. 揭示这些稀疏模式与**层深度和头位置**存在强相关，但与输入内容的依赖性较弱，说明稀疏策略可以离线静态确定。
+3. 提出 Sparse-vDiT 框架：(1) 针对上述模式设计专用稀疏核（sparse kernels）替代密集注意力；(2) 离线稀疏扩散搜索（offline sparse diffusion search），通过硬件感知的代价模型为每一层/每个头选择最优稀疏策略，并融合相同策略的头以提升硬件利用率。
+4. 在 CogVideoX1.5、HunyuanVideo、Wan2.1 三个模型上实现 **1.58-1.85 倍实际推理加速**，同时维持高 PSNR（22.59-27.09）。
+
+### 方法细节
+
+- **注意力图分析**：对 vDiT 各层各头做密集注意力的可视化与统计分析，按模式聚类。三种模式的成因：对角线来自时序自注意力中相邻帧的局部关联；多对角线来自特定间隔帧之间的远程依赖；垂直条纹来自某些查询 token 对其余所有 token 的全局聚合。
+- **稀疏核设计**：为每种模式定制 CUDA kernel，在计算前按预设掩码跳过零值位置，避免稠密矩阵乘法后再 Mask 的额外开销。
+- **离线稀疏搜索**：构建硬件感知的代价模型（考虑计算量、内存带宽、核融合效率），在搜索空间中评估每层的稀疏配置，找到速度-质量 Pareto 最优解。具有相同稀疏配置的注意力头被合并为一个 batch 并行执行，减少 kernel launch 开销。
+- **无需重训练**：稀疏策略直接应用于预训练模型的推理阶段，不修改模型权重。
+
+### 关键发现
+
+- 在 CogVideoX1.5 上 PSNR 维持 27.09（全稠密基线），推理速度 1.58x；HunyuanVideo 上 1.65x 加速；Wan2.1 上 1.85x 加速。
+- 随着视频分辨率和帧数增长，加速比趋于上升（注意力复杂度 $O(n^2)$ 的占比更大）。
+- 离线搜索得到的稀疏策略在不同输入 prompt 间表现出高度一致性，验证了"稀疏模式偏静态"的发现。
+
+### 方法归类
+
+- **推理加速 / 模型压缩**：属于对 DiT 架构注意力机制的稀疏化，非蒸馏、非量化、非剪枝。
+- **硬件-算法协同设计**：稀疏核定制 + 代价模型搜索两层优化。
+- 与 Token Merging、SparseViT 等方法互补，可在不改变生成模型权重的前提下获得接近 2x 的加速。

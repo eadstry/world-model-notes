@@ -1,21 +1,39 @@
 ---
-title: "SafeMVDrive: Multi-view Safety-Critical Driving Video Synthesis in the Real World Domain"
-arxiv: https://arxiv.org/abs/2505.17727v1
-github: https://github.com/zhoujiawei3/SafeMVDrive
-website: https://zhoujiawei3.github.io/SafeMVDrive/
-venue: arXiv
-year: 2025
+title: "SafeMVDrive: 面向真实世界域的多视角安全关键驾驶视频合成"
+source: "arxiv"
+arxiv_id: "2505.17727"
+tags: ["autonomous driving","safety-critical","multi-view","video generation","trajectory generation","diffusion model","VLM"]
+status: "已读"
 ---
-
-# SafeMVDrive: Multi-view Safety-Critical Driving Video Synthesis in the Real World Domain
-
-::: info 论文信息
-- **Venue**: arXiv (2025)
-- **arXiv**: [https://arxiv.org/abs/2505.17727v1](https://arxiv.org/abs/2505.17727v1)
-- **GitHub**: [https://github.com/zhoujiawei3/SafeMVDrive](https://github.com/zhoujiawei3/SafeMVDrive)
-- **Website**: [https://zhoujiawei3.github.io/SafeMVDrive/](https://zhoujiawei3.github.io/SafeMVDrive/)
-:::
-
 ## 学习笔记
 
-*此部分待补充。*
+### 核心贡献
+
+- **首个安全关键多视角驾驶视频生成框架**：SafeMVDrive 是第一个面向真实世界域、专门生成安全关键（safety-critical）多视角驾驶视频的框架，直接服务于端到端自动驾驶规划器的安全评估。
+- **视觉上下文增强轨迹生成**：提出将视觉上下文（visual context）引入轨迹生成器，利用 GRPO 微调的视觉语言模型（VLM）实现真实感、上下文感知的安全关键轨迹生成。
+- **两阶段可控轨迹生成机制**：设计了两阶段轨迹生成策略以产生碰撞规避（collision-evasion）轨迹，第一阶段生成粗粒度路径，第二阶段细化到可执行的车辆控制。
+- **扩散式多视角视频生成器**：采用基于扩散模型的多视角视频生成器，将生成的安全关键轨迹渲染为多相机视角下的一致性驾驶视频。
+- **端到端自动驾驶规划器验证**：在端到端自动驾驶规划器上进行评估，生成的视频显著提升了规划器的碰撞率（collision rate），证明了对安全评估的有效性。
+
+### 方法细节
+
+- **整体流程**：安全关键轨迹生成 → 多视角视频生成 → 端到端规划器验证。
+- **轨迹生成器**：以初始道路场景和自车状态为输入，利用 GRPO-finetuned VLM 感知视觉上下文（如周围车辆、行人、道路结构），生成上下文自适应的安全关键轨迹。GRPO（Group Relative Policy Optimization）微调使 VLM 能够理解驾驶场景的视觉语义并输出合理且危险的轨迹。
+- **两阶段轨迹生成**：
+  - 第一阶段：生成粗粒度的未来路径（waypoints），确保轨迹与道路几何一致并趋向碰撞；
+  - 第二阶段：将路径细化为包含速度、转向角等控制量的可执行轨迹，同时保持规避机制（碰撞后自动调整）。
+- **多视角视频生成器**：基于扩散模型（Diffusion-based），以生成的安全关键轨迹和初始场景条件为输入，生成前、后、左、右、左后、右后等多相机视角的视频，保持跨视角的时间一致性和空间一致性。
+- **评估协议**：将生成的视频输入端到端自动驾驶规划器，测量规划器的碰撞率、轨迹偏差等指标。
+
+### 关键发现
+
+- SafeMVDrive 生成的视频在真实感（realism）、多视角一致性（multi-view consistency）和安全关键性（safety-criticality）三个维度上均优于基线方法。
+- 在 nuScenes 数据集上进行实验，生成的视频能有效提升端到端规划器的碰撞率（作为压力测试），验证了安全关键视频对自动驾驶系统鲁棒性评估的价值。
+- VLM 增强了轨迹生成的上下文感知能力，相比纯几何/规则方法生成的安全关键轨迹更加真实合理。
+- 两阶段轨迹生成机制在碰撞率与物理可行性之间取得了良好平衡。
+
+### 方法归类
+
+- **类别**：自动驾驶视频生成 / 安全关键场景合成
+- **技术栈**：Diffusion Model + VLM + GRPO 微调
+- **与应用的关系**：属于视频生成模型的下游应用，专注于自动驾驶安全评估场景，与 World Model（世界模型）驱动的驾驶仿真高度相关。

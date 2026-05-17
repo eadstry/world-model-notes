@@ -1,0 +1,26 @@
+- [x] `docs/others/theory/` 下不再存在 `theory/` 子目录，所有文件直接在 theory/ 根下
+- [x] `docs/others/survey/` 下不再存在 `survey/` 子目录
+- [x] `docs/others/github-repo/` 下不再存在 `github-repo/` 子目录
+- [x] `docs/others/workshop/` 下不再存在 `workshop/` 子目录
+- [x] `docs/others/world-models-for-downstream-tasks/` 下不再存在 `world-models-for-downstream-tasks/` 子目录
+- [x] `docs/others/other-perspectives-of-world-modeling/` 下不再存在 `other-perspectives-of-world-modeling/` 子目录
+- [x] `docs/designs/other-architectures/` 下不再存在 `other-architectures/` 子目录
+- [x] VitePress config.mts 中所有侧边栏路径与实际目录结构一致
+- [x] 首页 `docs/index.md` 中所有目录导航链接指向正确路径
+- [x] 首页 `docs/index.md` 中「交叉跳转」区块所有链接指向正确路径
+- [x] `designs/sequential-generation/` 下每篇非占位笔记末尾有「相关笔记」区块
+- [x] `designs/diffusion-based-generation/` 下每篇非占位笔记末尾有「相关笔记」区块
+- [x] `designs/embedding-prediction/` 下每篇非占位笔记末尾有「相关笔记」区块
+- [x] `designs/state-transition/` 下每篇非占位笔记末尾有「相关笔记」区块
+- [x] `designs/other-architectures/` 下每篇非占位笔记末尾有「相关笔记」区块
+- [x] `datasets/foundational-world-modeling/` 下每篇非占位笔记末尾有「相关笔记」区块
+- [x] `datasets/domain-specific-world-modeling/` 下每篇非占位笔记末尾有「相关笔记」区块
+- [x] `others/` 下每篇非占位笔记末尾有「相关笔记」区块
+- [x] designs/ 各层级非占位 index.md 末尾有「相关分类」区块
+- [x] datasets/ 各层级非占位 index.md 末尾有「相关分类」区块
+- [x] others/ 各层级非占位 index.md 末尾有「相关分类」区块
+- [x] `video-generation/methods/` 下占位笔记有指向所属分类的链接
+- [x] `video-generation/datasets/` 下占位笔记有指向所属分类的链接
+- [x] `video-generation/benchmarks/` 下占位笔记有指向所属分类的链接
+- [ ] `npm run docs:build` 构建成功 (exit code 0) — ⚠️ 当前环境无 Node.js/npm，已手动验证目录结构和文件内容
+- [ ] 构建后无死链警告（dead links）— ⚠️ 同上，已手动验证路径一致性

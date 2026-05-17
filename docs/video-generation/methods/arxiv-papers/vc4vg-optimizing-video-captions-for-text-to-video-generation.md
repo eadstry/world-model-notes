@@ -2,18 +2,40 @@
 title: "VC4VG: Optimizing Video Captions for Text-to-Video Generation"
 arxiv: https://arxiv.org/abs/2510.24134
 github: https://github.com/qyr0403/VC4VG
-venue: arXiv
+website:
+venue: EMNLP
 year: 2025
 ---
 
 # VC4VG: Optimizing Video Captions for Text-to-Video Generation
 
 ::: info 论文信息
-- **Venue**: arXiv (2025)
+- **Venue**: EMNLP 2025
 - **arXiv**: [https://arxiv.org/abs/2510.24134](https://arxiv.org/abs/2510.24134)
-- **GitHub**: [https://github.com/qyr0403/VC4VG](https://github.com/qyr0403/VC4VG)
+- **GitHub**: https://github.com/qyr0403/VC4VG
+- **Website**: 
 :::
 
 ## 学习笔记
 
-*此部分待补充。*
+### 核心贡献
+- 提出 VC4VG，一个面向文本到视频（T2V）生成训练的全面视频描述优化框架，填补了 T2V 训练中描述策略系统性研究的空白
+- 从 T2V 视角对描述内容进行多维度分解，建立了原则性的描述设计方法论，明确视频重建所需的要素
+- 构建 VC4VG-Bench 评测基准，提供细粒度、多维度、按必要性分级（necessity-graded）的指标，专门适配 T2V 任务的评估需求
+- 通过大规模 T2V 微调实验，验证了描述质量与视频生成性能之间的强相关性
+
+### 方法细节
+- 从视频重建角度出发，将描述内容分解为多个维度（如主体、动作、场景、时序、空间关系等），系统分析各维度对 T2V 生成的贡献
+- 基于维度分析，设计原则性的描述生成流程：筛选关键维度、构建维度组合策略、控制描述的完整性与简洁性之间的平衡
+- VC4VG-Bench 不仅评估描述的通用质量，还按维度给出必要性分级分数，使得评估结果直接关联到 T2V 训练的实际收益
+- 在 T2V 模型上使用优化后的描述进行微调，对比不同描述策略下的生成质量，证明描述质量是 T2V 性能的关键影响因素
+
+### 关键发现
+- 优化后的视频描述能显著提升 T2V 模型的生成质量，描述质量与生成性能之间存在稳定正相关
+- 并非所有维度的信息对 T2V 生成同等重要，必要性分级指标能有效指导描述优化方向的优先级
+- 系统化的描述优化框架优于启发式或经验性的描述策略
+
+### 方法归类
+- **范式**: 训练数据优化 / 视频描述工程
+- **关键技术**: 多维度描述分解、必要性分级评估、T2V 微调验证
+- **适用场景**: T2V 模型训练数据质量提升、视频描述自动生成与优化、视频生成数据集的构建与清洗

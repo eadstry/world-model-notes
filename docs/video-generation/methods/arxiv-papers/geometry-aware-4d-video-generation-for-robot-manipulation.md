@@ -1,21 +1,40 @@
 ---
-title: "Geometry-aware 4D Video Generation for Robot Manipulation"
-arxiv: https://arxiv.org/abs/2507.01099v1
-github: https://github.com/lzylucy/4dgen
-website: https://robot4dgen.github.io/
-venue: arXiv
-year: 2025
+title: "几何感知的 4D 视频生成用于机器人操作"
+source: "arxiv"
+arxiv_id: "2507.01099"
+tags:
+  - "4D视频生成"
+  - "机器人操作"
+  - "多视图一致性"
+  - "3D场景表示"
+status: "已读"
 ---
-
-# Geometry-aware 4D Video Generation for Robot Manipulation
-
-::: info 论文信息
-- **Venue**: arXiv (2025)
-- **arXiv**: [https://arxiv.org/abs/2507.01099v1](https://arxiv.org/abs/2507.01099v1)
-- **GitHub**: [https://github.com/lzylucy/4dgen](https://github.com/lzylucy/4dgen)
-- **Website**: [https://robot4dgen.github.io/](https://robot4dgen.github.io/)
-:::
-
 ## 学习笔记
 
-*此部分待补充。*
+### 核心贡献
+
+- 提出一种几何感知的 4D 视频生成模型，通过跨视角点图对齐（cross-view pointmap alignment）监督训练，强制生成视频在多视图间保持 3D 一致性。
+- 模型学习共享的 3D 场景表示，仅需每视角单张 RGB-D 图像即可生成时空对齐的未来视频序列，无需输入相机位姿。
+- 在多个仿真和真实机器人数据集上，相比现有基线方法生成更视觉稳定、空间对齐的预测结果。
+- 利用现成的 6DoF 姿态跟踪器从预测的 4D 视频中恢复机器人末端执行器轨迹，从而获得对新相机视角泛化良好的机器人操作策略。
+- 被 ICLR 2026 接收。
+
+### 方法细节
+
+- **输入**：每个视角仅需单张 RGB-D 图像，无需相机位姿信息。
+- **几何监督机制**：训练时通过跨视角点图对齐进行监督。具体来说，从多个相机视角生成未来帧后，利用深度信息将像素反投影到 3D 空间获得点图（pointmap），然后约束不同视角生成的点图在 3D 空间中保持一致。这种监督迫使模型学习共享的 3D 场景表示。
+- **4D 生成能力**：模型能够从新视角（novel viewpoints）生成时空对齐的未来视频序列，"4D" 指 3D 空间 + 1D 时间。
+- **下游应用**：生成的 4D 视频可直接输入现成的 6DoF 姿态跟踪器（如 FoundationPose），从中恢复机器人末端执行器的运动轨迹，进而作为视觉运动策略（visuomotor policy）的输入信号，使策略对训练时未见过的相机视角具有泛化能力。
+
+### 关键发现
+
+- 所提方法在多个仿真（如 RLBench）和真实世界（如 RoboTurk）机器人操作数据集上，生成视频的多视图一致性和时序稳定性显著优于现有视频生成基线。
+- 几何监督（点图对齐）是关键设计——消融实验表明去除该监督后多视图一致性显著下降。
+- 从预测 4D 视频恢复的末端执行器轨迹可以成功指导机器人完成操作任务，且策略对新相机位姿具有良好泛化性，表明 4D 视频生成在机器人视觉运动控制中具有实用价值。
+
+### 方法归类
+
+- **所属范式**：视频预测 / 世界模型
+- **技术路线**：基于扩散模型 / 视频生成模型 + 几何监督（点图对齐）实现多视图 3D 一致性
+- **相关方法**：UniPi、SuSIE、AVDC 等视频预测用于机器人操作的方法；DUSt3R 等跨视图点图对齐方法
+- **应用领域**：机器人操作（Robot Manipulation）、视觉运动控制（Visuomotor Control）、新视角合成

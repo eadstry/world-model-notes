@@ -1,21 +1,42 @@
 ---
-title: "HunyuanVideo-Avatar: High-Fidelity Audio-Driven Human Animation for Multiple Characters"
-arxiv: https://arxiv.org/abs/2505.20156v2
-github: https://github.com/Tencent-Hunyuan/HunyuanVideo-Avatar
-website: https://hunyuanvideo-avatar.github.io/
-venue: arXiv
-year: 2025
+title: "HunyuanVideo-Avatar: 面向多角色的高保真音频驱动人物动画"
+source: "arxiv"
+arxiv_id: "2505.20156"
+tags:
+  - "音频驱动人物动画"
+  - "多角色视频生成"
+  - "情绪控制"
+  - "人脸感知音频注入"
+status: "已读"
 ---
-
-# HunyuanVideo-Avatar: High-Fidelity Audio-Driven Human Animation for Multiple Characters
-
-::: info 论文信息
-- **Venue**: arXiv (2025)
-- **arXiv**: [https://arxiv.org/abs/2505.20156v2](https://arxiv.org/abs/2505.20156v2)
-- **GitHub**: [https://github.com/Tencent-Hunyuan/HunyuanVideo-Avatar](https://github.com/Tencent-Hunyuan/HunyuanVideo-Avatar)
-- **Website**: [https://hunyuanvideo-avatar.github.io/](https://hunyuanvideo-avatar.github.io/)
-:::
-
 ## 学习笔记
 
-*此部分待补充。*
+### 核心贡献
+
+- 提出 HunyuanVideo-Avatar，一种基于多模态扩散 Transformer（MM-DiT）的音频驱动人物动画模型，可同时生成高动态、情绪可控的多角色对话视频
+- 设计图像注入模块（character image injection module）替代传统的加法式角色条件方案（addition-based conditioning），消除训练-推理间条件不匹配问题，在保持强身份一致性的同时实现大幅动态运动
+- 提出音频情绪模块（Audio Emotion Module, AEM），从情绪参考图像中提取情感线索并迁移至目标视频，实现细粒度的情绪风格控制
+- 提出人脸感知音频适配器（Face-Aware Audio Adapter, FAA），通过潜在空间级别的人脸掩码隔离音频驱动角色，在交叉注意力中实现独立音频注入，天然支持多角色场景
+
+### 方法细节
+
+- **基座架构**：基于多模态扩散 Transformer（MM-DiT），联合建模图像、音频、文本等多模态条件
+- **角色图像注入模块**：将角色参考图像通过注入模块直接嵌入扩散网络的中间层特征，替代传统加法融合；这一设计避免了训练阶段（使用视频帧 GT）与推理阶段（使用参考图）的条件分布偏移，使生成的角色既能大幅运动又能保持身份一致
+- **音频情绪模块（AEM）**：接受情绪参考图像作为输入，提取其中的情绪视觉特征（如表情、神态），将其注入扩散去噪过程，使生成视频中人物的情绪风格与参考图对齐；这使得用户可通过一张表情图精细控制生成人物的情绪表现
+- **人脸感知音频适配器（FAA）**：在多角色场景中，每个角色有独立的参考图和音频；FAA 在潜在空间生成人脸掩码，将音频注入限定在对应角色的人脸区域，避免不同角色的音频信号相互干扰
+- **多角色对话**：通过 FAA 的掩码机制，每个角色的音频仅通过交叉注意力注入其对应的面部区域，实现多说话人场景的独立音频驱动
+
+### 关键发现
+
+- 在基准数据集上超越现有 SOTA 方法（如 VASA-1、EchoMimic），在视频质量、身份一致性、唇形同步精度上均有显著提升
+- 新提出的 wild 数据集验证了模型在真实复杂场景下的泛化能力
+- 情绪可控性：通过 AEM 可以实现愤怒、开心、悲伤等多种情绪风格的精确迁移，改变情绪的同时不影响唇形同步精度
+- 多角色效果：FAA 机制使两个或多个角色在同一场景中独立接收不同音频并产生各自的说话动作，且角色特征互不污染
+- 支持多种角色风格（写实人物、卡通角色、艺术风格等），具有良好的风格泛化性
+
+### 方法归类
+
+- **所属范式**：扩散模型（MM-DiT）+ 音频驱动人物动画
+- **技术路线**：基于 MM-DiT 的多模态条件注入，以参考图注入替代加法融合消除条件偏差，潜在空间掩码实现多角色音频解耦
+- **相关方法**：VASA-1、EchoMimic、AniPortrait、MuseTalk、HunyuanVideo
+- **应用领域**：数字人驱动、虚拟主播、多角色对话视频生成、影视配音可视化、情感可控的虚拟角色动画

@@ -1,19 +1,41 @@
 ---
-title: "In-Context Learning with Unpaired Clips for Instruction-based Video Editing"
-arxiv: https://arxiv.org/abs/2510.14648v1
-github: https://github.com/leoisufa/ICVE
-venue: arXiv
-year: 2025
+title: "ICVE：基于非配对视频片段上下文学习的指令式视频编辑"
+source: "arxiv"
+arxiv_id: "2510.14648"
+tags: ["video-editing","in-context-learning","unpaired-data","instruction-based","HunyuanVideo"]
+status: "已读"
 ---
-
-# In-Context Learning with Unpaired Clips for Instruction-based Video Editing
-
-::: info 论文信息
-- **Venue**: arXiv (2025)
-- **arXiv**: [https://arxiv.org/abs/2510.14648v1](https://arxiv.org/abs/2510.14648v1)
-- **GitHub**: [https://github.com/leoisufa/ICVE](https://github.com/leoisufa/ICVE)
-:::
-
 ## 学习笔记
+### 核心贡献
+1. 提出 ICVE（In-Context Video Editing），一种低成本的指令式视频编辑预训练策略，核心创新是利用上下文学习（in-context learning）从海量非配对视频片段中学习编辑模式，避免依赖昂贵的大规模配对编辑数据。
+2. 设计非配对上下文学习预训练任务：从约 **100万** 真实视频片段中随机采样两个非配对 clip，构造伪编辑对（源-目标），让模型学习通用视频变换能力。
+3. 基于 HunyuanVideo-T2V 预训练模型，在其架构上添加额外的编辑条件分支，在非配对数据上预训练后，仅用 **<150k** 精标注编辑对做微调即可达到竞争性能。
+4. 编辑指令遵循率提升 **12%**，编辑质量提升 **15%**，展示了非配对预训练的有效性。
+5. 发布从 FLAN 数据集中精标的 <150k 高质量视频编辑指令数据集，为该方向提供数据基础。
 
-*此部分待补充。*
+### 方法细节
+- **基础架构**：基于 HunyuanVideo-T2V（Diffusion Transformer, DiT），引入双流条件注入：
+  - **源视频编码**：使用冻结的 3D VAE 将源视频编码为 latent 序列，通过可学习的 source adapter 投影到与 DiT 相同的隐空间。
+  - **编辑指令编码**：使用 T5/Flan-T5 编码编辑指令文本，与源视频 latent 做交叉注意力融合。
+  - **噪声拼接**：在去噪通道上将源视频 latent 作为附加条件 signal，与当前带噪 latent 沿通道维度拼接，送入 DiT 进行联合去噪。
+- **非配对上下文学习预训练（第一阶段）**：
+  - **数据构造**：从约 100万真实视频片段中随机采样两段（clip A、clip B），彼此无配对关系；将 A 视为"源视频"，定义伪编辑指令为 "Turn this video into another video"。
+  - **训练任务**：给定 A 和通用的伪指令，模型学习从 A 的噪声 latent 去噪生成 B。关键洞察：大量的非配对变换训练迫使模型学习通用的视频-视频映射能力（如外观变换、运动迁移、场景理解），而非死记硬背特定编辑对。
+  - **损失函数**：标准扩散损失 $\mathcal{L}_{\text{simple}} = \mathbb{E}[\|\epsilon - \epsilon_\theta(x_t, c)\|^2]$，其中条件 $c$ 包含源视频和编辑指令。
+- **指令式编辑微调（第二阶段）**：
+  - 在 <150k 精心标注的编辑指令-视频对上微调，包括属性编辑（换装、换背景、调色）、运动编辑（动作修改）、组合编辑等多种类别。
+  - 使用指令级对比学习辅助损失，增强对不同编辑指令的语义区分。
+- **推理**：输入源视频 + 自然语言编辑指令，端到端生成编辑后视频，无需 mask、无需额外引导。
+
+### 关键发现
+- 编辑指令遵循率（Instruction Following Rate, 由 GPT-4V 评判）相比直接微调的基线提升 **12%**；编辑质量（由 CLIP-I 和人类评估衡量）提升 **15%**。
+- 非配对预训练的消融：直接跳过第一阶段、仅用 <150k 配对数据微调 → 性能显著下降，验证了大规模非配对预训练对学习通用编辑能力的关键作用。
+- 非配对数据量缩放实验：预训练 clip 数从 10万 增至 100万，性能持续提升且未饱和，暗示更多非配对数据仍有潜力。
+- 与同期方法比较（如 InsV2V、AnyV2V、RAVE），ICVE 在保持源视频时序一致性（temporal consistency）方面表现更优，因非配对预训练隐式学习了视频帧间连续性。
+- 对未见编辑类型（如背景替换 + 人物换装同时进行）的泛化能力强于仅用配对数据训练的方法。
+
+### 方法归类
+- **所属范式**：指令式视频编辑（Instruction-based Video Editing），基于扩散模型的条件生成。
+- **技术路线**：非配对视频上下文学习预训练 → 小规模配对指令微调 → HunyuanVideo DiT 双流条件注入。
+- **相关方法**：InsV2V（指令式视频编辑）、AnyV2V（任意视频编辑）、RAVE（文本驱动编辑）、InstructPix2Pix（图像编辑）、HunyuanVideo（基座 T2V 模型）。
+- **应用领域**：视频编辑与后期处理、短视频创作、影视特效辅助、内容个性化修改。

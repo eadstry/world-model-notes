@@ -20,11 +20,9 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
-      { text: 'Designs', link: '/designs/' },
-      { text: 'Datasets & Benchmarks', link: '/datasets/' },
-      { text: 'Others', link: '/others/' },
+      { text: '世界模型', link: '/world-models/' },
       {
-        text: 'Video Generation',
+        text: '视频生成',
         items: [
           { text: 'Methods', link: '/video-generation/methods/' },
           { text: 'Datasets', link: '/video-generation/datasets/' },
@@ -34,194 +32,151 @@ export default defineConfig({
     ],
 
     sidebar: {
-      '/designs/': [
+      '/world-models/': [
         {
-          text: 'World Models — Designs',
-          link: '/designs/',
+          text: '世界模型',
+          link: '/world-models/',
           collapsed: false,
           items: [
             {
-              text: 'Sequential Generation',
-              link: '/designs/sequential-generation/',
+              text: '理论基础',
+              link: '/world-models/fundamentals/',
+              collapsed: true,
+            },
+            {
+              text: '架构设计',
+              link: '/world-models/architectures/',
               collapsed: true,
               items: [
                 {
-                  text: 'Visual Autoregressive Modeling',
-                  link: '/designs/sequential-generation/visual-autoregressive-modeling/'
+                  text: 'Sequential Generation',
+                  link: '/world-models/architectures/sequential-generation/',
+                  collapsed: true,
+                  items: [
+                    {
+                      text: 'Visual Autoregressive Modeling',
+                      link: '/world-models/architectures/sequential-generation/visual-autoregressive-modeling/'
+                    },
+                    {
+                      text: 'MLLM-guided Multimodal AR',
+                      link: '/world-models/architectures/sequential-generation/mllm-guided-multimodal-autoregressive-model/'
+                    }
+                  ]
                 },
                 {
-                  text: 'MLLM-guided Multimodal AR',
-                  link: '/designs/sequential-generation/mllm-guided-multimodal-autoregressive-model/'
-                }
-              ]
-            },
-            {
-              text: 'Diffusion-based Generation',
-              link: '/designs/diffusion-based-generation/',
-              collapsed: true,
-              items: [
-                {
-                  text: 'Latent Diffusion',
-                  link: '/designs/diffusion-based-generation/latent-diffusion/'
+                  text: 'Diffusion-based Generation',
+                  link: '/world-models/architectures/diffusion-based-generation/',
+                  collapsed: true,
+                  items: [
+                    {
+                      text: 'Latent Diffusion',
+                      link: '/world-models/architectures/diffusion-based-generation/latent-diffusion/'
+                    },
+                    {
+                      text: 'Autoregressive Diffusion',
+                      link: '/world-models/architectures/diffusion-based-generation/autoregressive-diffusion/'
+                    }
+                  ]
                 },
                 {
-                  text: 'Autoregressive Diffusion',
-                  link: '/designs/diffusion-based-generation/autoregressive-diffusion/'
-                }
-              ]
-            },
-            {
-              text: 'Embedding Prediction',
-              link: '/designs/embedding-prediction/',
-              collapsed: true,
-              items: [
-                {
-                  text: 'JEPA Family',
-                  link: '/designs/embedding-prediction/jepa/'
-                }
-              ]
-            },
-            {
-              text: 'State Transition',
-              link: '/designs/state-transition/',
-              collapsed: true,
-              items: [
-                {
-                  text: 'Latent State-Space Modeling',
-                  link: '/designs/state-transition/latent-state-space-modeling/'
+                  text: 'Embedding Prediction',
+                  link: '/world-models/architectures/embedding-prediction/',
+                  collapsed: true,
+                  items: [
+                    {
+                      text: 'JEPA Family',
+                      link: '/world-models/architectures/embedding-prediction/jepa/'
+                    }
+                  ]
                 },
                 {
-                  text: 'Object-Centric Modeling',
-                  link: '/designs/state-transition/object-centric-modeling/'
-                }
-              ]
-            },
-            {
-              text: 'Other Architectures',
-              link: '/designs/other-architectures/',
-              collapsed: true,
-              items: [
-                {
-                  text: 'Paper List',
-                  link: '/designs/other-architectures/other-architectures/'
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      '/datasets/': [
-        {
-          text: 'World Models — Datasets & Benchmarks',
-          link: '/datasets/',
-          collapsed: false,
-          items: [
-            {
-              text: 'Foundational World Modeling',
-              link: '/datasets/foundational-world-modeling/',
-              collapsed: true,
-              items: [
-                {
-                  text: 'General World Prediction & Simulation',
-                  link: '/datasets/foundational-world-modeling/general-world-prediction-and-simulation/'
+                  text: 'State Transition',
+                  link: '/world-models/architectures/state-transition/',
+                  collapsed: true,
+                  items: [
+                    {
+                      text: 'Latent State-Space Modeling',
+                      link: '/world-models/architectures/state-transition/latent-state-space-modeling/'
+                    },
+                    {
+                      text: 'Object-Centric Modeling',
+                      link: '/world-models/architectures/state-transition/object-centric-modeling/'
+                    }
+                  ]
                 },
                 {
-                  text: 'Physics & Causality Benchmark',
-                  link: '/datasets/foundational-world-modeling/physics-and-causality-benchmark/'
+                  text: 'Other Architectures',
+                  link: '/world-models/architectures/other-architectures/',
+                  collapsed: true,
                 }
               ]
             },
             {
-              text: 'Domain-specific World Modeling',
-              link: '/datasets/domain-specific-world-modeling/',
+              text: '数据集与评测',
+              link: '/world-models/datasets-benchmarks/',
               collapsed: true,
               items: [
                 {
-                  text: 'Embodied AI & Robotics',
-                  link: '/datasets/domain-specific-world-modeling/embodied-ai-and-robotics/'
+                  text: 'Foundational World Modeling',
+                  link: '/world-models/datasets-benchmarks/foundational-world-modeling/',
+                  collapsed: true,
+                  items: [
+                    {
+                      text: 'General World Prediction & Simulation',
+                      link: '/world-models/datasets-benchmarks/foundational-world-modeling/general-world-prediction-and-simulation/'
+                    },
+                    {
+                      text: 'Physics & Causality Benchmark',
+                      link: '/world-models/datasets-benchmarks/foundational-world-modeling/physics-and-causality-benchmark/'
+                    }
+                  ]
                 },
                 {
-                  text: 'Autonomous Driving',
-                  link: '/datasets/domain-specific-world-modeling/autonomous-driving/'
+                  text: 'Domain-specific World Modeling',
+                  link: '/world-models/datasets-benchmarks/domain-specific-world-modeling/',
+                  collapsed: true,
+                  items: [
+                    {
+                      text: 'Embodied AI & Robotics',
+                      link: '/world-models/datasets-benchmarks/domain-specific-world-modeling/embodied-ai-and-robotics/'
+                    },
+                    {
+                      text: 'Autonomous Driving',
+                      link: '/world-models/datasets-benchmarks/domain-specific-world-modeling/autonomous-driving/'
+                    },
+                    {
+                      text: 'Interactive Environments & Gaming',
+                      link: '/world-models/datasets-benchmarks/domain-specific-world-modeling/interactive-environments-and-gaming/'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              text: '下游应用',
+              link: '/world-models/applications/',
+              collapsed: true,
+            },
+            {
+              text: '研究生态',
+              link: '/world-models/ecology/',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Surveys',
+                  link: '/world-models/ecology/surveys/'
                 },
                 {
-                  text: 'Interactive Environments & Gaming',
-                  link: '/datasets/domain-specific-world-modeling/interactive-environments-and-gaming/'
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      '/others/': [
-        {
-          text: 'World Models — Others',
-          link: '/others/',
-          collapsed: false,
-          items: [
-            {
-              text: 'Survey',
-              link: '/others/survey/',
-              collapsed: true,
-              items: [
+                  text: 'Workshops',
+                  link: '/world-models/ecology/workshops/'
+                },
                 {
-                  text: '论文列表',
-                  link: '/others/survey/survey/'
-                }
-              ]
-            },
-            {
-              text: 'GitHub Repo',
-              link: '/others/github-repo/',
-              collapsed: true,
-              items: [
+                  text: 'Repositories',
+                  link: '/world-models/ecology/repositories/'
+                },
                 {
-                  text: '仓库列表',
-                  link: '/others/github-repo/github-repo/'
-                }
-              ]
-            },
-            {
-              text: 'Workshop',
-              link: '/others/workshop/',
-              collapsed: true,
-              items: [
-                {
-                  text: 'Workshop 列表',
-                  link: '/others/workshop/workshop/'
-                }
-              ]
-            },
-            {
-              text: 'Theory',
-              link: '/others/theory/',
-              collapsed: true,
-              items: [
-                {
-                  text: '论文列表',
-                  link: '/others/theory/theory/'
-                }
-              ]
-            },
-            {
-              text: 'Downstream Tasks',
-              link: '/others/world-models-for-downstream-tasks/',
-              collapsed: true,
-              items: [
-                {
-                  text: '论文列表',
-                  link: '/others/world-models-for-downstream-tasks/world-models-for-downstream-tasks/'
-                }
-              ]
-            },
-            {
-              text: 'Other Perspectives',
-              link: '/others/other-perspectives-of-world-modeling/',
-              collapsed: true,
-              items: [
-                {
-                  text: '论文列表',
-                  link: '/others/other-perspectives-of-world-modeling/other-perspectives-of-world-modeling/'
+                  text: 'Perspectives',
+                  link: '/world-models/ecology/perspectives/'
                 }
               ]
             }
@@ -230,7 +185,7 @@ export default defineConfig({
       ],
       '/video-generation/': [
         {
-          text: 'Video Generation',
+          text: '视频生成后训练',
           link: '/video-generation/',
           collapsed: false,
           items: [
@@ -253,23 +208,11 @@ export default defineConfig({
               text: 'Datasets',
               link: '/video-generation/datasets/',
               collapsed: true,
-              items: [
-                {
-                  text: '数据集列表',
-                  link: '/video-generation/datasets/'
-                }
-              ]
             },
             {
               text: 'Benchmarks',
               link: '/video-generation/benchmarks/',
               collapsed: true,
-              items: [
-                {
-                  text: '评测基准列表',
-                  link: '/video-generation/benchmarks/'
-                }
-              ]
             }
           ]
         }

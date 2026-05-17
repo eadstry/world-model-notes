@@ -1,21 +1,30 @@
 ---
-title: "Learning Primitive Embodied World Models: Towards Scalable Robotic Learning"
-arxiv: https://arxiv.org/abs/2508.20840v3
-github: https://github.com/qiaosun22/PrimitiveWorld
-website: https://qiaosun22.github.io/PrimitiveWorld/
-venue: arXiv
-year: 2025
+title: "PEWM：学习原始具身世界模型"
+source: "arxiv"
+arxiv_id: "2508.20840"
+tags: ["Embodied World Model","Video Generation","Robotics","Primitive Actions","Closed-Loop Control"]
+status: "已读"
 ---
-
-# Learning Primitive Embodied World Models: Towards Scalable Robotic Learning
-
-::: info 论文信息
-- **Venue**: arXiv (2025)
-- **arXiv**: [https://arxiv.org/abs/2508.20840v3](https://arxiv.org/abs/2508.20840v3)
-- **GitHub**: [https://github.com/qiaosun22/PrimitiveWorld](https://github.com/qiaosun22/PrimitiveWorld)
-- **Website**: [https://qiaosun22.github.io/PrimitiveWorld/](https://qiaosun22.github.io/PrimitiveWorld/)
-:::
-
 ## 学习笔记
-
-*此部分待补充。*
+### 核心贡献
+- 提出 PEWM（Primitive Embodied World Models），将视频生成限制为固定短时间窗口（primitive horizon），从根本上缓解具身世界模型对大规模交互数据的依赖瓶颈。
+- 短视界设计带来四重收益：(1) 语言与动作视觉表示之间的细粒度对齐，(2) 降低学习复杂度，(3) 提升数据效率，(4) 减少推理延迟。
+- 配备 VLM Planner 进行高层任务规划 + Start-Goal Heatmap Guidance (SGG) 实现灵活闭环控制与组合泛化。
+- 验证了「将长时域控制分解为可组合的短时域原语」这一范式在视频生成世界模型中的有效性。
+### 方法细节
+- **原语世界模型（Primitive World Model）**：将视频生成限制在固定短窗口（如 8 帧），以单步动作执行前后的状态变化作为学习目标，避免长视频生成的不确定性与误差累积。
+- **语言-动作细粒度对齐**：短时域使得自然语言指令与单步动作对应的视觉变化之间形成更紧密的监督信号，减少长时域中动作归因模糊的问题。
+- **VLM Planner**：利用视觉语言模型作为高层规划器，将复杂任务分解为原语动作序列（如「拿起杯子 → 移动到目标位置 → 放下」），每步调用 PEWM 预测对应的视觉结果。
+- **Start-Goal Heatmap Guidance (SGG)**：在推理时通过起始帧与目标帧之间的热力图引导视频生成，无需额外训练即可实现零样本的闭环控制与组合泛化。
+- **训练效率**：相比长时域世界模型，PEWM 所需训练数据量显著降低，且训练收敛更快。
+### 关键发现
+- 短时域原语设计在数据效率上显著优于直接生成长视频的具身世界模型。
+- SGG 实现了无需训练的闭环控制能力，支持灵活的任务组合与目标切换。
+- VLM + PEWM 的组合框架在多个具身任务上展示了零样本泛化到新任务组合的能力。
+- 推理延迟降低至实时可控水平，支持交互式应用。
+### 方法归类
+- **任务**：具身世界模型、机器人视频预测
+- **架构**：短时域视频生成模型 + VLM Planner + SGG 引导
+- **关键技术**：Primitive Horizon 分解、Start-Goal Heatmap Guidance、语言-动作对齐
+- **训练策略**：短时域监督学习，数据高效
+- **推理特点**：VLM 规划 + 原语级联执行，闭环可控，低延迟

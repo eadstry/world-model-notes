@@ -1,21 +1,40 @@
 ---
-title: "StoryMem: Multi-shot Long Video Storytelling with Memory"
-arxiv: https://arxiv.org/abs/2512.19539
-github: https://github.com/Kevin-thu/StoryMem
-website: https://kevin-thu.github.io/StoryMem/
-venue: arXiv
-year: 2025
+title: "StoryMem：基于视觉记忆的多镜头长篇视频故事生成"
+source: "arxiv"
+arxiv_id: "2512.19539"
+tags: ["video-storytelling","multi-shot","memory-bank","long-video","keyframe-retrieval","diffusion-model"]
+status: "已读"
 ---
-
-# StoryMem: Multi-shot Long Video Storytelling with Memory
-
-::: info 论文信息
-- **Venue**: arXiv (2025)
-- **arXiv**: [https://arxiv.org/abs/2512.19539](https://arxiv.org/abs/2512.19539)
-- **GitHub**: [https://github.com/Kevin-thu/StoryMem](https://github.com/Kevin-thu/StoryMem)
-- **Website**: [https://kevin-thu.github.io/StoryMem/](https://kevin-thu.github.io/StoryMem/)
-:::
-
 ## 学习笔记
+### 核心贡献
+1. 受人类记忆机制启发，将长篇视频故事生成重新定义为以显式视觉记忆为条件的迭代镜头合成，将预训练单镜头视频扩散模型转化为多镜头故事叙述器
+2. 提出 Memory-to-Video (M2V) 框架，维护紧凑且动态更新的关键帧记忆库，通过潜在空间拼接（latent concatenation）和负向 RoPE 位移注入历史镜头信息
+3. 设计语义关键帧选择 + 美学偏好过滤的双重检索策略，确保记忆库中存储的帧兼具跨镜头信息价值和视觉质量
+4. 引入 ST-Bench（StoryTelling Benchmark），首个面向多镜头视频故事叙述的专用评测基准
+5. 仅需 LoRA 微调即可将预训练视频扩散模型适配为多镜头故事生成器，训练开销极小
 
-*此部分待补充。*
+### 方法细节
+- **Memory-to-Video (M2V) 整体流程**：
+  - 每生成一个镜头后，从该镜头视频中通过语义关键帧选择算法提取 1-3 帧代表性关键帧
+  - 关键帧经过美学偏好过滤器（基于预训练美学评分模型）筛选后加入记忆库
+  - 记忆库大小固定，以 FIFO 或重要性排序策略动态更新，保证推理内存可控
+- **记忆注入机制**：
+  - **Latent Concatenation**：将记忆库中的关键帧编码为潜在特征后，沿通道维度拼接到当前镜头去噪网络的输入 latent 上
+  - **负向 RoPE 位移（Negative RoPE Shifts）**：在时间注意力层中，对记忆帧与当前帧之间的位置编码施加负偏移，使模型感知记忆帧为"过去"的时间位置，增强时序因果性
+- **训练策略**：
+  - 冻结基础视频扩散模型（如 CogVideoX）的主干权重
+  - 仅通过 LoRA 微调新增的记忆注入交叉注意力层和 latent 拼接投影层
+  - 训练数据为多镜头视频片段，每个样本含 2-5 个连续镜头
+- **镜头间过渡**：通过在相邻镜头的交界帧处施加平滑约束（temporal smoothness loss），保证镜头切换的自然过渡
+
+### 关键发现
+- 在 ST-Bench 上，StoryMem 在跨镜头一致性（Cross-Shot Consistency）指标上显著优于直接拼接单镜头生成结果和基于文本延续的基线方法
+- 美学质量与单镜头生成模型相比无显著下降，证明记忆注入不损害生成质量
+- 消融实验表明：语义关键帧选择优于均匀采样和随机选择；负向 RoPE 位移比直接拼接或零位移方案更有效
+- 记忆库大小（1-10 帧）对一致性的影響呈边际递减趋势，3-5 帧即可实现大部分收益
+- 方法可泛化至不同基础视频扩散模型（CogVideoX、AnimateDiff）
+
+### 方法归类
+- **任务类别**：多镜头视频故事生成 / 长篇视频生成
+- **技术路线**：记忆增强扩散模型 + LoRA 微调 + 关键帧检索
+- **与现有方法的关系**：区别于基于文本脚本一次性生成长视频的方法（如 StreamingT2V、FreeNoise），采用迭代式镜头合成；记忆库机制类似于 MemoNav 和 MovieGen 中的长期记忆理念，但更轻量且无需大规模微调

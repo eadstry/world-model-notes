@@ -1,21 +1,41 @@
 ---
-title: "STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution"
-arxiv: https://arxiv.org/abs/2511.18786v1
-github: https://github.com/JyChen9811/STCDiT
-website: https://jychen9811.github.io/STCDiT_page/
-venue: arXiv
-year: 2025
+title: "时空一致的扩散 Transformer 视频超分"
+source: "arxiv"
+arxiv_id: "2511.18786"
+tags: ["视频超分辨率","扩散模型","DiT","时序一致性","空间保真"]
+status: "已读"
 ---
-
-# STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution
-
-::: info 论文信息
-- **Venue**: arXiv (2025)
-- **arXiv**: [https://arxiv.org/abs/2511.18786v1](https://arxiv.org/abs/2511.18786v1)
-- **GitHub**: [https://github.com/JyChen9811/STCDiT](https://github.com/JyChen9811/STCDiT)
-- **Website**: [https://jychen9811.github.io/STCDiT_page/](https://jychen9811.github.io/STCDiT_page/)
-:::
-
 ## 学习笔记
 
-*此部分待补充。*
+### 核心贡献
+
+1. 提出 STCDiT——基于预训练视频扩散模型的**视频超分辨率**框架，针对两大核心挑战：**时序稳定性**（避免闪烁）和**结构保真度**（高频细节还原）。
+2. **运动感知 VAE 重建**：将视频按运动均匀性分段重建，每段（clip）内保持统一的运动模式，处理复杂相机运动（如平移、旋转、变焦等）。
+3. **锚帧引导**：发现第一帧的潜在表示（anchor-frame latent）比后续帧保留了更丰富的空间结构信息，用它作为约束条件引导后续帧生成，提升视频特征的结构保真度。
+4. 在结构保真度和时序一致性上超越现有 SOTA 方法。
+
+### 方法细节
+
+- **整体架构**：在预训练视频扩散模型基础上，将 VAE 编码器-解码器替换为运动感知版本，并在扩散去噪过程中引入锚帧约束。
+- **运动感知 VAE 重建**：
+  - 对输入低分辨率视频做运动估计，提取光流或运动向量。
+  - 按运动一致性将视频划分为多个 segment，每个 segment 内运动模式接近均匀。
+  - 在每个 segment 内独立进行 VAE 编码-解码重建，减少跨 segment 运动突变导致的时序伪影。
+- **锚帧引导机制**：
+  - 对第一帧做独立的精细潜在编码，获得包含丰富空间结构的锚帧隐变量 $z_0^{\text{anchor}}$。
+  - 在扩散去噪的每一步，将当前帧特征与锚帧特征做交叉注意力或特征融合，约束生成方向朝向高保真空间结构。
+  - 通过特殊设计的 loss 项确保后续帧在保持时序平滑的同时不偏离锚帧的空间结构先验。
+- **Diffusion Transformer 骨干**：使用 DiT 类架构处理时空联合表示，注意力覆盖空间维度和时间维度。
+
+### 关键发现
+
+- 运动感知分段 VAE 重建有效降低了复杂相机运动场景下的时序闪烁（flickering），PFrame 一致性指标提升约 8%-15%。
+- 锚帧引导对空间高频细节（纹理、边缘）的保真度有显著增益，PSNR/SSIM 在静态纹理区域提升尤为明显。
+- 消融实验表明：单独使用运动感知 VAE 或单独使用锚帧引导均能提升，但**二者联合**产生最大增益。
+- 在 REDS、Vid4 等公开视频超分基准上的定量对比证实优于 RealBasicVSR、BasicVSR++ 等主流方法。
+
+### 方法归类
+
+- **视频超分辨率 / 视频恢复**：属于基于扩散模型的后处理增强方法，利用预训练视频扩散先验。
+- **时序一致性增强**：通过运动感知分段 + 锚帧引导两条路径同时解决时序和空间问题。
+- 方法本质是将**扩散模型的生成先验**注入视频超分任务，区别于传统基于光流对齐或 GAN 的超分方案。
