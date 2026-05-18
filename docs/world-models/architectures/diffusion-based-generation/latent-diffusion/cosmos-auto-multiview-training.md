@@ -436,6 +436,346 @@ torchrun --nproc_per_node=8 --master_port=12341 -m scripts.train \
 - `caption.jsonl` 的 `view` 是否与 `pinhole_front` 等 key 对齐；
 - NCCL、共享内存、8 卡 context parallel 是否正常。
 
+## 10.5 Post-Training Deep Dive: Hydra 配置注册与代码流
+
+第 10 节给出了训练命令和高层参数表。这一节往下走一层，把 Hydra ConfigStore 注册机制、数据/模型/回调/实验的代码链串起来。
+
+### 10.5.1 整体架构：ConfigStore + LazyCall + 模块注册
+
+Auto Multiview 的配置系统入口在：
+
+- `cosmos_predict2/_src/predict2_multiview/configs/vid2vid/config.py` — 顶层 ConfigStore 初始化和子模块导入。
+
+核心思路是 **Hydra ConfigStore + LazyCall**：
+
+```python
+# config.py 核心逻辑（简化）
+INTERNAL = os.environ.get("INTERNAL", "False")
+
+if INTERNAL:
+    # 注册 Alpamayo 内部 dataloader、conditioner、model、net、callbacks
+    _base_config.register_configs()
+else:
+    # 注册 Waymo local dataloader（文件系统版本）
+    _base_config.register_local_configs()
+
+cs = ConfigStore.instance()
+cs.store(
+    name="cosmos_predict2_multiview",
+    group="config",
+    node=config_store_config().defaults,  # 默认 config 列表
+    provider="schema",
+)
+```
+
+`config.py` 通过 `all_modules_from_package()` 自动发现子目录下所有模块并触发它们的注册函数。真正的注册分布在 `defaults/` 子目录中：
+
+| 注册文件 | ConfigStore group | 注册内容 |
+|---|---|---|
+| `defaults/dataloader.py` | `data_train`, `data_val` | Alpamayo 内部 dataloader 变体 |
+| `defaults/dataloader_local.py` | `data_train`, `data_val` | Waymo 本地文件 dataloader |
+| `defaults/model.py` | `model` | `MultiviewVid2VidModelRectifiedFlow` |
+| `defaults/net.py` | `net` | `MultiViewDiT` 或 `MultiViewCrossDiT` |
+| `defaults/conditioner.py` | `conditioner` | `MultiViewCondition` |
+| `defaults/callbacks.py` | `callbacks` | `LogWeight`, `SigmoLossAnalysisPerFrame` |
+| `defaults/trainer.py` | `trainer` | `RectifiedFlowTrainer` |
+
+注册方式是 `ConfigStore.instance().store(group=..., name=..., node=LazyCall(...))`。`LazyCall` 来自 `cosmos_predict2/_src/imaginaire/config.py`，它的作用是把 Python 类的构造参数写成 YAML/OmegaConf 可操控的字典，Hydra 通过命令行 `-- key=value` 即可覆盖任意嵌套字段。
+
+### 10.5.2 数据管线注册：Alpamayo 内部 vs Waymo 本地
+
+#### Alpamayo 内部 dataloader（`defaults/dataloader.py`）
+
+面向 NVIDIA 内部 Alpamayo 数据平台的注册。核心变体：
+
+| 注册名 | 视角数 | caption 策略 | 用途 |
+|---|---|---|---|
+| `alpamayo_7views_1cap` | 7 | 单 caption + view prefix | 7-view 全量训练 |
+| `alpamayo_4views_1cap` | 4 | 单 caption + view prefix | 4-view 训练 |
+| `alpamayo_allcaps` | 7 | 多标签 caption 随机采样 | caption 增强 |
+
+每个变体通过 `LazyCall(AlpamayoDataloader)` 注册，关键参数：
+
+```python
+LazyCall(AlpamayoDataloader)(
+    video_name_prefix={
+        # 7-view 模板中 view 名 → 文件前缀 的映射
+        "front": "pinhole_front",
+        "front_right": "pinhole_front_right",
+        "side_right": "pinhole_side_right",
+        "back": "pinhole_back",
+        "side_left": "pinhole_side_left",
+        "front_left": "pinhole_front_left",
+        "front_tele": "pinhole_front_tele",
+    },
+    num_frames=29,
+    frame_height=720,
+    frame_width=1280,
+    sample_n_views=7,
+    ...
+)
+```
+
+`video_name_prefix` 是第 2 节 view id 槽位到实际文件名的桥梁：view id 0→`front`→`pinhole_front.mp4`，依此类推。
+
+#### Waymo 本地 dataloader（`defaults/dataloader_local.py`）
+
+`register_waymo_dataloader()` 注册在 `data_train/waymo` 组下。核心区别：不使用 Alpamayo 远程数据，而是从本地文件系统读取 `input/<sample_id>/` 目录。
+
+```python
+# dataloader_local.py 关键注册
+LazyCall(WaymoLocalDataset)(
+    data_path="datasets/multiview/waymo/input",
+    cameras=["pinhole_front", "pinhole_front_right",
+             "pinhole_side_right", "pinhole_side_left",
+             "pinhole_front_left"],
+    caption_key="pinhole_front",
+    num_video_frames=29,
+    frame_height=720,
+    frame_width=1280,
+    sample_n_views=5,
+    ...
+)
+```
+
+`WaymoLocalDataset`（`datasets/local.py`）的实现：
+
+- 扫描 `data_path` 下所有 sample 子目录
+- 检查每个 sample 是否包含全部所需相机 MP4 + `caption.jsonl`
+- 按 `frame_indices` 用 `decord` 读取帧
+- 每个 epoch 自动 shuffle，每 N 步触发一次 GC 释放显存
+
+`WaymoLocalDataset` 内部调用 `ExtractFramesAndCaptions`（`datasets/multiview.py`）完成：
+1. 所有相机取相同 `frame_indices`
+2. 读取前视 caption，为不同相机追加 view 方向前缀
+3. 返回 shape `[C, V*T, H, W]` 的视频 tensor 和对应的 `view_indices`
+
+#### 多 dataloader 混合策略
+
+Cosmos 支持多个 dataloader 按比例混合。实验配置中通过 `ratios` 控制：
+
+```python
+# waymo.py 中：Waymo 100%，Alpamayo 0%
+dataloader_train=dict(
+    dataloaders=dict(
+        alpamayo_1cap=dict(ratio=0),
+        alpamayo_allcaps=dict(ratio=0),
+    )
+)
+```
+
+大规模实验 `buttercup2p5_rectified_flow.py` 使用 Alpamayo 混合：
+
+```python
+dataloader_train=dict(
+    dataloaders=dict(
+        alpamayo_1cap=dict(ratio=0.9),
+        alpamayo_allcaps=dict(ratio=0.1),
+    )
+)
+```
+
+### 10.5.3 模型注册：FSDP + RectifiedFlow + VisionEncoder
+
+`defaults/model.py` 中的 `register_multiview_vid2vid_model()` 把三块拼进一个 LazyCall：
+
+```python
+LazyCall(MultiviewVid2VidModelRectifiedFlow)(
+    fsdp_config=LazyCall(FSDPConfig)(
+        use_fsdp=True,
+        fsdp_auto_wrap_policy="transformer_root_module",
+        ...
+    ),
+    rectified_flow_config=LazyCall(RectifiedFlowConfig)(
+        num_inference_steps=50,
+        sigma_min=1e-5,
+        ...
+    ),
+    vision_encoder_config=LazyCall(VisionEncoderConfig)(
+        vision_encoder="auto",
+        freeze_vae=True,
+        freeze_ccond=True,
+        ...
+    ),
+    ...
+)
+```
+
+三个嵌套配置的含义：
+
+| 配置块 | 类 | 作用 |
+|---|---|---|
+| `fsdp_config` | `FSDPConfig` | 控制 FSDP 分片策略、auto wrap policy、mixed precision |
+| `rectified_flow_config` | `RectifiedFlowConfig` | 控制 rectified flow 的 sigma 范围、推理步数、loss weight |
+| `vision_encoder_config` | `VisionEncoderConfig` | 控制 VAE 和 C-Conder（T5 text encoder）是否冻结 |
+
+后训练阶段 `freeze_vae=True` 和 `freeze_ccond=True` 意味着 tokenizer 和 text encoder 权重不动，只训练 DiT 主干。这和第 7 节"模型封装"中描述的 `encode()` 只在 rank 0 执行一次并广播 latent 的策略一致——冻结的 VAE 不需要在所有 GPU 上同步梯度。
+
+### 10.5.4 回调系统：LogWeight 和 SigmoLossAnalysisPerFrame
+
+`defaults/callbacks.py` 在 `Callbacks` group 下注册了两个专用回调：
+
+**LogWeight**：按 `log_scopes` 配置统计每 GPU 的模型权重信息（均值、方差、直方图），通过 Neptune 风格接口写入实验管理平台。默认启用，设置 `enabled=True`：
+
+```python
+LazyCall(LogWeight)(
+    log_scopes=["trainer.model.model.model"],
+    log_weight_norm=True,
+    enabled=True,
+)
+```
+
+**SigmoLossAnalysisPerFrame**：逐帧分析 sigmoid loss，用于监控 rectified flow 训练中不同帧位置的 loss 分布。默认按 `enabled=False` 关闭，仅在调试时开启：
+
+```python
+LazyCall(SigmoLossAnalysisPerFrame)(
+    enabled=False,
+)
+```
+
+这两个回调都为 rectified flow 训练提供专用信号：`LogWeight` 监控模型收敛健康度，`SigmoLossAnalysisPerFrame` 帮助排查多视角序列中某个时间/视角位置的异常 loss。
+
+### 10.5.5 实验配置全解：buttercup2p5_rectified_flow.py
+
+`cosmos_predict2/_src/predict2_multiview/configs/vid2vid/experiment/buttercup2p5_rectified_flow.py` 是 Auto Multiview 的完整实验入口。它作为 OmegaConf dictnode 注册到 ConfigStore 的 `experiment` group 下：
+
+```python
+# buttercup2p5_rectified_flow.py 结构（简化）
+predict2_multiview_rectified_flow = dict(
+    defaults=[
+        {"override /data_train": "alpamayo_7views_1cap"},
+        {"override /data_val": "alpamayo_7views_1cap"},
+        {"override /model": "multiview_vid2vid"},
+        {"override /net": "cosmos_v1_2B_multiview"},
+        "_self_",
+    ],
+    model_parallel=dict(
+        context_parallel_size=4,
+    ),
+    checkpoint=dict(
+        # 从 Multiview-2B-Base checkpoint 加载
+        load_path=...,
+    ),
+    trainer=dict(
+        trainer_class=LazyCall(RectifiedFlowTrainer),
+        max_iter=200_000,
+        optim_param_groups=dict(
+            groups=[dict(name="model", lr=3e-5, weight_decay=0.0)],
+        ),
+        lr_schedule=dict(
+            class_kwargs=dict(
+                num_warmup_steps=1_000,
+                cosine_T_max=200_000,
+            ),
+        ),
+        video_context_len=9,
+        video_context_size=4,
+        ...
+    ),
+    ...
+)
+```
+
+关键训练参数逐条解读：
+
+| 参数 | 值 | 含义 |
+|---|---|---|
+| `trainer_class` | `RectifiedFlowTrainer` | rectified flow 专用 trainer，继承 Imagine 框架 |
+| `lr` | $3 \times 10^{-5}$ | AdamW 学习率，仅 DiT 主干更新 |
+| `max_iter` | 200,000 | 总迭代数 |
+| `lr_schedule` | cosine, 1000 warmup | cosine annealing + linear warmup |
+| `video_context_len` | 9 | context parallel 中每段的 latent 帧数 |
+| `video_context_size` | 4 | context parallel 段数（与 `context_parallel_size` 配合） |
+| `checkpoint.load_path` | Multiview-2B-Base | 加载预训练 Multiview DiT + VAE + conditioner 权重 |
+
+`video_context_len=9` 和 `video_context_size=4` 决定了 context parallel 沿序列维度的分割策略：$4 \times 9 = 36$ 帧 latent 长度，对应 $V \times T_{\text{latent}}$ 的总序列。它与第 5 节的 `[V*T]` 展平逻辑完全对齐——context parallel 不关心哪些帧属于哪个 view，只沿序列均匀切分。
+
+### 10.5.6 Waymo 实验如何覆盖基础配置
+
+`cosmos_predict2/experiments/multiview/waymo.py` 在第 10 节已经展示参数值，这里从 Hydra 覆盖机制的角度重新看：
+
+```python
+DEFAULT_CHECKPOINT = MODEL_CHECKPOINTS[ModelKey(variant=ModelVariant.AUTO_MULTIVIEW)]
+
+predict2_multiview_post_train_waymo = dict(
+    defaults=[
+        DEFAULT_CHECKPOINT.experiment,           # 继承 buttercup2p5_rectified_flow 的默认配置
+        {"override /data_train": "waymo"},       # 把 dataloader 切换到本地 Waymo
+        {"override /data_val": "waymo"},
+        "_self_",                                 # 允许本文件中的字段覆盖默认值
+    ],
+    job=dict(project="cosmos_predict_v2p5", group="multiview", name="2b_waymo"),
+    checkpoint=dict(
+        load_path=DEFAULT_CHECKPOINT.s3.uri,      # 从 Auto Multiview 官方 checkpoint 加载
+        save_to_object_store=ObjectStoreConfig(enabled=False),  # 不写 S3
+        load_from_object_store=ObjectStoreConfig(enabled=False),
+    ),
+    model_parallel=dict(context_parallel_size=8),  # 覆盖为 8 路 parallel
+    trainer=dict(
+        logging_iter=100,
+        max_iter=2_000,                            # 后训练仅 2000 步
+        callbacks=dict(
+            every_n_sample_reg=dict(every_n=500, sample_n_views=5, save_s3=False),
+            every_n_sample_ema=dict(every_n=500, sample_n_views=5, save_s3=False),
+        ),
+        straggler_detection=dict(enabled=False),
+    ),
+    dataloader_train=dict(
+        dataloaders=dict(
+            alpamayo_1cap=dict(ratio=0),
+            alpamayo_allcaps=dict(ratio=0),
+        )
+    ),
+    upload_reproducible_setup=False,
+)
+```
+
+Hydra 覆盖的三条链路：
+
+1. **Checkpoint 链**：`buttercup2p5_rectified_flow.py` 的 `checkpoint.load_path` 指向 Multiview-2B-Base，`waymo.py` 的 `DEFAULT_CHECKPOINT.experiment` 继承这一默认，再从 `DEFAULT_CHECKPOINT.s3.uri` 指向 AUTO_MULTIVIEW 官方权重。最终后训练从官方已预训练的 Multiview 权重启动。
+
+2. **数据链**：`buttercup2p5_rectified_flow.py` 默认使用 `alpamayo_7views_1cap`，`waymo.py` 通过 `override /data_train: waymo` 替换为本地 `WaymoLocalDataset`，同时把 `alpamayo_*` 的 ratio 置 0 防止数据混合。
+
+3. **并行链**：`buttercup2p5_rectified_flow.py` 默认 `context_parallel_size=4`，`waymo.py` 覆盖为 8。这是因为 Waymo 实验只有 5 view + 29 frames，序列更短，用 8 路并行可以把每卡的每帧 latent 降到更细粒度。
+
+### 10.5.7 训练入口：scripts/train.py
+
+第 10 节中的训练命令 `torchrun --nproc_per_node=8 -m scripts.train --config=... -- experiment=...` 实际调用链：
+
+```
+scripts/train.py
+  → cosmos_oss.scripts.train.main()
+    → HydraConfigStore 加载 config.py 的 schema
+    → 按 experiment 名查找 buttercup2p5_rectified_flow.py / waymo.py
+    → 递归 resolve defaults（model, net, dataloader, conditioner, trainer, callbacks）
+    → LazyCall 实例化所有组件
+    → RectifiedFlowTrainer.train()
+```
+
+`scripts/train.py` 本身是薄封装，核心逻辑在 `cosmos_oss` 包中。这也是 Cosmos 的工程约定：脚本只负责入口和参数解析，所有训练逻辑封装在 trainer 类中。
+
+### 10.5.8 小总结：从配置到训练的完整链
+
+把 10.5.1–10.5.7 串成一条线：
+
+1. `torchrun` 启动多进程 → Hydra 初始化 ConfigStore
+2. `config.py` 通过 `INTERNAL` 标志加载内部/外部注册
+3. `all_modules_from_package()` 自动发现 `defaults/` 下的所有 module 并执行注册
+4. Hydra 按 `experiment` 名（如 `predict2_multiview_post_train_waymo`）查找配置
+5. `defaults` 列表加载 model/net/dataloader/conditioner/trainer/callbacks 默认值
+6. 实验配置中的 override 逐层替换默认值
+7. `LazyCall` 把所有配置节点转换为 `Instantiate` 对象
+8. `RectifiedFlowTrainer` 启动训练循环：
+   - `model.encode()` 压缩视频到 latent（frozen VAE）
+   - 采样 rectified flow 时间步 $\tau$
+   - 多视角 latent 沿 context parallel 分片
+   - `MultiViewDiT` 前向预测 velocity field
+   - rectified flow loss 回传 → FSDP all-reduce
+   - 回调（`LogWeight`, sample, checkpoint）
+9. 保存 DCP checkpoint，转 `.pt` 后推理
+
+---
+
 ## 11. Checkpoint 与推理验证
 
 训练保存的是 DCP distributed checkpoint，适合分布式恢复，不适合直接给普通推理脚本加载。需要先转换：
