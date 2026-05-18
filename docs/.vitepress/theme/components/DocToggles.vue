@@ -47,14 +47,14 @@ watch([leftCollapsed, rightCollapsed], () => {
 </script>
 
 <template>
-  <div class="doc-toggles" aria-label="文档目录显示控制">
+  <div class="doc-toggles" aria-label="文档布局显示控制">
     <button
       class="doc-toggle-btn"
       type="button"
       :aria-pressed="leftCollapsed"
       @click="toggleLeft"
     >
-      {{ leftCollapsed ? '展开左目录' : '折叠左目录' }}
+      {{ leftCollapsed ? '显示左侧目录' : '隐藏左侧目录' }}
     </button>
     <button
       class="doc-toggle-btn"
@@ -62,7 +62,7 @@ watch([leftCollapsed, rightCollapsed], () => {
       :aria-pressed="rightCollapsed"
       @click="toggleRight"
     >
-      {{ rightCollapsed ? '展开右目录' : '折叠右目录' }}
+      {{ rightCollapsed ? '显示右侧大纲' : '隐藏右侧大纲' }}
     </button>
   </div>
 </template>

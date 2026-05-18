@@ -10,6 +10,12 @@ title: "方法综述"
 
 ---
 
+## 专题入口
+
+- [DiT 控制方法综述：ControlNet 路线与 Cosmos-Transfer2.5](/world-models/architectures/diffusion-based-generation/latent-diffusion/dit-control-methods-and-cosmos-transfer2-5): 从 CameraCtrl、Ctrl-Adapter、TIC-FT 到 Cosmos-Transfer2.5，系统梳理 DiT 中条件控制尤其是 ControlNet 的落地方式
+
+---
+
 ## 1. 监督微调 (Supervised Fine-Tuning)
 
 利用高质量标注数据对预训练视频模型进行领域适配，是后训练中最基础的范式。

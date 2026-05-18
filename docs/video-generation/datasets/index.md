@@ -28,7 +28,7 @@ title: "数据集"
 | 数据集 | 年份 | 会议 | 用途 |
 |--------|------|------|------|
 | [HOIGen-1M](./hoigen-1m.md) | 2025 | CVPR | 手-物交互视频生成，百万级 |
-| [OpenHumanVid](./openhivid.md) | 2025 | CVPR | 开放人像视频数据集，主体驱动生成 |
+| [OpenHumanVid](./openhumanvid.md) | 2025 | CVPR | 开放人像视频数据集，主体驱动生成 |
 | [CookGen](./cookgen.md) | 2025 | CVPR | 烹饪视频指令生成，YouCook2 扩展 |
 | [TalkCuts](./talkcuts.md) | 2025 | NeurIPS | 对话视频剪辑生成 |
 

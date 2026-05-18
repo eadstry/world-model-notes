@@ -37,7 +37,7 @@ title: "评测基准"
 | [StoryEval](./storyeval.md) | 2025 | CVPR | 故事生成评测扩展 |
 | [SeqBench](./seqbench.md) | 2025 | arXiv | 时序叙事生成评测 |
 | [MC-Bench](./mc-bench.md) | 2025 | CVPR | 运动控制评测 (MotionPro) |
-| [VideoUFO](./videoufo.md) | 2025 | NeurIPS | 视频事件理解评测 |
+| [VideoUFO](../datasets/videoufo.md) | 2025 | NeurIPS | 视频事件理解评测 |
 | [DynamicEval](./dynamiceval.md) | 2025 | arXiv | 动态场景评测 |
 
 ### 视频编辑与可控生成
@@ -86,7 +86,7 @@ title: "评测基准"
 | [VidCapBench](./vidcapbench.md) | 2025 | 视频描述 | 视频字幕评测 |
 | [RecipeGen](./recipegen.md) | 2025 | 烹饪 | 菜谱视频生成评测 |
 | [VideoPhy](./videophy.md) | 2025 | 物理 | 物理理解评测 |
-| [TiViBench](./tivibench.md) | 2025 | 推理 | Think-in-Video 推理评测 |
+| [TiViBench](../methods/arxiv-papers/tivibench-benchmarking-think-in-video-reasoning-for-video-generative-models.md) | 2025 | 推理 | Think-in-Video 推理评测 |
 
 ## 评测基准年代分布
 
